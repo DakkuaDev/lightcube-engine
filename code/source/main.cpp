@@ -11,9 +11,35 @@
  *
  */
 
-#include <sdl2/include/SDL.h>
+//#include <SDL.h>
+#include <gtest/gtest.h>
 
 int main()
 {
 	return 0;
+}
+
+/// <summary>
+/// Google Test Library overview experiments to test out
+/// </summary>
+namespace myTest
+{
+
+	int sum(int n)
+	{
+		auto result = n + 5;
+
+		return result;
+	}
+
+	TEST(BasicTest, SubTest1)
+	{
+		ASSERT_TRUE(1 == 2);
+	}
+	
+	TEST(ExperimentTest, SumComprobation)
+	{
+		EXPECT_EQ(sum(5), 10);
+	}
+
 }
