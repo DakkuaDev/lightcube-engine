@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\code\source\main.cpp">
+    <ClCompile Include="..\..\code\source\window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
