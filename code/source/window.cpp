@@ -12,7 +12,7 @@
 
 #include <iostream>
 #include <SDL.h>
-#include "window.h"
+#include "Window.h"
 
 using namespace std;
 
