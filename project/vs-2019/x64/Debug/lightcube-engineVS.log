@@ -1,2 +1,6 @@
-﻿  window.cpp
-  lightcube-engineVS.vcxproj -> D:\Dev\LightCube Engine\lightcube-engine\project\vs-2019\x64\Debug\lightcube-engineVS.lib
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (lightcube-engineVS.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  main.cpp
+  window.cpp
+  Generating Code...
+     Creating library D:\Dev\LightCube Engine\lightcube-engine\project\vs-2019\x64\Debug\lightcube-engine.lib and object D:\Dev\LightCube Engine\lightcube-engine\project\vs-2019\x64\Debug\lightcube-engine.exp
+  lightcube-engineVS.vcxproj -> D:\Dev\LightCube Engine\lightcube-engine\project\vs-2019\x64\Debug\lightcube-engine.exe

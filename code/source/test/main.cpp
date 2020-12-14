@@ -1,27 +1,18 @@
 /**
  * Copyright (C) Daniel Guerra Gallardo
  *
- * @section LICENSE MIT License (see LICENSE file for more information)
+ * @section LICENSE MIT License (Lee el archivo LICENSE para mas información)
  *
  * @section DESCRIPTION
- * This is LightCube Engine, a personal game engine for education purpouses.
+ *Aplicación de Test usando la librería de Google Test para ver que LighCube Engine funciona correctamente
  *
  * @author Daniel Guerra Gallardo
  * Contact: daniel.guerra.gallardo99@gmail.com
- *
  */
 
 #include <gtest/gtest.h>
 
-int main()
+TEST(initialTest, subTest)
 {
-	return 0;
-}
-
-namespace myTest
-{
-	TEST(initialTest, subTest)
-	{
-		ASSERT_TRUE(1 == 1);
-	}
+	ASSERT_TRUE(1 == 1);
 }

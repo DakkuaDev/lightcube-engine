@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30709.132
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lightcube-engineVS", "lightcube-engineVS.vcxproj", "{CB43DADD-0254-4634-8D98-2E24DD66931E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lightcube-test", "..\lightcube-test\lightcube-test.vcxproj", "{32ECCEF1-96A7-4661-A394-1C417CD9ED01}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lightcube-test", "lightcube-test\lightcube-test.vcxproj", "{32ECCEF1-96A7-4661-A394-1C417CD9ED01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
