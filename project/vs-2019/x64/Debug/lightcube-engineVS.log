@@ -1,5 +1,5 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (lightcube-engineVS.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Vector2.cpp
+  Window.cpp
 gtest_maind.lib(gtest_main.obj) : warning LNK4006: main already defined in SDL2maind.lib(SDL_windows_main.obj); second definition ignored
 winmm.lib(WINMM.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in opengl32.lib(OPENGL32.dll); second definition ignored
   lightcube-engineVS.vcxproj -> D:\Dev\LightCube Engine\lightcube-engine\project\vs-2019\x64\Debug\lightcube-engine.lib

@@ -13,6 +13,7 @@
 #include <iostream>
 #include <SDL.h>
 #include "Window.h"
+#include <Camera.hpp>
 
 using namespace std;
 

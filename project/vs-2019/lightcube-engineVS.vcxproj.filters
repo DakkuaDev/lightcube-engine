@@ -21,9 +21,6 @@
     <ClCompile Include="..\..\code\source\String.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\headers\Vector2.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\Window.h">
