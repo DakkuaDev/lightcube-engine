@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\Dev\LightCube Engine\lightcube-engine\project\vs-2019\x64\Debug\lightcube-test.exe</FullPath>
+      <FullPath>D:\Dev\LightCube_Engine\lightcube-engine\project\vs-2019\x64\Debug\lightcube-test.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

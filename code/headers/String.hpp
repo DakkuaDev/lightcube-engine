@@ -6,6 +6,9 @@
     #include <cstddef>
     #include <initializer_list>
 
+#include <iostream>
+using namespace std;
+
 class String
 {
 public:
@@ -85,6 +88,7 @@ public:
     char   & operator [] (size_t index)        { return chars[index]; }
     char     operator [] (size_t index) const  { return chars[index]; }
 
+
     explicit operator bool () const
     {
         return size > 0;
@@ -129,4 +133,8 @@ private:
     }
 
 };
+
+// TODO: Comprobar que funciona
+// Sobreescritura del operador <<, para mostrar el string
+ostream& operator << (ostream& os, const String& string);
 

@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Internal">
+      <UniqueIdentifier>{ed1296b9-c0d0-4f0a-831f-9406b1b0eb4f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\source\Window.cpp">
@@ -31,6 +34,9 @@
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Vector.hpp">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\internal\declarations.h">
+      <Filter>Header Files\Internal</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

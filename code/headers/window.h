@@ -12,8 +12,7 @@
 
 #pragma once
 
-#include <string>
-#include <SDL.h>
+#include "internal/declarations.h"
 
 using namespace std;
 
