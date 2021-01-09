@@ -11,8 +11,29 @@
  */
 
 #include <gtest/gtest.h>
+#include <ObjectPool.h>
+#include <Windows.h>
 
 TEST(initialTest, subTest)
 {
 	ASSERT_TRUE(1 == 1);
+
+  //  ASSERT_NO_FATAL_FAILURE(
+		//// Creo un objeto de tipo ventana
+		//	myWindow window("Test Window", 800, 600);
+
+		//// Genero el bucle de la aplicación hasta que suceda algo
+		//while (!window.isClosed())
+		//{
+		//	window.pollEvents();
+		//}
+  //  )
+    
+}
+
+int main(int argument_count, char* arguments[])
+{
+    testing::InitGoogleTest(&argument_count, arguments);
+
+    return RUN_ALL_TESTS();
 }

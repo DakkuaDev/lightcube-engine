@@ -16,6 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\internal\declarations.h" />
+    <ClInclude Include="..\..\code\headers\ObjectPool.h" />
     <ClInclude Include="..\..\code\headers\String.hpp" />
     <ClInclude Include="..\..\code\headers\Vector.hpp" />
     <ClInclude Include="..\..\code\headers\Window.h" />
