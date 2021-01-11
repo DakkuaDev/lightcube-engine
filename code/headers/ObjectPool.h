@@ -133,10 +133,9 @@ public:
 
     void endTimer()
     {
-        std::cout
-            << "Crono Elapsed Time: "
-            << std::chrono::duration_cast<Resolution>(Clock::now() - mStart).count()
-            << std::endl;
+        DEBUG_LOG("Crono Elapsed Time: ");
+        DEBUG_LOG(std::chrono::duration_cast<Resolution>(Clock::now() - mStart).count());
+        DEBUG_LOG("\n");
     };
 
 private:

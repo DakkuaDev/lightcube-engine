@@ -3,3 +3,4 @@ D:\Dev\LightCube Engine\demo-game\project\vs-2019\x64\Debug\lightcube-engine.pdb
 D:\Dev\LightCube Engine\lightcube-engine\project\vs-2019\x64\Debug\lightcube-engine.lib
 D:\Dev\LightCube_Engine\demo-game\project\vs-2019\x64\Debug\lightcube-engine.pdb
 D:\Dev\LightCube_Engine\lightcube-engine\project\vs-2019\x64\Debug\lightcube-engine.pdb
+D:\Dev\LightCube_Engine\lightcube-engine\project\vs-2019\x64\Debug\lightcube-engine.lib

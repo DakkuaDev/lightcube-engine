@@ -1,2 +1,7 @@
-﻿  window.cpp
-  lightcube-engineVS.vcxproj -> D:\Dev\LightCube Engine\lightcube-engine\project\vs-2019\x64\Release\lightcube-engineVS.lib
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (lightcube-engineVS.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  String.cpp
+imm32.lib(IMM32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in winmm.lib(WINMM.dll); second definition ignored
+version.lib(VERSION.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in winmm.lib(WINMM.dll); second definition ignored
+setupapi.lib(SETUPAPI.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in winmm.lib(WINMM.dll); second definition ignored
+gtest_main.lib(gtest_main.obj) : warning LNK4006: main already defined in SDL2main.lib(SDL_windows_main.obj); second definition ignored
+  lightcube-engineVS.vcxproj -> D:\Dev\LightCube_Engine\demo-game\project\vs-2019\x64\Release\lightcube-engine.lib
