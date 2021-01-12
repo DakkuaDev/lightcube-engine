@@ -16,12 +16,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\internal\declarations.h" />
-    <ClInclude Include="..\..\code\headers\internal\Log.h" />
     <ClInclude Include="..\..\code\headers\internal\macros.h" />
-    <ClInclude Include="..\..\code\headers\ObjectPool.h" />
+    <ClInclude Include="..\..\code\headers\LC_Utils.h" />
     <ClInclude Include="..\..\code\headers\String.hpp" />
-    <ClInclude Include="..\..\code\headers\Vector.hpp" />
-    <ClInclude Include="..\..\code\headers\Window.h" />
+    <ClInclude Include="..\..\code\headers\LC_Math.h" />
+    <ClInclude Include="..\..\code\headers\LC_Graphics.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

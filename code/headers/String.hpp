@@ -3,10 +3,10 @@
 // angel.rodriguez@esne.edu
 // 2020.10
 
-    #include <cstddef>
-    #include <initializer_list>
-
+#include <cstddef>
+#include <initializer_list>
 #include <iostream>
+
 using namespace std;
 
 class String

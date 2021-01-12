@@ -10,11 +10,14 @@
  * Contact: daniel.guerra.gallardo99@gmail.com
  */
 
-#include <iostream>
-#include <SDL.h>
-#include "Window.h"
 
+#include <iostream>						// Cuidado con el orden de estas cabeceras.
+#include <SDL.h>
+#include "LC_Graphics.h"
+
+using namespace LC_Graphics;
 using namespace std;
+
 
 /// <summary>
 /// Constructor de la ventana
@@ -22,7 +25,7 @@ using namespace std;
 /// <param name="title"> Título de la ventana</param>
 /// <param name="w"> ancho de la ventana</param>
 /// <param name="h"> alto de la ventana</param>
-myWindow::myWindow(const string& title, int w, int h) :
+LC_Graphics::Window::Window(const string& title, int w, int h) :
 	title(title), width(w), height(h)
 {
 	// Si no se inicializa cierro la ventana
@@ -35,7 +38,7 @@ myWindow::myWindow(const string& title, int w, int h) :
 /// <summary>
 /// Destructor de la ventana emergente
 /// </summary>
-myWindow::~myWindow()
+LC_Graphics::Window::~Window()
 {
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -44,7 +47,7 @@ myWindow::~myWindow()
 /// <summary>
 /// Inicialización de la ventana emergente
 /// </summary>
-bool myWindow::init()
+bool LC_Graphics::Window::init()
 {
 	// Inicializo SDL
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
@@ -76,7 +79,7 @@ bool myWindow::init()
 /// <summary>
 /// Función para capturar los diferentes eventos de SDL2
 /// </summary>
-void myWindow::pollEvents()
+void LC_Graphics::Window::pollEvents()
 {
 	SDL_Event event;
 

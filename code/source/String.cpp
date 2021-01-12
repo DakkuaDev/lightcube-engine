@@ -5,11 +5,8 @@
 // Modificada por Daniel Guerra Gallardo
 
 #include "String.hpp"
-
 #include <iostream>
 using namespace std;
-
-
 
 String::String(const char character)
 {
