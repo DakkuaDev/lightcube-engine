@@ -68,7 +68,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>LC_DEBUG;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\code\headers;..\..\libraries\opengl-toolkit\headers;..\..\code\headers\internal;..\..\libraries\sdl2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\code\headers;..\..\libraries\opengl-toolkit\headers;..\..\code\headers\internal;..\..\libraries\sdl2\include;..\..\libraries\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -92,7 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>LC_RELEASE;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\code\headers;..\..\libraries\opengl-toolkit\headers;..\..\code\headers\internal;..\..\libraries\sdl2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\code\headers;..\..\libraries\opengl-toolkit\headers;..\..\code\headers\internal;..\..\libraries\sdl2\include;..\..\libraries\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -1,5 +1,6 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (lightcube-engineVS.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   String.cpp
+  Window.cpp
 imm32.lib(IMM32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in winmm.lib(WINMM.dll); second definition ignored
 version.lib(VERSION.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in winmm.lib(WINMM.dll); second definition ignored
 setupapi.lib(SETUPAPI.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in winmm.lib(WINMM.dll); second definition ignored

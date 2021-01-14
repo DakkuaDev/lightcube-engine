@@ -2,10 +2,11 @@
 // Este código es de dominio público.
 // angel.rodriguez@esne.edu
 // 2020.10
-// Modificada por Daniel Guerra Gallardo
+// Programa modificado por Daniel Guerra Gallardo
 
 #include "String.hpp"
 #include <iostream>
+
 using namespace std;
 
 String::String(const char character)
@@ -147,8 +148,20 @@ bool String::operator == (const String & other) const
     return true;
 }
 
-// TODO: Comprobar que funciona
-// Sobreescritura del operador <<, para mostrar el string
-ostream& operator << (ostream& os, const String& string){ os << string; return os; }
+// No funciona correctamente
+ostream& operator << (ostream& out, String& string)
+{
+
+    const size_t total = string.length();
+    char* buffer = new char[total];
+
+    for (char* target = string.begin(), *end = string.end(); target < end; )
+    {
+        *target++ = *buffer++;
+    }
+    
+    return out << buffer;
+}
+
 
 

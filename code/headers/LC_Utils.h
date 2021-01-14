@@ -62,11 +62,12 @@ namespace LC_Utils
     /// y consumiendo demasiados recursos. Haciendo uso de un object pool, logramos reducir el tiempo en esto notablemente.
     /// </summary>
     /// <typeparam name="T"> El objeto que se le pasa</typeparam>
-    template<class T>
+    /// <typeparam name="size"> Tamaño de la piscina de objetos</typeparam>
+    template<class T, size_t size = 2048>
     class ObjectPool final
     {
     public:
-        const static std::size_t Size = 100000;
+        const static std::size_t Size = size;
 
         using value_type = T;
         using pointer = value_type*;

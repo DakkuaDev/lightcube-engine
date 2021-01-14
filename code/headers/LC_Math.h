@@ -12,6 +12,7 @@
 
 #pragma once
 
+#include <glm/glm.hpp>
 #include <cmath>
 #include <ostream>
 
@@ -19,6 +20,7 @@ using namespace std;
 
 namespace LC_Math
 {
+
     // Clases: Vector (Modificada)
     // Angel Rodrigez
     // angel.rodriguez@esne.edu

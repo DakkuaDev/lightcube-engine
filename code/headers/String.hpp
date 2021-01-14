@@ -2,6 +2,7 @@
 // Este código es de dominio público.
 // angel.rodriguez@esne.edu
 // 2020.10
+// Programa modificado por Daniel Guerra Gallardo
 
 #include <cstddef>
 #include <initializer_list>
@@ -74,6 +75,34 @@ public:
         return chars + size;
     }
 
+    auto printf()
+    {
+
+        if (chars)
+        {
+            for (auto c : *this) cout << c;
+        }
+        cout << endl;
+  
+       /* char* buffer = new char[100];
+        if (chars)
+        {
+            for (auto c : *this) *buffer++ = c;
+        }
+        return buffer;*/
+
+        //const size_t total = length();
+        //char* buffer = new char[total];
+        //char* source = begin();
+        //
+        //for (int i = 0; i < total; ++i)
+        //{
+        //    buffer[i] = source[i];
+        //    buffer++; source++;
+        //}
+       /* return chars;*/
+    }
+
 public:
 
     String & operator  = (const String &  other);
@@ -134,7 +163,7 @@ private:
 
 };
 
-// TODO: Comprobar que funciona
-// Sobreescritura del operador <<, para mostrar el string
-ostream& operator << (ostream& os, const String& string);
+ostream& operator << (ostream& out, String& string);
+
+
 
