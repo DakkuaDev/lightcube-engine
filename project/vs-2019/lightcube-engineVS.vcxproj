@@ -17,10 +17,14 @@
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\internal\declarations.h" />
     <ClInclude Include="..\..\code\headers\internal\macros.h" />
+    <ClInclude Include="..\..\code\headers\internal\utf8.h" />
     <ClInclude Include="..\..\code\headers\LC_Utils.h" />
     <ClInclude Include="..\..\code\headers\String.hpp" />
     <ClInclude Include="..\..\code\headers\LC_Math.h" />
     <ClInclude Include="..\..\code\headers\LC_Graphics.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="test.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -68,7 +72,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>LC_DEBUG;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\code\headers;..\..\libraries\opengl-toolkit\headers;..\..\code\headers\internal;..\..\libraries\sdl2\include;..\..\libraries\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\code\headers;..\..\libraries\opengl-toolkit\headers;..\..\code\headers\internal;..\..\libraries\sdl2\include;..\..\libraries\glm\include;..\..\libraries\sdl2-mixer\include;..\..\resources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -81,7 +86,7 @@
     </ProjectReference>
     <Lib>
       <AdditionalDependencies>SDL2d.lib;SDL2maind.lib;winmm.lib;imm32.lib;version.lib;setupapi.lib;gtest_maind.lib;opengl-toolkit-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\libraries\sdl2\lib\x64;..\..\libraries\gtest\lib\x64;..\..\libraries\opengl-toolkit\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\libraries\sdl2\lib\x64;..\..\libraries\gtest\lib\x64;..\..\libraries\opengl-toolkit\lib\x64;..\..\libraries\sdl2-mixer\lib\static\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -92,7 +97,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>LC_RELEASE;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\code\headers;..\..\libraries\opengl-toolkit\headers;..\..\code\headers\internal;..\..\libraries\sdl2\include;..\..\libraries\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\code\headers;..\..\libraries\opengl-toolkit\headers;..\..\code\headers\internal;..\..\libraries\sdl2\include;..\..\libraries\glm\include;..\..\libraries\sdl2-mixer\include;..\..\resources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -107,7 +113,7 @@
     </ProjectReference>
     <Lib>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;winmm.lib;imm32.lib;version.lib;setupapi.lib;gtest.lib;gtest_main.lib;opengl-toolkit-release.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\libraries\sdl2\lib\x64;..\..\libraries\gtest\lib\x64;..\..\libraries\opengl-toolkit\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\libraries\sdl2\lib\x64;..\..\libraries\gtest\lib\x64;..\..\libraries\opengl-toolkit\lib\x64;..\..\libraries\sdl2-mixer\lib\static\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

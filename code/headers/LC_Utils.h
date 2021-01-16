@@ -16,6 +16,9 @@
 #include <memory>
 #include <chrono>
 #include <iostream>
+#include <cstddef>
+#include <fstream>
+#include <internal/utf8.h>
 
 using namespace std;
 
@@ -49,11 +52,13 @@ namespace LC_Utils
     #define N_DEBUG_ERROR(x)
     #endif // LC_DEBUG
 
-    // TODO: Añadir a la plantilla la opción de pasarle también el tamaño de memoria.
-
     // Clases: ObjectPool & ExecutionTimer
     // Code Blacksmith
     // https://twitter.com/codeblacksmith
+
+     // Clases: Asset
+    // Angel Rodrigez
+    // angel.rodriguez@esne.edu
 
     /// <summary>
     /// Object Pool: Sistema que me ayuda a optimizar la instanciación / destrucción de objetos en particiones, 
@@ -175,6 +180,162 @@ namespace LC_Utils
 
     private:
         Clock::time_point mStart = Clock::now();
+    };
+
+    /// <summary>
+    /// Clase de lectura / escritura de archivos de texto
+    /// </summary>
+    class Serialization
+    {
+    private:
+        
+        std::string file_name;
+        std::string path = "../../resources/";    
+        std::string resource;
+
+    public:
+
+        Serialization() = default;
+        Serialization(std::string _file_name)
+        {
+            file_name = _file_name;
+            resource = path + _file_name;
+            //std::ifstream file(_fileName, std::ifstream::binary);
+        }
+        ~Serialization() = default;
+
+    public:
+
+        void read()
+        {
+            N_DEBUG_WARNING(resource);
+
+            std::ifstream file(file_name, std::ifstream::binary);
+
+            if (file)
+            {
+                file.seekg(0, ifstream::end);
+
+                if (file.good())
+                {
+                    int length = file.tellg();
+
+                    if (length > 0)
+                    {
+                        file.seekg(0, ifstream::beg);
+
+                        char* buffer = new char[length];
+
+                        if (file.good())
+                        {
+                            file.read(buffer, length);
+
+                            if (file.good())
+                            {
+                                file.close();
+
+                                DEBUG_LOG("Se ha leido correctamente el archivo: ");
+                                N_DEBUG_LOG(file_name);
+                            }
+                            else
+                            {
+                                N_DEBUG_ERROR("No se ha podido leer el archivo");
+                            }
+                        } 
+
+                        delete[] buffer;
+                    }              
+                }          
+            }  
+        }
+
+        void write(string out)
+        {
+            N_DEBUG_WARNING(resource);
+
+            std::ofstream file(file_name, std::ifstream::binary);
+
+            if (file.is_open())
+            {
+                file << out;
+
+                if (file.good())
+                {
+                    file.close();
+
+                    DEBUG_LOG("Se ha escrito correctamente el archivo: ");
+                    N_DEBUG_LOG(file_name);
+                }
+                else
+                {
+                    N_DEBUG_ERROR("No se ha podido escribir el archivo");
+                }              
+            }
+        }
+
+        void open()
+        {
+            N_DEBUG_WARNING(resource);
+
+            std::fstream file;
+
+            file.open("test.txt");
+
+            if (file.is_open())
+            {
+                std::string item;
+
+                while (!file.eof())
+                {
+                    file >> item;
+                }
+
+                if (file.good())
+                {
+                    file.close();
+
+                    DEBUG_LOG("Se ha abierto correctamente el archivo: ");
+                    DEBUG_LOG(file_name);
+                }
+                else
+                {
+                    N_DEBUG_ERROR("No se ha podido abrir el archivo");
+                }
+            }
+        }  
+    };
+
+    /// <summary>
+    /// Clase Serialization encapsulada con capacidad de multi-motor
+    /// </summary>
+    class Asset
+    {
+
+        std::ifstream reader;
+
+    public:
+
+        Asset(const string& path) : reader(path)
+        {
+        }
+
+        byte get()
+        {
+            return byte(reader.get());
+        }
+
+        size_t read(byte* buffer, size_t amount)
+        {
+            reader.read(reinterpret_cast<char*>(buffer), amount);
+
+            return reader.gcount();
+        }
+
+        bool good() { return reader.good(); }
+        bool bad() { return reader.bad(); }
+        bool fail() { return reader.fail(); }
+        bool eof() { return reader.eof(); }
+
     };
 }
 

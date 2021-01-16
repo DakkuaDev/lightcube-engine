@@ -4,7 +4,7 @@
  * @section LICENSE MIT License (Lee el archivo LICENSE para mas información)
  * 
  * @section DESCRIPTION
- * LightCube Engine, es un motor de videojuegos propio creado como propósito educacional
+ * LightCube Engine, es un motor de videojuegos propio programado en C++ y creado con propósito educacional
  * 
  * @author Daniel Guerra Gallardo
  * Contact: daniel.guerra.gallardo99@gmail.com

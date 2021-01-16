@@ -44,5 +44,13 @@
     <ClInclude Include="..\..\code\headers\LC_Graphics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\code\headers\internal\utf8.h">
+      <Filter>Header Files\Internal</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="test.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
