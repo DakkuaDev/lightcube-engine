@@ -19,7 +19,7 @@ using namespace std;
 namespace LC_Graphics
 {
 	/// <summary>
-	/// Clase de personalización de la ventana emergente con SDL2
+	/// Clase de personalización de la ventana emergente (Singleton)
 	/// </summary>
 	class Window
 	{
@@ -28,6 +28,7 @@ namespace LC_Graphics
 		string title = "";
 		int width = 800;
 		int height = 600;
+		bool set_full_screen = false;
 
 		bool closed = false;
 
@@ -36,7 +37,7 @@ namespace LC_Graphics
 	public:
 
 		Window() = default;
-		Window(const string& title, int width, int height);
+		Window(const string& title, int width, int height, bool set_full_screen);
 		~Window();
 
 		void pollEvents();
