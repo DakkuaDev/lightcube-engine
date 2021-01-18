@@ -190,7 +190,7 @@ namespace LC_Utils
     private:
         
         std::string file_name;
-        std::string path = "../../resources/";    
+        std::string path = "../../../lightcube-engine/resources/";    
         std::string resource;
 
     public:
@@ -206,14 +206,16 @@ namespace LC_Utils
 
     public:
 
+        // Función de lectura de archivo
         void read()
         {
             N_DEBUG_WARNING(resource);
 
-            std::ifstream file(file_name, std::ifstream::binary);
+            std::ifstream file(resource, std::ifstream::binary);
 
             if (file)
             {
+                // Obtengo la longitud de la cadena
                 file.seekg(0, ifstream::end);
 
                 if (file.good())
@@ -228,6 +230,11 @@ namespace LC_Utils
 
                         if (file.good())
                         {
+                            DEBUG_LOG("Leyendo ");
+                            DEBUG_LOG(length);
+                            N_DEBUG_LOG(" caracteres");
+
+                            // Leo el bloque de cadena
                             file.read(buffer, length);
 
                             if (file.good())
@@ -249,14 +256,20 @@ namespace LC_Utils
             }  
         }
 
+        // Función de escritura de archivo
         void write(string out)
         {
             N_DEBUG_WARNING(resource);
 
-            std::ofstream file(file_name, std::ifstream::binary);
+            std::ofstream file(resource, std::ofstream::binary);
 
             if (file.is_open())
             {
+                DEBUG_LOG("Escribiendo '");
+                DEBUG_LOG(out);
+                N_DEBUG_LOG("' en el archivo");
+
+                // Sobreescritura textual del contenido
                 file << out;
 
                 if (file.good())
@@ -275,33 +288,7 @@ namespace LC_Utils
 
         void open()
         {
-            N_DEBUG_WARNING(resource);
 
-            std::fstream file;
-
-            file.open("test.txt");
-
-            if (file.is_open())
-            {
-                std::string item;
-
-                while (!file.eof())
-                {
-                    file >> item;
-                }
-
-                if (file.good())
-                {
-                    file.close();
-
-                    DEBUG_LOG("Se ha abierto correctamente el archivo: ");
-                    DEBUG_LOG(file_name);
-                }
-                else
-                {
-                    N_DEBUG_ERROR("No se ha podido abrir el archivo");
-                }
-            }
         }  
     };
 
