@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\code\source\String.cpp" />
     <ClCompile Include="..\..\code\source\Window.cpp" />
+    <ClCompile Include="..\..\code\source\winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\internal\declarations.h" />
@@ -85,7 +86,7 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>SDL2d.lib;SDL2maind.lib;winmm.lib;imm32.lib;version.lib;setupapi.lib;gtest_maind.lib;opengl-toolkit-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2d.lib;setupapi.lib;gtestd.lib;gtest_maind.lib;opengl-toolkit-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\libraries\sdl2\lib\x64;..\..\libraries\gtest\lib\x64;..\..\libraries\opengl-toolkit\lib\x64;..\..\libraries\sdl2-mixer\lib\static\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
@@ -112,7 +113,7 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;winmm.lib;imm32.lib;version.lib;setupapi.lib;gtest.lib;gtest_main.lib;opengl-toolkit-release.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;setupapi.lib;gtest.lib;gtest_main.lib;opengl-toolkit-release.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\libraries\sdl2\lib\x64;..\..\libraries\gtest\lib\x64;..\..\libraries\opengl-toolkit\lib\x64;..\..\libraries\sdl2-mixer\lib\static\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
