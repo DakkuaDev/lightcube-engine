@@ -27,6 +27,12 @@
     <ClCompile Include="..\..\code\source\winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\source\Music.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\source\Sound.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\String.hpp">
@@ -50,10 +56,18 @@
     <ClInclude Include="..\..\code\headers\internal\utf8.h">
       <Filter>Header Files\Internal</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\code\headers\LC_Audio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="test.txt">
       <Filter>Resource Files</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\resources\bg_music.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
   </ItemGroup>
 </Project>

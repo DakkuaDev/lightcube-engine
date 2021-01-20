@@ -11,6 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\code\source\Music.cpp" />
+    <ClCompile Include="..\..\code\source\Sound.cpp" />
     <ClCompile Include="..\..\code\source\String.cpp" />
     <ClCompile Include="..\..\code\source\Window.cpp" />
     <ClCompile Include="..\..\code\source\winmain.cpp" />
@@ -19,6 +21,7 @@
     <ClInclude Include="..\..\code\headers\internal\declarations.h" />
     <ClInclude Include="..\..\code\headers\internal\macros.h" />
     <ClInclude Include="..\..\code\headers\internal\utf8.h" />
+    <ClInclude Include="..\..\code\headers\LC_Audio.h" />
     <ClInclude Include="..\..\code\headers\LC_Utils.h" />
     <ClInclude Include="..\..\code\headers\String.hpp" />
     <ClInclude Include="..\..\code\headers\LC_Math.h" />
@@ -26,6 +29,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="test.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\resources\bg_music.wav" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -73,7 +79,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>LC_DEBUG;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\code\headers;..\..\libraries\opengl-toolkit\headers;..\..\code\headers\internal;..\..\libraries\sdl2\include;..\..\libraries\glm\include;..\..\libraries\sdl2-mixer\include;..\..\resources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\code\headers;..\..\code\headers\internal;..\..\resources;..\..\libraries\sdl2\include;..\..\libraries\sdl2-mixer\include;..\..\libraries\glm\include;..\..\libraries\opengl-toolkit\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -86,8 +92,8 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>SDL2d.lib;setupapi.lib;gtest_maind.lib;opengl-toolkit-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\libraries\sdl2\lib\x64;..\..\libraries\gtest\lib\x64;..\..\libraries\opengl-toolkit\lib\x64;..\..\libraries\sdl2-mixer\lib\static\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2d.lib;setupapi.lib;gtest_maind.lib;opengl-toolkit-debug.lib;SDL2-mixer-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\libraries\sdl2\lib\x64;..\..\libraries\sdl2-mixer\lib\static\x64;..\..\libraries\gtest\lib\x64;..\..\libraries\opengl-toolkit\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -98,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>LC_RELEASE;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\code\headers;..\..\libraries\opengl-toolkit\headers;..\..\code\headers\internal;..\..\libraries\sdl2\include;..\..\libraries\glm\include;..\..\libraries\sdl2-mixer\include;..\..\resources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\code\headers;..\..\code\headers\internal;..\..\resources;..\..\libraries\sdl2\include;..\..\libraries\sdl2-mixer\include;..\..\libraries\glm\include;..\..\libraries\opengl-toolkit\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -113,8 +119,8 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>SDL2.lib;setupapi.lib;gtest.lib;gtest_main.lib;opengl-toolkit-release.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\libraries\sdl2\lib\x64;..\..\libraries\gtest\lib\x64;..\..\libraries\opengl-toolkit\lib\x64;..\..\libraries\sdl2-mixer\lib\static\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;setupapi.lib;gtest.lib;gtest_main.lib;opengl-toolkit-release.lib;SDL2-mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\libraries\sdl2\lib\x64;..\..\libraries\sdl2-mixer\lib\static\x64;..\..\libraries\gtest\lib\x64;..\..\libraries\opengl-toolkit\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

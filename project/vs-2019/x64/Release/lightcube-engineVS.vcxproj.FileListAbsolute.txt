@@ -1,2 +1,1 @@
 D:\Dev\LightCube Engine\lightcube-engine\project\vs-2019\x64\Release\lightcube-engineVS.lib
-D:\Dev\LightCube_Engine\lightcube-engine\project\vs-2019\x64\Release\lightcube-engine.lib

@@ -56,7 +56,7 @@ namespace LC_Utils
     // Code Blacksmith
     // https://twitter.com/codeblacksmith
 
-     // Clases: Asset
+    // Clases: Asset
     // Angel Rodrigez
     // angel.rodriguez@esne.edu
 
@@ -171,7 +171,7 @@ namespace LC_Utils
         ExecutionTimer() = default;
         ~ExecutionTimer() = default;
 
-        void endTimer()
+        void end_timer()
         {
             DEBUG_LOG("Crono Elapsed Time: ");
             DEBUG_LOG(std::chrono::duration_cast<Resolution>(Clock::now() - mStart).count());
