@@ -4,18 +4,18 @@
 // 2020.10
 // Programa modificado por Daniel Guerra Gallardo
 
-#include "String.hpp"
 #include <iostream>
+#include "LC_Utils.h"
 
 using namespace std;
 
-String::String(const char character)
+LC_Utils::String::String(const char character)
 {
     allocate (1);
     chars[0] = character;
 }
 
-String::String(const char * string)
+LC_Utils::String::String(const char * string)
 {
     if (string)
     {
@@ -35,7 +35,7 @@ String::String(const char * string)
     chars = nullptr;
 }
 
-String::String(const String & other)
+LC_Utils::String::String(const String & other)
 {
     this->size = other.size;
 
@@ -50,7 +50,7 @@ String::String(const String & other)
     }
 }
 
-String::String(String && other) noexcept
+LC_Utils::String::String(String && other) noexcept
 {
     this->chars = other.chars;
     this->size  = other.size;
@@ -58,7 +58,7 @@ String::String(String && other) noexcept
     other.reset ();
 }
 
-String::String(std::initializer_list< char > char_list)
+LC_Utils::String::String(std::initializer_list< char > char_list)
 {
     size = char_list.size ();
 
@@ -73,7 +73,7 @@ String::String(std::initializer_list< char > char_list)
     }
 }
 
-String & String::operator = (const String & other)
+LC_Utils::String & LC_Utils::String::operator = (const String & other)
 {
     if (this != &other)
     {
@@ -96,7 +96,7 @@ String & String::operator = (const String & other)
     return *this;
 }
 
-String & String::operator = (String && other) noexcept
+LC_Utils::String & LC_Utils::String::operator = (String && other) noexcept
 {
     this->chars = other.chars;
     this->size  = other.size;
@@ -106,7 +106,7 @@ String & String::operator = (String && other) noexcept
     return *this;
 }
 
-String & String::operator += (const String & other)
+LC_Utils::String & LC_Utils::String::operator += (const String & other)
 {
     if (other.size > 0)
     {
@@ -133,7 +133,7 @@ String & String::operator += (const String & other)
     return *this;
 }
 
-bool String::operator == (const String & other) const
+bool LC_Utils::String::operator == (const String & other) const
 {
     if (this->size != other.size) return false;
 
@@ -149,7 +149,7 @@ bool String::operator == (const String & other) const
 }
 
 // No funciona correctamente
-ostream& operator << (ostream& out, String& string)
+ostream& operator << (ostream& out, LC_Utils::String& string)
 {
 
     const size_t total = string.length();

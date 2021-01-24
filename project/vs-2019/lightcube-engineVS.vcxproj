@@ -11,21 +11,32 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\code\source\Component.cpp" />
+    <ClCompile Include="..\..\code\source\Entity.cpp" />
+    <ClCompile Include="..\..\code\source\Kernel.cpp" />
     <ClCompile Include="..\..\code\source\Music.cpp" />
+    <ClCompile Include="..\..\code\source\Render_System.cpp" />
+    <ClCompile Include="..\..\code\source\Scene.cpp" />
     <ClCompile Include="..\..\code\source\Sound.cpp" />
     <ClCompile Include="..\..\code\source\String.cpp" />
+    <ClCompile Include="..\..\code\source\Task.cpp" />
     <ClCompile Include="..\..\code\source\Window.cpp" />
     <ClCompile Include="..\..\code\source\winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\code\headers\Component.h" />
+    <ClInclude Include="..\..\code\headers\Entity.h" />
     <ClInclude Include="..\..\code\headers\internal\declarations.h" />
     <ClInclude Include="..\..\code\headers\internal\macros.h" />
     <ClInclude Include="..\..\code\headers\internal\utf8.h" />
+    <ClInclude Include="..\..\code\headers\Kernel.h" />
     <ClInclude Include="..\..\code\headers\LC_Audio.h" />
     <ClInclude Include="..\..\code\headers\LC_Utils.h" />
-    <ClInclude Include="..\..\code\headers\String.hpp" />
     <ClInclude Include="..\..\code\headers\LC_Math.h" />
     <ClInclude Include="..\..\code\headers\LC_Graphics.h" />
+    <ClInclude Include="..\..\code\headers\Render_System.h" />
+    <ClInclude Include="..\..\code\headers\Scene.h" />
+    <ClInclude Include="..\..\code\headers\Task.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="test.txt" />

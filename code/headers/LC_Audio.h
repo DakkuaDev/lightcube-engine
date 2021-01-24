@@ -30,6 +30,7 @@ namespace LC_Audio
 		const int frequency = 22050;
 		int channels = 2;
 		const int chunksize = 4096;
+
 	public:
 		Music() = default;
 		Music(int frequency, int channels, int chunksize);

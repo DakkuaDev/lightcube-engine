@@ -27,7 +27,7 @@ using namespace std;
 LC_Audio::Music::Music(int _frequency, int _channels, int _chunksize)
 	:frequency(_frequency),channels(_channels), chunksize(_chunksize)
 {
-
+	init();
 }
 
 /// <summary>
@@ -65,10 +65,11 @@ void LC_Audio::Music::init()
 /// <param name="loop"> repetición constante de la música (0: false, 1: true)</param>
 void LC_Audio::Music::play(std::string file, int loop)
 {
+	auto music = Music::music;
 	std::string music_path = path + file;
 
 	// Se le pasa la ruta
-	music = Mix_LoadMUS(music_path.c_str());
+    music = Mix_LoadMUS(music_path.c_str());
 
 	if (!music)
 	{
@@ -86,6 +87,7 @@ void LC_Audio::Music::play(std::string file, int loop)
 /// </summary>
 void LC_Audio::Music::stop()
 {
+	auto music = Music::music;
 	if (music) Mix_FreeMusic(music);
 }
 

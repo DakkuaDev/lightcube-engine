@@ -14,6 +14,7 @@
 
 // Open GL-Toolkit
 #include <Render_Node.hpp>
+#include <Model_Obj.hpp>
 #include <Cube.hpp>
 #include <Model.hpp>
 #include <Light.hpp>
@@ -95,7 +96,7 @@ namespace LC_Graphics
 
 		std::unique_ptr< glt::Render_Node > renderer;
 
-		LC_Graphics::Window* window;
+		Window* window;
 
 	public:
 
