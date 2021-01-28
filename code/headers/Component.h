@@ -12,16 +12,17 @@
 
 #pragma once
 
-#include "Entity.h"
-
 using namespace std;
 
 namespace LightCubeEngine
 {
+
+	class Entity;
+
 	class Component
 	{
 
-		//Entity* parent;
+		Entity* parent;
 
 	public:
 		Component() = default;

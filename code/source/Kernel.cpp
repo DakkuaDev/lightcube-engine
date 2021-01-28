@@ -10,35 +10,36 @@
 * Contact: daniel.guerra.gallardo99@gmail.com
 */
 
-#include "Task.h"
 #include "Kernel.h"
+#include "Task.h"
 
 using namespace std;
 
 namespace LightCubeEngine
 {
-	//Kernel::Kernel() {};
-	//Kernel::~Kernel() {};
-
-	/*
-	void Kernel::add_task(Task* task)
+	
+	/*void Kernel::add_task(Task* task)
 	{
-		//TODO: Añadir tarea a la lista
-	}
-	*/
+		tasks.push_back(task);
+	}*/
+	
 	
 	void Kernel::run()
-	{
-		/*
+	{	
 		stopped = false;
 		while (!stopped)
 		{
-			for (auto t : tasks)
-			{
-				t->run();
-			}
+			//for (auto t : tasks)
+			//{
+			//	t.run();
+			//}
 		}
-		*/
+		
+	}
+
+	void Kernel::stop()
+	{
+
 	}
 }
 

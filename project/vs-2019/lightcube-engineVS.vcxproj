@@ -38,12 +38,6 @@
     <ClInclude Include="..\..\code\headers\Scene.h" />
     <ClInclude Include="..\..\code\headers\Task.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="test.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="..\..\resources\bg_music.wav" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

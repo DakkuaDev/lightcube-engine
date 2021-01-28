@@ -10,21 +10,28 @@
 * Contact: daniel.guerra.gallardo99@gmail.com
 */
 
-#include "Kernel.h"
-#include "Entity.h"
 #include "Scene.h"
+#include "Kernel.h"
+#include "LC_Graphics.h"
+
+using namespace LC_Graphics;
 
 namespace LightCubeEngine
 {
-	//Scene::Scene() {};
-	//Scene::~Scene() {};
+	Scene::Scene(Window* _window) : window(_window) {}
 
 	void Scene::run()
 	{
-		//kernel->run();
+		kernel->run();
 	}
 
 	void Scene::stop()
 	{
+		kernel->stop();
+	}
+
+	Window* Scene::get_window()
+	{
+		return window;
 	}
 }

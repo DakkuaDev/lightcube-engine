@@ -14,8 +14,6 @@
 
 #include <iostream>
 #include <map>
-#include "Kernel.h"
-#include "Entity.h"
 #include "LC_Graphics.h"
 
 using namespace std;
@@ -23,20 +21,27 @@ using namespace LC_Graphics;
 
 namespace LightCubeEngine
 {
+
+	class Kernel;
+	class Entity;
+
 	class Scene
 	{
-		//LC_Graphics::Window& window;
-		//std::map<std::string, Entity*> entity_map;
-		//Kernel* kernel;
+		Window* window = nullptr;
+
+		std::map<std::string, std::shared_ptr< Entity > > entities;
+		Kernel* kernel;
 
 	public:
 		Scene() = default;
-		//Scene(LC_Graphics::Window& window);
+		Scene(Window* window);
 		~Scene() = default;
 
 	public:
 
 		void run();
 		void stop();
+
+		Window* get_window();
 	};
 }

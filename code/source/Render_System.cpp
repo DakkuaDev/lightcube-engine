@@ -23,8 +23,10 @@ namespace LightCubeEngine
 	//void Render_System::run() 
 	//{
 	//	// TODO: Añadier clase Scene y desde ahí llamar a clear() y swap_buffers()
+	//	//scene->get_window()->clear(); 
 	//	renderer.reset(new Render_Node);
 	//	renderer->render();
+	//	//scene->get_window()->swap_buffers();
 	//}
 
 }

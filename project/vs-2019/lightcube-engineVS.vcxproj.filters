@@ -99,14 +99,4 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="test.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="..\..\resources\bg_music.wav">
-      <Filter>Resource Files</Filter>
-    </Media>
-  </ItemGroup>
 </Project>

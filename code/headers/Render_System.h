@@ -20,6 +20,7 @@ using namespace std;
 
 namespace LightCubeEngine
 {
+
 	class Render_System : public Task
 	{
 		std::unique_ptr< glt::Render_Node > renderer;
@@ -28,6 +29,6 @@ namespace LightCubeEngine
 		Render_System() = default;
 		~Render_System() = default;
 	public:
-		void run() override;
+		void run() {};
 	};
 }

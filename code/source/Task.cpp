@@ -16,6 +16,5 @@ using namespace std;
 
 namespace LightCubeEngine
 {
-	//Task::Task() {};
-	//Task::~Task() {};
+
 }

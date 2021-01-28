@@ -14,17 +14,19 @@
 
 #include <iostream>
 #include <map>
-#include "Scene.h"
-#include "Component.h"
 
 using namespace std;
 
 namespace LightCubeEngine
 {
+
+	class Scene;
+	class Component;
+
 	class Entity
 	{
-		//Scene* scene;
-		//std::map<std::string, Component*> component_map;
+		Scene* scene;
+		std::map<std::string, std::shared_ptr< Component >> components;
 
 	public:
 		Entity() = default;

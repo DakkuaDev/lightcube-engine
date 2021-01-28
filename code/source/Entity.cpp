@@ -16,6 +16,5 @@ using namespace std;
 
 namespace LightCubeEngine
 {
-	//Entity::Entity() {};
-	//Entity::~Entity() {};
+
 }

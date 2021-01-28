@@ -12,15 +12,19 @@
 
 #pragma once
 
-#include "Scene.h"
-
 using namespace std;
 
 namespace LightCubeEngine
 {
+	class Scene;
+
 	class Task
 	{
-		//Scene* scene;
+		// ORDEN DEL CICLO DE LECTURA: Inputs -> Update -> Render (Al cargar la escena en el archivo ya condicionamos esto cargando las tareas necesarias)
+		int priotiry;
+
+	protected:
+		Scene* scene;
 
 	public:
 		Task() = default;

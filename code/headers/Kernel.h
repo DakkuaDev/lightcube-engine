@@ -12,24 +12,30 @@
 
 #pragma once
 
+#include <iostream>
 #include <set>
-#include "Task.h"
+#include <list>
 
 using namespace std;
 
 namespace LightCubeEngine
 {
+	class Task;
+
 	class Kernel
 	{
+		Task* task;
+
 		bool stopped;
-		//set< Task* > tasks;
+		list< std::shared_ptr<Task> > tasks;
 
 	public:
 		Kernel() = default;
 		~Kernel() = default;
 
 	public:
-		//void add_task(Task* task);
+		//void add_task(task);
 		void run();
+		void stop();
 	};
 }
