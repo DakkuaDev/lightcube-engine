@@ -12,16 +12,21 @@
 
 #pragma once
 
+
 using namespace std;
 
 namespace LightCubeEngine
 {
 	class Scene;
+	class Render_Node;
 
+	/// <summary>
+	/// Clase base de tareas
+	/// </summary>
 	class Task
 	{
-		// ORDEN DEL CICLO DE LECTURA: Inputs -> Update -> Render (Al cargar la escena en el archivo ya condicionamos esto cargando las tareas necesarias)
-		int priotiry;
+
+		// Considerar si quiero añadir prioridad a las tareas o añadirlas por XML ya en orden. Tambiñen podríamos llamar a las tareas en orden y ya.
 
 	protected:
 		Scene* scene;
@@ -31,7 +36,24 @@ namespace LightCubeEngine
 		~Task() = default;
 
 	public:
+		virtual void initialize() {};
+		virtual void finalize() {};
 		virtual void run() = 0;
 	};
+
+	///// <summary>
+	///// Sistema encargado del renderizado de la escena
+	///// </summary>
+	//class Render_System : public Task
+	//{
+	//	std::unique_ptr< glt::Render_Node > renderer;
+
+	//public:
+	//	Render_System() = default;
+	//	~Render_System() = default;
+
+	//public:
+	//	void run();
+	//};
 }
 

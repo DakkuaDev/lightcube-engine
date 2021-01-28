@@ -27,21 +27,23 @@ namespace LightCubeEngine
 
 	class Scene
 	{
-		Window* window = nullptr;
+		Window& window;
+		Kernel* kernel;
 
 		std::map<std::string, std::shared_ptr< Entity > > entities;
-		Kernel* kernel;
 
 	public:
 		Scene() = default;
-		Scene(Window* window);
+		// TODO: Pensar, si añado XML, donde lo meto + cuando cargo las tareas
+		Scene(Window& window);
 		~Scene() = default;
 
 	public:
 
 		void run();
+		// Se sale de la escena -> Por ejemplo cuando el usuario cierra la aplicación
 		void stop();
 
-		Window* get_window();
+		Window& get_window();
 	};
 }

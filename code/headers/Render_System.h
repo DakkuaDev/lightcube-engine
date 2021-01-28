@@ -12,23 +12,23 @@
 
 #pragma once
 
-#include <Render_Node.hpp>
-#include "Task.h"
-
-using namespace glt;
-using namespace std;
+//#include <Render_Node.hpp>
+//
+//using namespace glt;
+//using namespace std;
 
 namespace LightCubeEngine
 {
+	//class Task;
 
-	class Render_System : public Task
-	{
-		std::unique_ptr< glt::Render_Node > renderer;
+	//class Render_System : public Task
+	//{
+	//	std::unique_ptr< glt::Render_Node > renderer;
 
-	public:
-		Render_System() = default;
-		~Render_System() = default;
-	public:
-		void run() {};
-	};
+	//public:
+	//	Render_System() = default;
+	//	~Render_System() = default;
+	//public:
+	//	void run();
+	//};
 }

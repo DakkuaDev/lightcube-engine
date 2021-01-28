@@ -17,29 +17,27 @@ using namespace std;
 
 namespace LightCubeEngine
 {
-	
-	/*void Kernel::add_task(Task* task)
-	{
-		tasks.push_back(task);
-	}*/
-	
-	
+
 	void Kernel::run()
 	{	
 		stopped = false;
 		while (!stopped)
 		{
-			//for (auto t : tasks)
-			//{
-			//	t.run();
-			//}
-		}
-		
+			// TODO: Añadir timer para obtener el parámetro delta que podemos pasar el update()
+			for (auto & t : tasks)
+			{
+				t->run();
+			}
+		}	
 	}
 
 	void Kernel::stop()
 	{
+	}
 
+	void Kernel::add_task(Task* task)
+	{
+		tasks.push_back(task);
 	}
 }
 

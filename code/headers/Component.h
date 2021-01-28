@@ -28,4 +28,31 @@ namespace LightCubeEngine
 		Component() = default;
 		~Component() = default;
 	};
+
+	// TODO: Crear clases hijas: Mayas, Cámara, Luz (par Render)...
+
+	class Transform_Component : public Component
+	{
+		// TODO: posición, rotación, escala + devolver la matriz resultante
+	};
+
+	class Camera_Component : public Component
+	{
+		// TODO: proyección...
+	};
+
+	class Light_Component : public Component
+	{
+		// TODO: intensidad, color...
+	};
+
+	class Mesh_Component : public Component
+	{
+
+	};
+
+	class Audio_Component : public Component
+	{
+
+	};
 }

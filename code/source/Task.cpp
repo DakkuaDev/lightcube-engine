@@ -10,11 +10,22 @@
 * Contact: daniel.guerra.gallardo99@gmail.com
 */
 
-#include "Task.h"
 
+#include "Task.h"
+#include <Render_Node.hpp>
+
+using namespace glt;
 using namespace std;
 
 namespace LightCubeEngine
 {
 
+	//void Render_System::run()
+	//{
+	//	// TODO: Añadier clase Scene y desde ahí llamar a clear() y swap_buffers()
+	//	//scene->get_window()->clear(); 
+	//	renderer.reset(new glt::Render_Node);
+	//	renderer->render();
+	//	//scene->get_window()->swap_buffers();
+	//}
 }

@@ -15,7 +15,6 @@
     <ClCompile Include="..\..\code\source\Entity.cpp" />
     <ClCompile Include="..\..\code\source\Kernel.cpp" />
     <ClCompile Include="..\..\code\source\Music.cpp" />
-    <ClCompile Include="..\..\code\source\Render_System.cpp" />
     <ClCompile Include="..\..\code\source\Scene.cpp" />
     <ClCompile Include="..\..\code\source\Sound.cpp" />
     <ClCompile Include="..\..\code\source\String.cpp" />
@@ -34,7 +33,6 @@
     <ClInclude Include="..\..\code\headers\LC_Utils.h" />
     <ClInclude Include="..\..\code\headers\LC_Math.h" />
     <ClInclude Include="..\..\code\headers\LC_Graphics.h" />
-    <ClInclude Include="..\..\code\headers\Render_System.h" />
     <ClInclude Include="..\..\code\headers\Scene.h" />
     <ClInclude Include="..\..\code\headers\Task.h" />
   </ItemGroup>

@@ -45,9 +45,6 @@
     <ClCompile Include="..\..\code\source\Task.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\source\Render_System.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\code\source\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -85,9 +82,6 @@
     </ClInclude>
     <ClInclude Include="..\..\code\headers\LC_Utils.h">
       <Filter>Header Files\Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Render_System.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Scene.h">
       <Filter>Header Files</Filter>

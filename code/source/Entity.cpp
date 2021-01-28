@@ -16,5 +16,19 @@ using namespace std;
 
 namespace LightCubeEngine
 {
+	void Entity::add(id, Component*)
+	{
+		// TODO: Función que añade componentes
+	}
 
+	Component* Entity::get(id)
+	{
+		// TODO: Busca en el mapa de componentes y devuelve el puntero asociado a ese componente
+		return nullptr;
+	}
+
+	Transform_Component& Entity::get_transform()
+	{	
+		return *transform;
+	}
 }

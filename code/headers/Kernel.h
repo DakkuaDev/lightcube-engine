@@ -27,15 +27,15 @@ namespace LightCubeEngine
 		Task* task;
 
 		bool stopped;
-		list< std::shared_ptr<Task> > tasks;
+		list< Task* > tasks;
 
 	public:
 		Kernel() = default;
 		~Kernel() = default;
 
 	public:
-		//void add_task(task);
 		void run();
 		void stop();
+		void add_task(Task* task);
 	};
 }

@@ -11,11 +11,11 @@
 */
 
 
-#include <Render_Node.hpp>
-#include "Render_System.h"
-
-using namespace glt;
-using namespace std;
+//#include <Render_Node.hpp>
+//#include "Render_System.h"
+//
+//using namespace glt;
+//using namespace std;
 
 namespace LightCubeEngine
 {

@@ -18,8 +18,13 @@ using namespace LC_Graphics;
 
 namespace LightCubeEngine
 {
-	Scene::Scene(Window* _window) : window(_window) {}
+	Scene::Scene(Window& _window) : window(_window)
+	{
+		//TODO: Añadir tareas o sistemas que se vayan a utilizar en la escena (procesado de componentes)
+		//kernel->add_task();
+	}
 
+	//  Read input -> update -> render
 	void Scene::run()
 	{
 		kernel->run();
@@ -30,7 +35,7 @@ namespace LightCubeEngine
 		kernel->stop();
 	}
 
-	Window* Scene::get_window()
+	Window& Scene::get_window()
 	{
 		return window;
 	}
