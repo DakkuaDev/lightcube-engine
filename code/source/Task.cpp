@@ -12,20 +12,26 @@
 
 
 #include "Task.h"
-#include <Render_Node.hpp>
+#include "Scene.h"
+#include "LC_Graphics.h"
 
-using namespace glt;
 using namespace std;
+using namespace glt;
 
 namespace LightCubeEngine
 {
 
-	//void Render_System::run()
-	//{
-	//	// TODO: Añadier clase Scene y desde ahí llamar a clear() y swap_buffers()
-	//	//scene->get_window()->clear(); 
-	//	renderer.reset(new glt::Render_Node);
-	//	renderer->render();
-	//	//scene->get_window()->swap_buffers();
-	//}
+	Render_System::Render_System()
+	{
+		// Se crea un nuevo render node de OpenGL Toolkit:
+		renderer.reset(new glt::Render_Node);
+	}
+
+	void Render_System::run()
+	{
+		scene->get_window()->clear();
+	    // TODO: Antes del render, actualizar el transform de todos los modelos
+		renderer->render();
+		scene->get_window()->swap_buffers();
+	}
 }

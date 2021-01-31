@@ -176,7 +176,7 @@ void LC_Graphics::Window::poll_events()
 		}
 
 		// Render (Re-dibujado) de pantalla
-		SDL_UpdateWindowSurface(window);
+		//SDL_UpdateWindowSurface(window);
 	}	
 }
 

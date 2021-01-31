@@ -18,6 +18,9 @@ namespace LightCubeEngine
 {
 
 	class Entity;
+	class Model;
+	class Camera;
+	class Light;
 
 	class Component
 	{
@@ -29,28 +32,65 @@ namespace LightCubeEngine
 		~Component() = default;
 	};
 
-	// TODO: Crear clases hijas: Mayas, Cámara, Luz (par Render)...
+	// TODO: Crear el resto de componentes necesarios
 
+	// TODO: Posición, rotación, escala con glm + devolver la matriz resultante
 	class Transform_Component : public Component
 	{
-		// TODO: posición, rotación, escala + devolver la matriz resultante
 	};
 
+	/// <summary>
+	/// Componente de la cámara. Su proyección, POV...
+	/// </summary>
 	class Camera_Component : public Component
 	{
-		// TODO: proyección...
+		Camera* camera;
+
+		Camera_Component() = default;
+		Camera_Component(Camera* camera);
+		~Camera_Component() = default;
+
+		Camera* get_camera()
+		{
+			return camera;
+		}
 	};
 
+	/// <summary>
+	/// Componente de luz direccional. Intensidad, color...
+	/// </summary>
 	class Light_Component : public Component
 	{
-		// TODO: intensidad, color...
+		Light* light;
+
+		Light_Component() = default;
+		Light_Component(Light* light);
+		~Light_Component() = default;
+
+		Light* get_light()
+		{
+			return light;
+		}
 	};
 
+	/// <summary>
+	/// Componente del modelo gráfico de la entidad
+	/// </summary>
 	class Mesh_Component : public Component
 	{
+		Model* mesh;
 
+		Mesh_Component() = default;
+		Mesh_Component(Model* model);
+		~Mesh_Component() = default;
+
+		Model* get_mesh()
+		{
+			return mesh;
+		}
 	};
 
+	// TODO
 	class Audio_Component : public Component
 	{
 

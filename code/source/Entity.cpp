@@ -16,15 +16,24 @@ using namespace std;
 
 namespace LightCubeEngine
 {
-	void Entity::add(id, Component*)
+	Entity::Entity()
 	{
-		// TODO: Función que añade componentes
+		// Añado los componentes (NO FUNCIONA)
+		//add_component("transform", transform);
+		//add_component("mesh", mesh);
 	}
 
-	Component* Entity::get(id)
+	void Entity::add_component(std::string id, Component*)
 	{
-		// TODO: Busca en el mapa de componentes y devuelve el puntero asociado a ese componente
-		return nullptr;
+		// Inserto la entidad dada en el mapa
+		components.insert(pair< std::string, std::shared_ptr< Component >>(id, component));
+	}
+
+	Component* Entity::get_component(std::string id)
+	{
+		// Busco en el mapa el componente y la devuelvo
+		auto comp = components.at(id).get();
+		return comp;
 	}
 
 	Transform_Component& Entity::get_transform()

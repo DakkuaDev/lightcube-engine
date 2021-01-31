@@ -111,6 +111,8 @@ namespace LC_Graphics
 		~SceneRenderer();
 
 		void render();
+		void SceneExample1();
+		void SceneExample2();
 
 	};
 }

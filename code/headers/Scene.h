@@ -21,29 +21,34 @@ using namespace LC_Graphics;
 
 namespace LightCubeEngine
 {
-
 	class Kernel;
 	class Entity;
 
 	class Scene
 	{
-		Window& window;
+		Window* window;
 		Kernel* kernel;
+		Entity* entity;
+
+		typedef std::string id;
 
 		std::map<std::string, std::shared_ptr< Entity > > entities;
 
 	public:
-		Scene() = default;
+
 		// TODO: Pensar, si añado XML, donde lo meto + cuando cargo las tareas
-		Scene(Window& window);
+		Scene() = default;
+		Scene(Window window);
 		~Scene() = default;
 
 	public:
 
 		void run();
-		// Se sale de la escena -> Por ejemplo cuando el usuario cierra la aplicación
+		// TODO: implementar función de stop(): Se sale de la escena -> Por ejemplo cuando el usuario cierra la aplicación
 		void stop();
 
-		Window& get_window();
+		Window* get_window();
+		void add_entity(id, Entity* entity);
+		Entity* get_entity(id);
 	};
 }

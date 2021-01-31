@@ -12,16 +12,34 @@
 
 #include "Scene.h"
 #include "Kernel.h"
+#include "Entity.h"
+#include "Component.h"
 #include "LC_Graphics.h"
 
 using namespace LC_Graphics;
 
 namespace LightCubeEngine
 {
-	Scene::Scene(Window& _window) : window(_window)
+	Scene::Scene(Window _window) 
 	{
-		//TODO: Añadir tareas o sistemas que se vayan a utilizar en la escena (procesado de componentes)
-		//kernel->add_task();
+		// Hago que el puntero de ventana apunte a la ventana que le pasa el usuario
+		window = &_window;
+		
+		// Creo las entidades (TODO: Inicializarlas con sus componentes)
+		Entity* player = nullptr;
+		Entity* scenario = nullptr;
+
+		// Añado las entidades
+		add_entity("player", player);
+		add_entity("scenario", scenario);
+
+		// Añado los componentes (NO FUNCIONA)
+		//player->add_component("player_mesh", Mesh_Component*);
+		//scenario->add_component("scenario_mesh", Mesh_Component*);
+
+		// debugging
+		entities.size();
+		
 	}
 
 	//  Read input -> update -> render
@@ -35,8 +53,21 @@ namespace LightCubeEngine
 		kernel->stop();
 	}
 
-	Window& Scene::get_window()
+	Window* Scene::get_window()
 	{
 		return window;
+	}
+
+	void Scene::add_entity(std::string id, Entity* entity)
+	{
+		// Inserto la entidad dada en el mapa
+		entities.insert(pair< std::string, std::shared_ptr< Entity >>(id, entity));
+	}
+
+	Entity* Scene::get_entity(std::string id)
+	{
+		// Busco en el mapa la entidad y la devuelvo
+		auto ent = entities.at(id).get();
+		return ent;
 	}
 }

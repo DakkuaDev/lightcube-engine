@@ -18,12 +18,18 @@ using namespace std;
 namespace LightCubeEngine
 {
 
-	void Kernel::run()
+	Kernel::Kernel() 
+	{
+		// TODO: Añadir todas las tareas y sistemas al constructor
+		add_task(render);
+	}
+
+	void Kernel::run() noexcept
 	{	
 		stopped = false;
 		while (!stopped)
 		{
-			// TODO: Añadir timer para obtener el parámetro delta que podemos pasar el update()
+			// TODO: Añadir timer para obtener el parámetro delta que podemos pasar el update(). 
 			for (auto & t : tasks)
 			{
 				t->run();
@@ -33,6 +39,7 @@ namespace LightCubeEngine
 
 	void Kernel::stop()
 	{
+		stopped = true;
 	}
 
 	void Kernel::add_task(Task* task)

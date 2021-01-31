@@ -24,7 +24,7 @@ namespace LC_Audio
 
 		Mix_Music* music = nullptr;
 
-		std::string path = "../../../demo-game/resources/";
+		std::string path = "../../resources/";
 
 		const int frequency = 22050;
 		int channels = 2;
@@ -48,7 +48,7 @@ namespace LC_Audio
 	{
 		Mix_Chunk* sound = nullptr;
 
-		std::string path = "../../../demo-game/resources/";
+		std::string path = "../../resources/";
 
 		const int frequency = 22050;
 		int channels = 2;
