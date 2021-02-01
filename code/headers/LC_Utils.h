@@ -179,6 +179,12 @@ namespace LC_Utils
             DEBUG_LOG("\n");
         };
 
+        float get_elapsed()
+        {
+            std::chrono::duration<float> elapsed = Clock::now() - mStart;
+            return elapsed.count();
+        }
+
     private:
         Clock::time_point mStart = Clock::now();
     };

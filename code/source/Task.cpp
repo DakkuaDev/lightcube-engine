@@ -27,7 +27,7 @@ namespace LightCubeEngine
 		renderer.reset(new glt::Render_Node);
 	}
 
-	void Render_System::run()
+	void Render_System::update(float delta)
 	{
 		scene->get_window()->clear();
 	    // TODO: Antes del render, actualizar el transform de todos los modelos

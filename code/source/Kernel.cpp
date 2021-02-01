@@ -12,27 +12,25 @@
 
 #include "Kernel.h"
 #include "Task.h"
+#include "LC_Utils.h"
 
 using namespace std;
 
 namespace LightCubeEngine
 {
 
-	Kernel::Kernel() 
-	{
-		// TODO: Añadir todas las tareas y sistemas al constructor
-		add_task(render);
-	}
-
 	void Kernel::run() noexcept
 	{	
 		stopped = false;
+		delta = 1.f / 60.f;
 		while (!stopped)
 		{
-			// TODO: Añadir timer para obtener el parámetro delta que podemos pasar el update(). 
+			
 			for (auto & t : tasks)
 			{
-				t->run();
+				LC_Utils::ExecutionTimer<> timer;
+				t->update(delta);
+				delta = timer.get_elapsed();
 			}
 		}	
 	}

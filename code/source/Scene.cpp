@@ -12,33 +12,38 @@
 
 #include "Scene.h"
 #include "Kernel.h"
+#include "Task.h"
 #include "Entity.h"
 #include "Component.h"
+
 #include "LC_Graphics.h"
 
 using namespace LC_Graphics;
 
 namespace LightCubeEngine
 {
-	Scene::Scene(Window _window) 
+	Scene::Scene(Window& _window) 
 	{
 		// Hago que el puntero de ventana apunte a la ventana que le pasa el usuario
 		window = &_window;
+
+		// Añado las tareas
+		kernel->add_task(render);
+
+		// Cargo la escena
+		load_scene("");
 		
 		// Creo las entidades (TODO: Inicializarlas con sus componentes)
-		Entity* player = nullptr;
-		Entity* scenario = nullptr;
+		//Entity* player = nullptr;
+		//Entity* scenario = nullptr;
 
 		// Añado las entidades
-		add_entity("player", player);
-		add_entity("scenario", scenario);
+		//add_entity("player", player);
+		//add_entity("scenario", scenario);
 
 		// Añado los componentes (NO FUNCIONA)
 		//player->add_component("player_mesh", Mesh_Component*);
 		//scenario->add_component("scenario_mesh", Mesh_Component*);
-
-		// debugging
-		entities.size();
 		
 	}
 
@@ -58,12 +63,20 @@ namespace LightCubeEngine
 		return window;
 	}
 
+	// TODO
+	void Scene::load_scene(const std::string&)
+	{
+		auto e = make_shared< Entity >(this);
+		//e->add_component("transform", new std::shared_ptr< Transform_Component >);
+		
+	}
+
 	void Scene::add_entity(std::string id, Entity* entity)
 	{
 		// Inserto la entidad dada en el mapa
 		entities.insert(pair< std::string, std::shared_ptr< Entity >>(id, entity));
 	}
-
+	 
 	Entity* Scene::get_entity(std::string id)
 	{
 		// Busco en el mapa la entidad y la devuelvo

@@ -1,4 +1,60 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (lightcube-engineVS.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Kernel.cpp
+  Entity.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\memory(671,1): warning C4150: deletion of pointer to incomplete type 'LightCubeEngine::Component'; no destructor called
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\Entity.h(24): message : see declaration of 'LightCubeEngine::Component'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\memory(670): message : while compiling class template member function 'void std::_Ref_count<_Ux>::_Destroy(void) noexcept'
+          with
+          [
+              _Ux=LightCubeEngine::Component
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\memory(1066): message : see reference to class template instantiation 'std::_Ref_count<_Ux>' being compiled
+          with
+          [
+              _Ux=LightCubeEngine::Component
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\utility(190): message : see reference to function template instantiation 'std::shared_ptr<LightCubeEngine::Component>::shared_ptr<LightCubeEngine::Component,0>(_Ux *)' being compiled
+          with
+          [
+              _Ux=LightCubeEngine::Component
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\utility(190): message : see reference to function template instantiation 'std::shared_ptr<LightCubeEngine::Component>::shared_ptr<LightCubeEngine::Component,0>(_Ux *)' being compiled
+          with
+          [
+              _Ux=LightCubeEngine::Component
+          ]
+D:\Dev\LightCube_Engine\lightcube-engine\code\source\Entity.cpp(29): message : see reference to function template instantiation 'std::pair<std::string,std::shared_ptr<LightCubeEngine::Component>>::pair<std::string&,LightCubeEngine::Component*&,0>(_Other1,_Other2) noexcept(false)' being compiled
+          with
+          [
+              _Other1=std::string &,
+              _Other2=LightCubeEngine::Component *&
+          ]
+D:\Dev\LightCube_Engine\lightcube-engine\code\source\Entity.cpp(29): message : see reference to function template instantiation 'std::pair<std::string,std::shared_ptr<LightCubeEngine::Component>>::pair<std::string&,LightCubeEngine::Component*&,0>(_Other1,_Other2) noexcept(false)' being compiled
+          with
+          [
+              _Other1=std::string &,
+              _Other2=LightCubeEngine::Component *&
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\memory(1020,1): warning C4150: deletion of pointer to incomplete type 'LightCubeEngine::Component'; no destructor called
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\Entity.h(24): message : see declaration of 'LightCubeEngine::Component'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\memory(1019): message : while compiling class template member function 'std::_Temporary_owner<_Ux>::~_Temporary_owner(void)'
+          with
+          [
+              _Ux=LightCubeEngine::Component
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\memory(1065): message : see reference to function template instantiation 'std::_Temporary_owner<_Ux>::~_Temporary_owner(void)' being compiled
+          with
+          [
+              _Ux=LightCubeEngine::Component
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\memory(1065): message : see reference to class template instantiation 'std::_Temporary_owner<_Ux>' being compiled
+          with
+          [
+              _Ux=LightCubeEngine::Component
+          ]
+  Scene.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(34,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  Task.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(34,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  Generating Code...
   Replacing x64\Debug\Music.obj
   lightcube-engineVS.vcxproj -> D:\Dev\LightCube_Engine\demo-game\project\vs-2019\x64\Debug\lightcube-engine.lib

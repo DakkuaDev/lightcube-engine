@@ -22,13 +22,18 @@ using namespace LC_Graphics;
 namespace LightCubeEngine
 {
 	class Kernel;
+	class Task;
+	class Render_System;
 	class Entity;
 
 	class Scene
 	{
 		Window* window;
+
 		Kernel* kernel;
-		Entity* entity;
+		Task* task;
+
+		Render_System* render;
 
 		typedef std::string id;
 
@@ -38,7 +43,7 @@ namespace LightCubeEngine
 
 		// TODO: Pensar, si añado XML, donde lo meto + cuando cargo las tareas
 		Scene() = default;
-		Scene(Window window);
+		Scene(Window& window);
 		~Scene() = default;
 
 	public:
@@ -50,5 +55,6 @@ namespace LightCubeEngine
 		Window* get_window();
 		void add_entity(id, Entity* entity);
 		Entity* get_entity(id);
+		void load_scene(const std::string&);
 	};
 }

@@ -28,20 +28,20 @@ namespace LightCubeEngine
 	class Entity
 	{
 		Scene* scene; 
-		Component* component;
-
-		typedef std::string id;
-		std::map<id, std::shared_ptr< Component >> components;
 
 		Transform_Component* transform;
 		Mesh_Component* mesh;
+
+		typedef std::string id;
+		std::map<id, std::shared_ptr< Component* >> components;
 		
 	public:
-		Entity();
+		Entity() = default;
+		Entity(Scene* scene);
 		~Entity() = default;
 
 	public:
-		void add_component(id, Component*);
+		void add_component(id, std::shared_ptr< Component > & new_component);
 		Component* get_component(id);
 		Transform_Component& get_transform();
 	};

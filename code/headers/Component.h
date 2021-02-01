@@ -44,13 +44,13 @@ namespace LightCubeEngine
 	/// </summary>
 	class Camera_Component : public Component
 	{
-		Camera* camera;
+		shared_ptr< Camera* > camera;
 
 		Camera_Component() = default;
 		Camera_Component(Camera* camera);
 		~Camera_Component() = default;
 
-		Camera* get_camera()
+		shared_ptr< Camera* > get_camera()
 		{
 			return camera;
 		}
@@ -61,13 +61,13 @@ namespace LightCubeEngine
 	/// </summary>
 	class Light_Component : public Component
 	{
-		Light* light;
+		shared_ptr< Light* > light;
 
 		Light_Component() = default;
 		Light_Component(Light* light);
 		~Light_Component() = default;
 
-		Light* get_light()
+		shared_ptr< Light* > get_light()
 		{
 			return light;
 		}
@@ -78,13 +78,13 @@ namespace LightCubeEngine
 	/// </summary>
 	class Mesh_Component : public Component
 	{
-		Model* mesh;
+		shared_ptr< Model_Obj* > mesh;
 
 		Mesh_Component() = default;
 		Mesh_Component(Model* model);
 		~Mesh_Component() = default;
 
-		Model* get_mesh()
+		shared_ptr< Model_Obj* > get_mesh()
 		{
 			return mesh;
 		}

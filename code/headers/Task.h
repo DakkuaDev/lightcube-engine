@@ -39,8 +39,7 @@ namespace LightCubeEngine
 	public:
 		virtual void initialize() {};
 		virtual void finalize() {};
-		//virtual void run() = 0; (NO FUNCIONA)
-		virtual void run() {};
+		virtual void update(float delta) = 0; 
 	};
 
 	/// <summary>
@@ -55,7 +54,7 @@ namespace LightCubeEngine
 		~Render_System() = default;
 
 	public:
-		void run();
+		void update(float delta);
 	};
 }
 

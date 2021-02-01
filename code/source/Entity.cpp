@@ -16,17 +16,12 @@ using namespace std;
 
 namespace LightCubeEngine
 {
-	Entity::Entity()
-	{
-		// Añado los componentes (NO FUNCIONA)
-		//add_component("transform", transform);
-		//add_component("mesh", mesh);
-	}
+	Entity::Entity(Scene* scene) {}
 
-	void Entity::add_component(std::string id, Component*)
+	void Entity::add_component(std::string id, std::shared_ptr< Component >& new_component)
 	{
 		// Inserto la entidad dada en el mapa
-		components.insert(pair< std::string, std::shared_ptr< Component >>(id, component));
+		components.insert(pair< std::string, std::shared_ptr< Component >>(id, new_component));
 	}
 
 	Component* Entity::get_component(std::string id)

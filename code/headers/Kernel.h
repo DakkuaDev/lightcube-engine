@@ -13,6 +13,7 @@
 #pragma once
 
 #include <iostream>
+//#include <chrono>
 #include <set>
 #include <list>
 
@@ -21,18 +22,17 @@ using namespace std;
 namespace LightCubeEngine
 {
 	class Task;
-	class Render_System;
 
 	class Kernel
 	{
 		Task* task;
-		Render_System* render;
 
 		bool stopped;
+		float delta;
 		list< Task* > tasks;
 
 	public:
-		Kernel();
+		Kernel() = default;
 		~Kernel() = default;
 
 	public:
