@@ -12,7 +12,10 @@
 
 #pragma once
 
+#include "LC_Math.h"
+
 using namespace std;
+using namespace glm;
 
 namespace LightCubeEngine
 {
@@ -21,6 +24,7 @@ namespace LightCubeEngine
 	class Model;
 	class Camera;
 	class Light;
+	class Model_Obj;
 
 	class Component
 	{
@@ -37,6 +41,19 @@ namespace LightCubeEngine
 	// TODO: Posición, rotación, escala con glm + devolver la matriz resultante
 	class Transform_Component : public Component
 	{
+		typedef LC_Math::Vector3f vec3;
+
+		vec3 position;
+		vec3 rotation;
+		vec3 scale;
+
+	public:
+		Transform_Component() = default;
+		Transform_Component(vec3 pos, vec3 rot, vec3 sca);
+		~Transform_Component() = default;
+
+	public:
+		glm::mat4 get_transform() const;
 	};
 
 	/// <summary>
@@ -47,7 +64,7 @@ namespace LightCubeEngine
 		shared_ptr< Camera* > camera;
 
 		Camera_Component() = default;
-		Camera_Component(Camera* camera);
+		Camera_Component(shared_ptr< Camera* > camera);
 		~Camera_Component() = default;
 
 		shared_ptr< Camera* > get_camera()
@@ -64,7 +81,7 @@ namespace LightCubeEngine
 		shared_ptr< Light* > light;
 
 		Light_Component() = default;
-		Light_Component(Light* light);
+		Light_Component(shared_ptr< Light* > light);
 		~Light_Component() = default;
 
 		shared_ptr< Light* > get_light()
@@ -81,7 +98,7 @@ namespace LightCubeEngine
 		shared_ptr< Model_Obj* > mesh;
 
 		Mesh_Component() = default;
-		Mesh_Component(Model* model);
+		Mesh_Component(shared_ptr< Model_Obj* > model);
 		~Mesh_Component() = default;
 
 		shared_ptr< Model_Obj* > get_mesh()

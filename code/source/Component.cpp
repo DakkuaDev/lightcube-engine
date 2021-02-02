@@ -12,15 +12,19 @@
 
 #include "Component.h"
 #include <Camera.hpp>
-#include <Model.hpp>
 #include <Light.hpp>
+#include <Model.hpp>
+#include <Model_Obj.hpp>
 
 using namespace std;
 
 namespace LightCubeEngine
 {
-	Camera_Component::Camera_Component(Camera* _camera) : camera(_camera) {};
-	Light_Component::Light_Component(Light* _light) : light(_light) {};
-	Mesh_Component::Mesh_Component(Model* _mesh) : mesh(_mesh) {};
+	Transform_Component::Transform_Component(vec3 _position, vec3 _rotation, vec3 _scale) 
+		: position(_position), rotation(_rotation), scale(_scale) {};
+
+	Camera_Component::Camera_Component(shared_ptr< Camera* > _camera) : camera (_camera) {};
+	Light_Component::Light_Component(shared_ptr< Light* > _light) : light (_light) {};
+	Mesh_Component::Mesh_Component(shared_ptr< Model_Obj* > _mesh) : mesh (_mesh) {};
 	
 }
