@@ -18,19 +18,31 @@ namespace LightCubeEngine
 {
 	Entity::Entity(Scene* scene) {}
 
+	/// <summary>
+	/// Se añade un componente al mapa
+	/// </summary>
+	/// <param name="id"> identificador del componente (único) </param>
+	/// <param name="new_component"> puntero al nuevo componente </param>
 	void Entity::add_component(std::string id, std::shared_ptr< Component >& new_component)
 	{
-		// Inserto la entidad dada en el mapa
 		components.insert(pair< std::string, std::shared_ptr< Component >>(id, new_component));
 	}
 
+	/// <summary>
+	/// Se obtiene el componente haciendo una búsqueda en su mapa
+	/// </summary>
+	/// <param name="id"> identificador del componente (único) </param>
+	/// <returns> se devuelve el puntero al componente buscado </returns>
 	Component* Entity::get_component(std::string id)
 	{
-		// Busco en el mapa el componente y la devuelvo
 		auto comp = components.at(id).get();
 		return comp;
 	}
 
+	/// <summary>
+	/// Se obtiene el transform del componente
+	/// </summary>
+	/// <returns> puntero al transform buscado </returns>
 	Transform_Component& Entity::get_transform()
 	{	
 		return *transform;

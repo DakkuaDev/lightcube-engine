@@ -24,7 +24,6 @@ namespace LightCubeEngine
 {
 	Scene::Scene(Window& _window) 
 	{
-		// Hago que el puntero de ventana apunte a la ventana que le pasa el usuario
 		window = &_window;
 
 		// Añado las tareas
@@ -32,18 +31,6 @@ namespace LightCubeEngine
 
 		// Cargo la escena
 		load_scene("");
-		
-		// Creo las entidades (TODO: Inicializarlas con sus componentes)
-		//Entity* player = nullptr;
-		//Entity* scenario = nullptr;
-
-		// Añado las entidades
-		//add_entity("player", player);
-		//add_entity("scenario", scenario);
-
-		// Añado los componentes (NO FUNCIONA)
-		//player->add_component("player_mesh", Mesh_Component*);
-		//scenario->add_component("scenario_mesh", Mesh_Component*);
 		
 	}
 
@@ -58,28 +45,41 @@ namespace LightCubeEngine
 		kernel->stop();
 	}
 
+	// TODO
+	void Scene::load_scene(const std::string&)
+	{
+		auto e = make_shared< Entity >(this);
+		//e->add_component("render", render->create_render_component("scenario.obj"));
+		entities["e1"] = e;
+		
+	}
+
+	/// <summary>
+	/// Se obtiene un puntero a la ventana de la escena
+	/// </summary>
+	/// <returns> el puntero de la escena buscada </returns>
 	Window* Scene::get_window()
 	{
 		return window;
 	}
 
-	// TODO
-	void Scene::load_scene(const std::string&)
-	{
-		auto e = make_shared< Entity >(this);
-		//e->add_component("transform", new std::shared_ptr< Transform_Component >);
-		
-	}
-
+	/// <summary>
+	/// Se añade una entidad al mapa
+	/// </summary>
+	/// <param name="id"> identificador de la entidad (único) </param>
+	/// <param name="entity"> puntero a la nueva entidad </param>
 	void Scene::add_entity(std::string id, Entity* entity)
 	{
-		// Inserto la entidad dada en el mapa
 		entities.insert(pair< std::string, std::shared_ptr< Entity >>(id, entity));
 	}
 	 
+	/// <summary>
+	/// Se obtiene la entidad haciendo una búsqueda en su mapa
+	/// </summary>
+	/// <param name="id"> identificador de la entidad (único) </param>
+	/// <returns> se devuelve el puntero a la entidad buscada </returns>
 	Entity* Scene::get_entity(std::string id)
 	{
-		// Busco en el mapa la entidad y la devuelvo
 		auto ent = entities.at(id).get();
 		return ent;
 	}

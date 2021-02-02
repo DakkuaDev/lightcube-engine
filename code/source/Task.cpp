@@ -13,6 +13,7 @@
 
 #include "Task.h"
 #include "Scene.h"
+#include "Component.h"
 #include "LC_Graphics.h"
 
 using namespace std;
@@ -24,14 +25,23 @@ namespace LightCubeEngine
 	Render_System::Render_System()
 	{
 		// Se crea un nuevo render node de OpenGL Toolkit:
-		renderer.reset(new glt::Render_Node);
+		//renderer.reset(new glt::Render_Node);
 	}
 
 	void Render_System::update(float delta)
 	{
 		scene->get_window()->clear();
 	    // TODO: Antes del render, actualizar el transform de todos los modelos
-		renderer->render();
+		renderer.render();
 		scene->get_window()->swap_buffers();
 	}
+
+	//shared_ptr< Component > Render_System::create_render_component(const std::string obj_file_path)
+	//{
+	//	auto model = make_shared < Mesh_Component >(obj_file_path);
+	//	//renderer.add(id, model);
+	//	auto render_component = make_shared < Mesh_Component >();
+
+	//	return render_component;
+	//}
 }

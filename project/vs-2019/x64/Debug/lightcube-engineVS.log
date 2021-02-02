@@ -1,6 +1,9 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (lightcube-engineVS.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Entity.cpp
+  Kernel.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(388,32): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
   Scene.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(34,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  Task.cpp
 D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(34,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
   Generating Code...
   Replacing x64\Debug\Music.obj

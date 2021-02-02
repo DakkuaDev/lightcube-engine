@@ -38,18 +38,21 @@ namespace LightCubeEngine
 
 	// TODO: Crear el resto de componentes necesarios
 
-	// TODO: Posición, rotación, escala con glm + devolver la matriz resultante
+	/// <summary>
+	/// Componente de la matriz de transformación (pósición, rotación y escala) asociada a la entidad
+	/// </summary>
 	class Transform_Component : public Component
 	{
-		typedef LC_Math::Vector3f vec3;
-
 		vec3 position;
 		vec3 rotation;
 		vec3 scale;
 
+		// TODO: Convertir a ángulo euler
+		float rot_angle;
+
 	public:
 		Transform_Component() = default;
-		Transform_Component(vec3 pos, vec3 rot, vec3 sca);
+		Transform_Component(vec3 pos, vec3 rot, float rot_angle, vec3 sca);
 		~Transform_Component() = default;
 
 	public:
@@ -61,13 +64,15 @@ namespace LightCubeEngine
 	/// </summary>
 	class Camera_Component : public Component
 	{
-		shared_ptr< Camera* > camera;
+		shared_ptr< Camera > camera;
 
+	public:
 		Camera_Component() = default;
-		Camera_Component(shared_ptr< Camera* > camera);
+		Camera_Component(shared_ptr< Camera >& camera);
 		~Camera_Component() = default;
 
-		shared_ptr< Camera* > get_camera()
+	public:
+		shared_ptr< Camera > get_camera()
 		{
 			return camera;
 		}
@@ -78,13 +83,15 @@ namespace LightCubeEngine
 	/// </summary>
 	class Light_Component : public Component
 	{
-		shared_ptr< Light* > light;
+		shared_ptr< Light > light;
 
+	public:
 		Light_Component() = default;
-		Light_Component(shared_ptr< Light* > light);
+		Light_Component(shared_ptr< Light >& light);
 		~Light_Component() = default;
 
-		shared_ptr< Light* > get_light()
+	public:
+		shared_ptr< Light > get_light()
 		{
 			return light;
 		}
@@ -95,13 +102,15 @@ namespace LightCubeEngine
 	/// </summary>
 	class Mesh_Component : public Component
 	{
-		shared_ptr< Model_Obj* > mesh;
+		shared_ptr< Model_Obj > mesh;
 
+	public:
 		Mesh_Component() = default;
-		Mesh_Component(shared_ptr< Model_Obj* > model);
+		Mesh_Component(shared_ptr< Model_Obj >& mesh);
 		~Mesh_Component() = default;
 
-		shared_ptr< Model_Obj* > get_mesh()
+	public:
+		shared_ptr< Model_Obj > get_mesh()
 		{
 			return mesh;
 		}

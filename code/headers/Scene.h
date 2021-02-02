@@ -29,10 +29,7 @@ namespace LightCubeEngine
 	class Scene
 	{
 		Window* window;
-
 		Kernel* kernel;
-		Task* task;
-
 		Render_System* render;
 
 		typedef std::string id;
@@ -49,6 +46,7 @@ namespace LightCubeEngine
 	public:
 
 		void run();
+
 		// TODO: implementar función de stop(): Se sale de la escena -> Por ejemplo cuando el usuario cierra la aplicación
 		void stop();
 

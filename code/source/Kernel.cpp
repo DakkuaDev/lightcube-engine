@@ -40,6 +40,10 @@ namespace LightCubeEngine
 		stopped = true;
 	}
 
+	/// <summary>
+	/// Se añade una tarea a la lista de tareas 
+	/// </summary>
+	/// <param name="task"> puntero a la tarea que se desea añadir </param>
 	void Kernel::add_task(Task* task)
 	{
 		tasks.push_back(task);

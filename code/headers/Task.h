@@ -22,10 +22,8 @@ namespace LightCubeEngine
 {
 	class Scene;
 	class Render_Node;
+	class Component;
 
-	/// <summary>
-	/// Clase base de tareas
-	/// </summary>
 	class Task
 	{
 		// Considerar si quiero añadir prioridad a las tareas.
@@ -43,11 +41,11 @@ namespace LightCubeEngine
 	};
 
 	/// <summary>
-	/// Sistema encargado del renderizado de la escena
+	/// Sistema encargado del renderizado gráfico de la escena
 	/// </summary>
 	class Render_System : public Task
 	{
-		std::unique_ptr< glt::Render_Node > renderer;
+		glt::Render_Node renderer;
 
 	public:
 		Render_System();
@@ -55,6 +53,7 @@ namespace LightCubeEngine
 
 	public:
 		void update(float delta);
+		//shared_ptr< Component > create_render_component(const string obj_file_path);
 	};
 }
 
