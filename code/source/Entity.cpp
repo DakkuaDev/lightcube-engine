@@ -11,6 +11,7 @@
 */
 
 #include "Entity.h"
+#include "Component.h"
 
 using namespace std;
 
@@ -25,7 +26,7 @@ namespace LightCubeEngine
 	/// <param name="new_component"> puntero al nuevo componente </param>
 	void Entity::add_component(std::string id, std::shared_ptr< Component >& new_component)
 	{
-		components.insert(pair< std::string, std::shared_ptr< Component >>(id, new_component));
+		components.insert(pair< std::string, std::shared_ptr< Component >& >(id, new_component));
 	}
 
 	/// <summary>
@@ -43,8 +44,8 @@ namespace LightCubeEngine
 	/// Se obtiene el transform del componente
 	/// </summary>
 	/// <returns> puntero al transform buscado </returns>
-	Transform_Component& Entity::get_transform()
+	Transform_Component* Entity::get_transform()
 	{	
-		return *transform;
+		return transform;
 	}
 }

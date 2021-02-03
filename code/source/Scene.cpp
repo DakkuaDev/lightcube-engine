@@ -14,10 +14,10 @@
 #include "Kernel.h"
 #include "Task.h"
 #include "Entity.h"
-#include "Component.h"
 
 #include "LC_Graphics.h"
 
+using namespace std;
 using namespace LC_Graphics;
 
 namespace LightCubeEngine
@@ -26,15 +26,14 @@ namespace LightCubeEngine
 	{
 		window = &_window;
 
-		// Añado las tareas
-		kernel->add_task(render);
-
 		// Cargo la escena
 		load_scene("");
-		
+
+		// Añado las tareas ( input -> update -> render  )
+		kernel->add_task(render);	
 	}
 
-	//  Read input -> update -> render
+
 	void Scene::run()
 	{
 		kernel->run();
@@ -61,16 +60,6 @@ namespace LightCubeEngine
 	Window* Scene::get_window()
 	{
 		return window;
-	}
-
-	/// <summary>
-	/// Se añade una entidad al mapa
-	/// </summary>
-	/// <param name="id"> identificador de la entidad (único) </param>
-	/// <param name="entity"> puntero a la nueva entidad </param>
-	void Scene::add_entity(std::string id, Entity* entity)
-	{
-		entities.insert(pair< std::string, std::shared_ptr< Entity >>(id, entity));
 	}
 	 
 	/// <summary>

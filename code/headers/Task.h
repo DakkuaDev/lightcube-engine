@@ -26,7 +26,6 @@ namespace LightCubeEngine
 
 	class Task
 	{
-		// Considerar si quiero añadir prioridad a las tareas.
 	protected:
 		Scene* scene;
 
@@ -40,6 +39,8 @@ namespace LightCubeEngine
 		virtual void update(float delta) = 0; 
 	};
 
+	// TODO: Añadir tarea de lectura de input del teclado, el sistema de sonido, y el sistema de control
+
 	/// <summary>
 	/// Sistema encargado del renderizado gráfico de la escena
 	/// </summary>
@@ -52,6 +53,7 @@ namespace LightCubeEngine
 		~Render_System() = default;
 
 	public:
+		void initialize();
 		void update(float delta);
 		//shared_ptr< Component > create_render_component(const string obj_file_path);
 	};

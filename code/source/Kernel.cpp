@@ -19,20 +19,23 @@ using namespace std;
 namespace LightCubeEngine
 {
 
-	void Kernel::run() noexcept
+	void Kernel::run() 
 	{	
+		for (auto& t : tasks) { t->initialize(); }
+
 		stopped = false;
 		delta = 1.f / 60.f;
 		while (!stopped)
-		{
-			
-			for (auto & t : tasks)
+		{		
+			for (auto& t : tasks)
 			{
 				LC_Utils::ExecutionTimer<> timer;
 				t->update(delta);
 				delta = timer.get_elapsed();
 			}
 		}	
+
+		for (auto& t : tasks) { t->finalize(); }
 	}
 
 	void Kernel::stop()

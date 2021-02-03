@@ -22,16 +22,17 @@ using namespace glt;
 namespace LightCubeEngine
 {
 
-	Render_System::Render_System()
+	Render_System::Render_System() {}
+
+	void Render_System::initialize()
 	{
-		// Se crea un nuevo render node de OpenGL Toolkit:
-		//renderer.reset(new glt::Render_Node);
+		// TODO: Crear el renderer, Crear una luz, crear una cámara
 	}
 
 	void Render_System::update(float delta)
 	{
 		scene->get_window()->clear();
-	    // TODO: Antes del render, actualizar el transform de todos los modelos
+	    // TODO: Antes del render, actualizar el transform de todos los modelos según el transform de las entidades
 		renderer.render();
 		scene->get_window()->swap_buffers();
 	}

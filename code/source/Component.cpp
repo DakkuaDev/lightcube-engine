@@ -11,12 +11,9 @@
 */
 
 #include "Component.h"
-#include <Camera.hpp>
-#include <Light.hpp>
-#include <Model.hpp>
-#include <Model_Obj.hpp>
 
 using namespace std;
+using namespace glm;
 
 namespace LightCubeEngine
 {

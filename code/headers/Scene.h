@@ -30,6 +30,8 @@ namespace LightCubeEngine
 	{
 		Window* window;
 		Kernel* kernel;
+
+		// Añadir las tareas y sistemas que falten
 		Render_System* render;
 
 		typedef std::string id;
@@ -46,13 +48,11 @@ namespace LightCubeEngine
 	public:
 
 		void run();
-
-		// TODO: implementar función de stop(): Se sale de la escena -> Por ejemplo cuando el usuario cierra la aplicación
 		void stop();
 
 		Window* get_window();
-		void add_entity(id, Entity* entity);
 		Entity* get_entity(id);
+
 		void load_scene(const std::string&);
 	};
 }

@@ -12,6 +12,10 @@
 
 #pragma once
 
+#include <Camera.hpp>
+#include <Light.hpp>
+#include <Model.hpp>
+#include <Model_Obj.hpp>
 #include "LC_Math.h"
 
 using namespace std;
@@ -28,7 +32,7 @@ namespace LightCubeEngine
 
 	class Component
 	{
-
+	protected:
 		Entity* parent;
 
 	public:
@@ -36,7 +40,7 @@ namespace LightCubeEngine
 		~Component() = default;
 	};
 
-	// TODO: Crear el resto de componentes necesarios
+	// TODO: Crear el resto de componentes necesarios (control: scripting, audio)
 
 	/// <summary>
 	/// Componente de la matriz de transformación (pósición, rotación y escala) asociada a la entidad
@@ -47,7 +51,7 @@ namespace LightCubeEngine
 		vec3 rotation;
 		vec3 scale;
 
-		// TODO: Convertir a ángulo euler
+		// TODO: Convertir a ángulo euler + gets de pos, rot y scale 
 		float rot_angle;
 
 	public:
