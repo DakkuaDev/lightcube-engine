@@ -4,7 +4,7 @@
 * @section LICENSE MIT License(Lee el archivo LICENSE para mas información)
 *
 * @section DESCRIPTION
-* Clase encargada de mostrar todos los elementos que se van a reproducir en la escena del engine
+* La Escena es la clase encargada de mostrar y actualizar todos las entidades que se ven en la pantalla. Le envia al Kernel las tareas que deberá procesar
 *
 * @author Daniel Guerra Gallardo
 * Contact: daniel.guerra.gallardo99@gmail.com
@@ -14,11 +14,6 @@
 #include "Kernel.h"
 #include "Task.h"
 #include "Entity.h"
-
-#include "LC_Graphics.h"
-
-using namespace std;
-using namespace LC_Graphics;
 
 namespace LightCubeEngine
 {
@@ -48,7 +43,8 @@ namespace LightCubeEngine
 	void Scene::load_scene(const std::string&)
 	{
 		auto e = make_shared< Entity >(this);
-		//e->add_component("render", render->create_render_component("scenario.obj"));
+
+		e->add_component("render", render->create_render_component("render", "../../resources/scenario_demo.obj"));
 		entities["e1"] = e;
 		
 	}
@@ -57,7 +53,7 @@ namespace LightCubeEngine
 	/// Se obtiene un puntero a la ventana de la escena
 	/// </summary>
 	/// <returns> el puntero de la escena buscada </returns>
-	Window* Scene::get_window()
+	LC_Graphics::Window* Scene::get_window()
 	{
 		return window;
 	}

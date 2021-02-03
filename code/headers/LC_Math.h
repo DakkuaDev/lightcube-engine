@@ -4,7 +4,7 @@
 * @section LICENSE MIT License(Lee el archivo LICENSE para mas información)
 *
 * @section DESCRIPTION
-* Módulo matemático que contiene las clases propias necesarias básicas para el funcionamiento de LightCube Engine
+* Módulo matemático que contiene las clases propias necesarias básicas para el funcionamiento de LightCube Engine junto a la libreria GLM
 *
 * @author Daniel Guerra Gallardo
 * Contact: daniel.guerra.gallardo99@gmail.com
@@ -12,7 +12,6 @@
 
 #pragma once
 
-// GLM
 #include <glm/glm.hpp>
 
 #include <cmath>

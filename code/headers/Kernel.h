@@ -4,7 +4,7 @@
 * @section LICENSE MIT License(Lee el archivo LICENSE para mas información)
 *
 * @section DESCRIPTION
-* Clase principal encargada de ejecutar las diferentes especializaciones de Task. Bucle principal del engine.
+* El Kernel es la clase del bucle principal del engine para cada escena. Contiene a las tareas que ejecutará de forma constante.
 *
 * @author Daniel Guerra Gallardo
 * Contact: daniel.guerra.gallardo99@gmail.com
@@ -17,7 +17,10 @@
 #include <set>
 #include <list>
 
+#include "LC_Utils.h"
+
 using namespace std;
+using namespace LC_Utils;
 
 namespace LightCubeEngine
 {

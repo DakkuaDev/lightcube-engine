@@ -4,7 +4,7 @@
 * @section LICENSE MIT License(Lee el archivo LICENSE para mas información)
 *
 * @section DESCRIPTION
-* Clase base. Recopila el conjunto de tareas individuales que realizan operaciones dentro del bucle del motor.
+*  La clase base Tarea, es de la que heredarán el conjunto de tareas y sistemas. Serán las encargadas de procesar los datos e información de entidades y componentes.
 *
 * @author Daniel Guerra Gallardo
 * Contact: daniel.guerra.gallardo99@gmail.com
@@ -14,10 +14,6 @@
 #include "Task.h"
 #include "Scene.h"
 #include "Component.h"
-#include "LC_Graphics.h"
-
-using namespace std;
-using namespace glt;
 
 namespace LightCubeEngine
 {
@@ -37,12 +33,19 @@ namespace LightCubeEngine
 		scene->get_window()->swap_buffers();
 	}
 
-	//shared_ptr< Component > Render_System::create_render_component(const std::string obj_file_path)
-	//{
-	//	auto model = make_shared < Mesh_Component >(obj_file_path);
-	//	//renderer.add(id, model);
-	//	auto render_component = make_shared < Mesh_Component >();
+	/// <summary>
+	/// Se crea un nuevo componente de renderizado
+	/// </summary>
+	/// <param name="id">  identificador del componente (único) </param>
+	/// <param name="obj_file_path"> ruta del archivo que se le pasa como .obj </param>
+	/// <returns></returns>
+	shared_ptr< Component > Render_System::create_render_component(std::string id, std::string obj_file_path)
+	{
+		auto mesh = make_shared < glt::Model_Obj >(obj_file_path);
+		renderer.add(id, mesh);
+		auto mesh_component = make_shared < Mesh_Component >(mesh);
 
-	//	return render_component;
-	//}
+		return mesh_component;
+	}
+
 }

@@ -4,7 +4,7 @@
 * @section LICENSE MIT License(Lee el archivo LICENSE para mas información)
 *
 * @section DESCRIPTION
-* Clase que guarda todas las entidades de la escena que se esté mostrando en el engine. 
+*  La clase Entidad, corresponde a todos aquellos elementos que se encuentran contenidos en la escena y que a su vez contienen componentes que los definen.
 *
 * @author Daniel Guerra Gallardo
 * Contact: daniel.guerra.gallardo99@gmail.com
@@ -22,6 +22,7 @@ namespace LightCubeEngine
 
 	class Scene;
 	class Component;
+
 	class Transform_Component;
 
 	class Entity
@@ -38,7 +39,7 @@ namespace LightCubeEngine
 		~Entity() = default;
 
 	public:
-		void add_component(id, std::shared_ptr< Component >& new_component);
+		void add_component(id, std::shared_ptr< Component > new_component);
 		Component* get_component(id);
 		Transform_Component* get_transform();
 	};
