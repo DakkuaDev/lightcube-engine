@@ -12,13 +12,14 @@ D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(388,32): warnin
   Task.cpp
 D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
 D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
-  Keyboard.cpp
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
   Window.cpp
 D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
 D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  Keyboard.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
   Generating Code...
+D:\Dev\LightCube_Engine\lightcube-engine\code\source\test\Keyboard.cpp(57): warning C4715: 'LC_Graphics::Keyboard::poll_events': not all control paths return a value
 D:\Dev\LightCube_Engine\lightcube-engine\code\source\Scene.cpp(73): warning C4715: 'LightCubeEngine::Scene::get_entity': not all control paths return a value
 D:\Dev\LightCube_Engine\lightcube-engine\code\source\Scene.cpp(81): warning C4715: 'LightCubeEngine::Scene::get_entities': not all control paths return a value
   Replacing x64\Debug\Music.obj

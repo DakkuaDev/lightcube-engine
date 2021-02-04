@@ -17,16 +17,11 @@
 using namespace LC_Graphics;
 using namespace std;
 
-LC_Graphics::Keyboard::Keyboard(Window& given_window)
-{
-	window = &given_window;
-}
-
 
 /// <summary>
 /// Listado de eventos capturados por teclado
 /// </summary>
-void LC_Graphics::Keyboard::poll_events()
+std::string LC_Graphics::Keyboard::poll_events()
 {
 	SDL_Event event;
 
@@ -42,16 +37,19 @@ void LC_Graphics::Keyboard::poll_events()
 			{
 			case SDLK_SPACE:
 				SDL_Log("Has pulsado la barra espaciadora");
+				return "space";
+				
 				break;
 
 			case SDLK_KP_ENTER:
 				SDL_Log("Has pulsado la tecla 'Enter'");
+				return "enter";
 				break;
 			}
 			break;
 		}
 		case SDL_QUIT:
-			window->set_closed(true);
+			
 		default:
 			break;
 		}

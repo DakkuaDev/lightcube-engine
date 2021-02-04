@@ -84,6 +84,20 @@ namespace LC_Graphics
 	};
 
 	/// <summary>
+	/// Clase encargada de recoger los eventos de teclado y procesarlos
+	/// </summary>
+	class Keyboard
+	{
+	public:
+		Keyboard() = default;
+		~Keyboard() = default;
+
+	public:
+		std::string poll_events();
+
+	};
+
+	/// <summary>
 	/// Clase encargada del renderizado provisional de la escena usando OpenGL-Tookit
 	/// </summary>
 	class SceneRenderer
@@ -96,10 +110,15 @@ namespace LC_Graphics
 		std::unique_ptr< glt::Render_Node > renderer;
 
 		Window* window = nullptr;
+		Keyboard* input = nullptr;
+
+		int horizontal_move = 0;
+		int vertical_move = 0;
 
 	public:
 
-		SceneRenderer(LC_Graphics::Window& given_window);
+		SceneRenderer(Window& given_window, Keyboard& given_keyboard);
+		SceneRenderer(Window& given_window);
 
 		/** En este caso es necesario definir explícitamente el destructor en el archivo
 			* de implementación (CPP) para que el compilador pueda destruir el Render_Node.
@@ -109,28 +128,11 @@ namespace LC_Graphics
 			*/
 		~SceneRenderer();
 
-		void render();
-		void SceneExample1();
-		void SceneExample2();
-
-	};
-
-	/// <summary>
-	/// Clase encargada de recoger los eventos de teclado y procesarlos
-	/// </summary>
-	class Keyboard
-	{
-		//SDL_Event event;
-
-		Window* window = nullptr;
-		SceneRenderer* render;
-
 	public:
-		Keyboard(LC_Graphics::Window& given_window);
-		~Keyboard() = default;
+		void update();
 
-	public:
-		void poll_events();
+		void initialize_scene_a();
+		void initialize_scene_b();
 
 	};
 }
