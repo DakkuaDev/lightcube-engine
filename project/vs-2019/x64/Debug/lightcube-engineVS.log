@@ -3,10 +3,23 @@
 D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(388,32): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winbase.h(716,1): warning C4005: 'STD_OUTPUT_HANDLE': macro redefinition
 D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(33): message : see previous definition of 'STD_OUTPUT_HANDLE'
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(34,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
   Scene.cpp
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(34,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
 D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(388,32): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
   Task.cpp
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(34,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  Keyboard.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  Window.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
   Generating Code...
+D:\Dev\LightCube_Engine\lightcube-engine\code\source\Scene.cpp(73): warning C4715: 'LightCubeEngine::Scene::get_entity': not all control paths return a value
+D:\Dev\LightCube_Engine\lightcube-engine\code\source\Scene.cpp(81): warning C4715: 'LightCubeEngine::Scene::get_entities': not all control paths return a value
+  Replacing x64\Debug\Music.obj
+  lightcube-engineVS.vcxproj -> D:\Dev\LightCube_Engine\demo-game\project\vs-2019\x64\Debug\lightcube-engine.lib

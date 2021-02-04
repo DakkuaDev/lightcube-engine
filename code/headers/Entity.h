@@ -13,6 +13,7 @@
 #pragma once
 
 #include <iostream>
+#include <memory>
 #include <map>
 
 using namespace std;
@@ -27,20 +28,20 @@ namespace LightCubeEngine
 
 	class Entity
 	{
-		Scene* scene; 
-		Transform_Component* transform;
+		std::shared_ptr< Scene > scene;		
+		std::shared_ptr< Transform_Component > transform;
 
 		typedef std::string id;
 		std::map<id, std::shared_ptr< Component >> components;
 		
 	public:
 		Entity() = default;
-		Entity(Scene* scene);
+		Entity(Scene* scene); //??
 		~Entity() = default;
 
 	public:
 		void add_component(id, std::shared_ptr< Component > new_component);
-		Component* get_component(id);
-		Transform_Component* get_transform();
+		std::shared_ptr< Component > get_component(id);
+		std::shared_ptr< Transform_Component > get_transform();
 	};
 }

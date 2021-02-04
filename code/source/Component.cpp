@@ -22,7 +22,7 @@ namespace LightCubeEngine
 	/// Obtiene la matriz resultante de la transformación del fotograma
 	/// </summary>
 	/// <returns> devuelve la matriz resultante de las operaciones de traslación, rotación y escala </returns>
-	glm::mat4 Transform_Component::get_transform() const
+	glm::mat4 Transform_Component::get_matrix() const
 	{
 		glm::mat4 new_matrix = glm::mat4();
 

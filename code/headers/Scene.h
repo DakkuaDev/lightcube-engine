@@ -13,6 +13,7 @@
 #pragma once
 
 #include <iostream>
+#include <memory>
 #include <map>
 
 #include "LC_Graphics.h"
@@ -30,10 +31,10 @@ namespace LightCubeEngine
 	class Scene
 	{
 		LC_Graphics::Window* window;
-		Kernel* kernel;
+		std::shared_ptr< Kernel > kernel;
 
 		// TODO: Añadir las tareas y sistemas que falten
-		Render_System* render;
+		std::shared_ptr< Render_System > render;
 
 		typedef std::string id;
 
@@ -52,7 +53,8 @@ namespace LightCubeEngine
 		void stop();
 
 		LC_Graphics::Window* get_window();
-		Entity* get_entity(id);
+		std::shared_ptr< Entity > get_entity(id);
+		std::map<std::string, std::shared_ptr< Entity > > get_entities();
 
 		void load_scene(const std::string&);
 	};

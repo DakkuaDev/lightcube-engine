@@ -12,6 +12,8 @@
 
 #pragma once
 
+#include <memory>
+
 #include <Camera.hpp>
 #include <Light.hpp>
 #include <Model.hpp>
@@ -37,7 +39,7 @@ namespace LightCubeEngine
 	class Component
 	{
 	protected:
-		Entity* parent;
+		std::shared_ptr< Entity > parent;
 
 	public:
 		Component() = default;
@@ -64,7 +66,7 @@ namespace LightCubeEngine
 		~Transform_Component() = default;
 
 	public:
-		glm::mat4 get_transform() const;
+		glm::mat4 get_matrix() const;
 	};
 
 	/// <summary>

@@ -21,11 +21,11 @@ namespace LightCubeEngine
 	{
 		window = &_window;
 
+		// Añado las tareas ( input -> update -> render  )
+		kernel->add_task(render);
+
 		// Cargo la escena
 		load_scene("");
-
-		// Añado las tareas ( input -> update -> render  )
-		kernel->add_task(render);	
 	}
 
 
@@ -42,10 +42,10 @@ namespace LightCubeEngine
 	// TODO
 	void Scene::load_scene(const std::string&)
 	{
-		auto e = make_shared< Entity >(this);
+		auto scenario = make_shared< Entity >();
 
-		e->add_component("render", render->create_render_component("render", "../../resources/scenario_demo.obj"));
-		entities["e1"] = e;
+		//scenario->add_component("scenario", render->create_mesh_component("scenario", "../../resources/scenario_demo.obj"));
+		entities["scenario"] = scenario;
 		
 	}
 
@@ -63,9 +63,20 @@ namespace LightCubeEngine
 	/// </summary>
 	/// <param name="id"> identificador de la entidad (único) </param>
 	/// <returns> se devuelve el puntero a la entidad buscada </returns>
-	Entity* Scene::get_entity(std::string id)
+	std::shared_ptr< Entity > Scene::get_entity(std::string id)
 	{
-		auto ent = entities.at(id).get();
-		return ent;
+		if (entities.size() > 0)
+		{
+			auto ent = entities.at(id);
+			return ent;
+		}
+	}
+
+	std::map<std::string, std::shared_ptr< Entity > > Scene::get_entities()
+	{
+		if (entities.size() > 0)
+		{
+			return entities;
+		}
 	}
 }

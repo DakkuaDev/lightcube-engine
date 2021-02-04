@@ -13,6 +13,7 @@
 #pragma once
 
 #include <iostream>
+#include <memory>
 #include <chrono>
 #include <set>
 #include <list>
@@ -25,13 +26,14 @@ using namespace LC_Utils;
 namespace LightCubeEngine
 {
 	class Task;
+	class Render_System;
 
 	class Kernel
 	{
 		bool stopped;
 		float delta;
 
-		list< Task* > tasks;
+		list< std::shared_ptr< Task > > tasks;
 
 	public:
 		Kernel() = default;
@@ -44,6 +46,6 @@ namespace LightCubeEngine
 		void run();
 		void stop();
 
-		void add_task(Task* task);
+		void add_task(std::shared_ptr< Task > task);
 	};
 }

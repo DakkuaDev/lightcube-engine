@@ -53,8 +53,8 @@ namespace LC_Graphics
 		Window(const std::string& title, int width, int height, bool set_full_screen);
 		~Window();
 
-		void poll_events();
 		inline bool is_closed() const { return closed; }
+		inline void set_closed(bool is) { closed = is; }
 
 		/** Retorna el ancho actual de la ventana (el usuario puede cambiarlo).
 			*/
@@ -95,7 +95,7 @@ namespace LC_Graphics
 
 		std::unique_ptr< glt::Render_Node > renderer;
 
-		Window* window;
+		Window* window = nullptr;
 
 	public:
 
@@ -112,6 +112,25 @@ namespace LC_Graphics
 		void render();
 		void SceneExample1();
 		void SceneExample2();
+
+	};
+
+	/// <summary>
+	/// Clase encargada de recoger los eventos de teclado y procesarlos
+	/// </summary>
+	class Keyboard
+	{
+		//SDL_Event event;
+
+		Window* window = nullptr;
+		SceneRenderer* render;
+
+	public:
+		Keyboard(LC_Graphics::Window& given_window);
+		~Keyboard() = default;
+
+	public:
+		void poll_events();
 
 	};
 }

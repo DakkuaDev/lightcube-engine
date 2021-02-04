@@ -26,7 +26,7 @@ namespace LightCubeEngine
 		stopped = false;
 		delta = 1.f / 60.f;
 		while (!stopped)
-		{		
+		{			
 			for (auto& t : tasks)
 			{
 				LC_Utils::ExecutionTimer<> timer;
@@ -50,9 +50,12 @@ namespace LightCubeEngine
 	/// Se añade una tarea a la lista de tareas 
 	/// </summary>
 	/// <param name="task"> puntero a la tarea que se desea añadir </param>
-	void Kernel::add_task(Task* task)
+	void Kernel::add_task(std::shared_ptr< Task > task)
 	{
-		tasks.push_back(task);
+		if (task != nullptr)
+		{
+			tasks.push_back(task);
+		}
 	}
 }
 

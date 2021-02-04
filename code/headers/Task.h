@@ -25,13 +25,14 @@ using namespace LC_Graphics;
 namespace LightCubeEngine
 {
 	class Scene;
+	class Entity;
 	class Component;
 	class Render_Node;
 
 	class Task
 	{
 	protected:
-		Scene* scene;
+		std::shared_ptr< Scene > scene;
 		typedef std::string id;
 
 	public:
@@ -45,7 +46,7 @@ namespace LightCubeEngine
 		// Finalización de la tarea
 		virtual void finalize() {};
 
-		// Actualización de la tarea
+		// Actualización de la tarea. delta: medición del refresco de actualización.
 		virtual void update(float delta) = 0; 
 	};
 
@@ -56,16 +57,16 @@ namespace LightCubeEngine
 	/// </summary>
 	class Render_System : public Task
 	{
-		glt::Render_Node renderer;
+		std::unique_ptr< glt::Render_Node > renderer;
 
 	public:
-		Render_System();
+		Render_System() = default;
 		~Render_System() = default;
 
 	public:
 		void initialize();
 		void update(float delta);
-		shared_ptr< Component > create_render_component(id, std::string obj_file_path);
+		shared_ptr< Component > create_mesh_component(id, std::string obj_file_path);
 	};
 }
 

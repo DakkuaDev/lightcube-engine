@@ -20,6 +20,8 @@
 
 typedef struct SDL_Window   SDL_Window;
 typedef void* SDL_GLContext;
+typedef union SDL_Event;
+
 
 
 //////////////////////////////////// SDL_stdinc ////////////////////////////////////////
