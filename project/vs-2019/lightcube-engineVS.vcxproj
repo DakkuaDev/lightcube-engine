@@ -28,6 +28,7 @@
     <ClInclude Include="..\..\code\headers\Entity.h" />
     <ClInclude Include="..\..\code\headers\internal\declarations.h" />
     <ClInclude Include="..\..\code\headers\internal\macros.h" />
+    <ClInclude Include="..\..\code\headers\internal\rapidxml.hpp" />
     <ClInclude Include="..\..\code\headers\internal\utf8.h" />
     <ClInclude Include="..\..\code\headers\Kernel.h" />
     <ClInclude Include="..\..\code\headers\LC_Audio.h" />

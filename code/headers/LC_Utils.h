@@ -20,8 +20,10 @@
 #include <cstddef>
 #include <fstream>
 #include <internal/utf8.h>
+#include <internal/rapidxml.hpp>
 
 using namespace std;
+using namespace rapidxml;
 
 namespace LC_Utils
 {
@@ -358,6 +360,8 @@ namespace LC_Utils
         std::string path = "../../../lightcube-engine/resources/";    
         std::string resource;
 
+        // TODO: Añadir los objetos de retorno del parser XML
+
     public:
 
         Serialization() = default;
@@ -365,7 +369,6 @@ namespace LC_Utils
         {
             file_name = _file_name;
             resource = path + _file_name;
-            //std::ifstream file(_fileName, std::ifstream::binary);
         }
         ~Serialization() = default;
 
@@ -421,6 +424,11 @@ namespace LC_Utils
             }  
         }
 
+        // Función de lectura de archivos XML
+        void read_xml();
+        bool parse_scene(xml_node<>* scene_node);
+        // TODO: gets de los objetos de retorno
+
         // Función de escritura de archivo
         void write(string out)
         {
@@ -451,10 +459,6 @@ namespace LC_Utils
             }
         }
 
-        void open()
-        {
-
-        }  
     };
 
     /// <summary>

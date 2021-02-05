@@ -95,5 +95,8 @@
     <ClInclude Include="..\..\code\headers\Component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\code\headers\internal\rapidxml.hpp">
+      <Filter>Header Files\Internal</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
