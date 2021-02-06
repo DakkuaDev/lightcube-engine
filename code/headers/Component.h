@@ -35,14 +35,16 @@ namespace LightCubeEngine
 	class Model_Obj;
 	class Camera;
 	class Light;
+	class Render_System; 
 
 	class Component
 	{
 	protected:
-		std::shared_ptr< Entity > parent;
+		Entity* parent;
 
 	public:
 		Component() = default;
+		Component(Entity& p); 
 		~Component() = default;
 	};
 
@@ -57,7 +59,6 @@ namespace LightCubeEngine
 		glm::vec3 rotation;
 		glm::vec3 scale;
 
-		// TODO: Convertir a ángulo euler + gets de pos, rot y scale 
 		float rot_angle;
 
 	public:
@@ -67,6 +68,7 @@ namespace LightCubeEngine
 
 	public:
 		glm::mat4 get_matrix() const;
+		glm::vec4 get_transform_vector() const;
 	};
 
 	/// <summary>
@@ -113,14 +115,15 @@ namespace LightCubeEngine
 	class Mesh_Component : public Component
 	{
 		shared_ptr< glt::Model_Obj > mesh;
+		typedef std::string id;
 
 	public:
 		Mesh_Component() = default;
-		Mesh_Component(shared_ptr< glt::Model_Obj > mesh);
+		Mesh_Component(id, std::string model_path, Entity& e, Render_System *render);
 		~Mesh_Component() = default;
 
 	public:
-		shared_ptr< glt::Model_Obj > get_mesh()
+		shared_ptr< glt::Model_Obj > &get_mesh()
 		{
 			return mesh;
 		}

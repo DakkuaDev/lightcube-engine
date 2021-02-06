@@ -26,6 +26,7 @@ namespace LightCubeEngine
 	class Kernel;
 	class Task;
 	class Render_System;
+	class Mesh_Component;
 	class Entity;
 
 	class Scene
@@ -38,7 +39,7 @@ namespace LightCubeEngine
 
 		typedef std::string id;
 
-		std::map<std::string, std::shared_ptr< Entity > > entities;
+		std::map<id, std::shared_ptr< Entity > > entities;
 
 	public:
 
@@ -54,7 +55,9 @@ namespace LightCubeEngine
 
 		LC_Graphics::Window* get_window();
 		std::shared_ptr< Entity > get_entity(id);
-		std::map<std::string, std::shared_ptr< Entity > > get_entities();
+		std::map<std::string, std::shared_ptr< Entity > > &get_entities();
+		void add_entity(id,  std::shared_ptr<Entity> e); 
+		std::shared_ptr<Render_System> &get_renderer();
 
 		void load_scene(const std::string&);
 	};

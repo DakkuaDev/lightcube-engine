@@ -57,6 +57,9 @@
     <ClCompile Include="..\..\code\source\test\Keyboard.cpp">
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="XML_Parser.cpp">
+      <Filter>Source Files\Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\internal\declarations.h">

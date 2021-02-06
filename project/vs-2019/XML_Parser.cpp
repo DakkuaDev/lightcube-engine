@@ -82,10 +82,14 @@ bool Serialization::parse_scene(xml_node<>* scene_node)
 {
     if (std::string(scene_node->name()) != "scene") return false;
 
+    // TODO: Se crea el objeto correspondiente
+
     for (auto child = scene_node->first_node(); child; child = child->next_sibling())
     {
-        // TODO: Se parsea la siguiente etiqueta
-        //funcionquesea(child)
+        // TODO: Se parsea la siguiente etiqueta pasandole el objeto creado
+        //funcionquesea(child, object)
     }
+
+    // TODO: Se asigna el objeto 
     return true;
 }

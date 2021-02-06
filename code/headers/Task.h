@@ -14,7 +14,7 @@
 
 #include <iostream>
 #include <memory>
-#include <Render_Node.hpp>
+
 
 #include "LC_Graphics.h"
 
@@ -32,11 +32,12 @@ namespace LightCubeEngine
 	class Task
 	{
 	protected:
-		std::shared_ptr< Scene > scene;
+		Scene* scene;
 		typedef std::string id;
 
 	public:
 		Task() = default;
+		Task(Scene& scene);
 		~Task() = default;
 
 	public:
@@ -57,16 +58,34 @@ namespace LightCubeEngine
 	/// </summary>
 	class Render_System : public Task
 	{
-		std::unique_ptr< glt::Render_Node > renderer;
+
+	public:
+		std::shared_ptr< glt::Render_Node > renderer;
 
 	public:
 		Render_System() = default;
+		Render_System(Scene& scene);
 		~Render_System() = default;
 
 	public:
 		void initialize();
 		void update(float delta);
-		shared_ptr< Component > create_mesh_component(id, std::string obj_file_path);
+		//std::unique_ptr<glt::Render_Node> get_renderer();
+		//shared_ptr< Component > create_mesh_component(id, std::string obj_file_path);
 	};
+
+	//class Input_Task : public Task
+	//{
+	//	std::unique_ptr< LC_Graphics::Keyboard > input_keyboard;
+
+	//public:
+	//	Input_Task() = default;
+	//	Input_Task(Scene& scene);
+	//	~Input_Task() = default;
+
+	//public:
+	//	void initialize();
+	//	void update(float delta);
+	//}
 }
 

@@ -22,6 +22,7 @@
     <ClCompile Include="..\..\code\source\test\Keyboard.cpp" />
     <ClCompile Include="..\..\code\source\Window.cpp" />
     <ClCompile Include="..\..\code\source\winmain.cpp" />
+    <ClCompile Include="XML_Parser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\Component.h" />

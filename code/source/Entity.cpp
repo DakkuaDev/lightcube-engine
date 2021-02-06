@@ -12,10 +12,16 @@
 
 #include "Entity.h"
 #include "Component.h"
+#include "glm/glm.hpp"
 
 namespace LightCubeEngine
 {
-	Entity::Entity(Scene* _scene) : scene(_scene) {}
+
+	Entity::Entity(Scene &_scene)
+	{
+		scene = &_scene; 
+		transform = std::make_shared<Transform_Component>(Transform_Component(glm::vec3 (0,0,0), glm::vec3 (0,0,0), 0, glm::vec3(1,1,1))); 
+	}
 
 	/// <summary>
 	/// Se añade un componente al mapa
@@ -56,4 +62,9 @@ namespace LightCubeEngine
 			return transform;
 		}
 	}
+
+	Scene* Entity::get_scene()
+	{
+		return scene; 
+	} 
 }

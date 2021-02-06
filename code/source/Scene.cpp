@@ -14,18 +14,22 @@
 #include "Kernel.h"
 #include "Task.h"
 #include "Entity.h"
+#include "Component.h"
 
 namespace LightCubeEngine
 {
 	Scene::Scene(Window& _window) 
 	{
 		window = &_window;
-
-		// Añado las tareas ( input -> update -> render  )
-		kernel->add_task(render);
+		
+		kernel.reset(new Kernel()); 
+		render.reset(new Render_System(*this));
 
 		// Cargo la escena
 		load_scene("");
+
+		// Añado las tareas ( input -> update -> render  )
+		kernel->add_task(render);
 	}
 
 
@@ -42,11 +46,22 @@ namespace LightCubeEngine
 	// TODO
 	void Scene::load_scene(const std::string&)
 	{
-		auto scenario = make_shared< Entity >();
+		shared_ptr<Entity> e( new Entity(*this));
+		//shared_ptr< glt::Model_Obj > scenario(new glt::Model_Obj("../../resources/scenario_demo.obj"));
 
-		//scenario->add_component("scenario", render->create_mesh_component("scenario", "../../resources/scenario_demo.obj"));
-		entities["scenario"] = scenario;
-		
+	
+		e->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
+		( 
+			"scenario", 
+			"../../resources/scenario_demo.obj",
+			*e.get(),
+			render.get()
+		)
+		));
+
+		//render->renderer->add("scenario", make_shared<glt::Model_Obj>(glt::Model_Obj("../../resources/scenario_demo.obj")));
+
+		this->add_entity("scenario", e);	
 	}
 
 	/// <summary>
@@ -72,11 +87,20 @@ namespace LightCubeEngine
 		}
 	}
 
-	std::map<std::string, std::shared_ptr< Entity > > Scene::get_entities()
+	std::map<std::string, std::shared_ptr< Entity > > &Scene::get_entities()
 	{
-		if (entities.size() > 0)
-		{
-			return entities;
-		}
+		return this->entities;
 	}
+
+	void Scene::add_entity(std::string id, std::shared_ptr<Entity> e)
+	{
+		entities.insert(pair< std::string, std::shared_ptr< Entity > >(id, e));	
+	}
+
+	std::shared_ptr<Render_System> &Scene::get_renderer()
+	{
+		return render; 
+	}
+
+
 }
