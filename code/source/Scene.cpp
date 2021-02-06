@@ -43,25 +43,130 @@ namespace LightCubeEngine
 		kernel->stop();
 	}
 
-	// TODO
+	/// <summary>
+	/// Clase encargada de añadir y crear todas las entidades de la escena
+	/// </summary>
+	/// <param name=""> Posible XML de la escena a cargar (TODO) </param>
 	void Scene::load_scene(const std::string&)
 	{
-		shared_ptr<Entity> e( new Entity(*this));
-		//shared_ptr< glt::Model_Obj > scenario(new glt::Model_Obj("../../resources/scenario_demo.obj"));
+		// SCENARIO
 
-	
-		e->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
+		shared_ptr<Entity> scenario( new Entity(*this));
+
+		scenario->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
 		( 
 			"scenario", 
 			"../../resources/scenario_demo.obj",
-			*e.get(),
+			*scenario.get(),
 			render.get()
 		)
 		));
 
-		//render->renderer->add("scenario", make_shared<glt::Model_Obj>(glt::Model_Obj("../../resources/scenario_demo.obj")));
+		this->add_entity("scenario", scenario);	
 
-		this->add_entity("scenario", e);	
+
+		// PLAYER
+
+		shared_ptr<Entity> player(new Entity(*this));
+
+		player->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
+		(
+			"player",
+			"../../resources/player.obj",
+			*player.get(),
+			render.get()
+		)
+			));
+
+		this->add_entity("player", player);
+
+		// NUMBERS
+
+		shared_ptr<Entity> number_1(new Entity(*this));
+
+		number_1->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
+		(
+			"number_1",
+			"../../resources/number_1.obj",
+			*number_1.get(),
+			render.get()
+		)
+			));
+
+		this->add_entity("number_1", number_1);
+
+		number_1->get_transform()->set_position(glm::vec3(-7.f, 0.f, -8.f));
+
+
+
+		shared_ptr<Entity> number_2(new Entity(*this));
+
+		number_2->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
+		(
+			"number_2",
+			"../../resources/number_2.obj",
+			*number_2.get(),
+			render.get()
+		)
+			));
+
+		this->add_entity("number_2", number_2);
+
+		number_2->get_transform()->set_position(glm::vec3(8.f, 0.f, -2.f));
+
+
+
+
+		shared_ptr<Entity> number_3(new Entity(*this));
+
+		number_3->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
+		(
+			"number_3",
+			"../../resources/number_3.obj",
+			*number_3.get(),
+			render.get()
+		)
+			));
+
+		this->add_entity("number_3", number_3);
+
+		number_3->get_transform()->set_position(glm::vec3(-8.f, 0.f, 4.f));
+
+
+
+
+		shared_ptr<Entity> number_4(new Entity(*this));
+
+		number_4->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
+		(
+			"number_4",
+			"../../resources/number_4.obj",
+			*number_4.get(),
+			render.get()
+		)
+			));
+
+		this->add_entity("number_4", number_4);
+
+		number_4->get_transform()->set_position(glm::vec3(0.f, 0.f, -5.f));
+
+
+
+
+		shared_ptr<Entity> number_5(new Entity(*this));
+
+		number_5->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
+		(
+			"number_5",
+			"../../resources/number_5.obj",
+			*number_5.get(),
+			render.get()
+		)
+			));
+
+		this->add_entity("number_5", number_5);
+
+		number_5->get_transform()->set_position(glm::vec3(2.5f, 0.f, 8.f));
 	}
 
 	/// <summary>
@@ -71,6 +176,15 @@ namespace LightCubeEngine
 	LC_Graphics::Window* Scene::get_window()
 	{
 		return window;
+	}
+
+	/// <summary>
+	/// Se obtiene el render de la escena
+	/// </summary>
+	/// <returns> puntero al sistema de render </returns>
+	std::shared_ptr<Render_System>& Scene::get_renderer()
+	{
+		return render;
 	}
 	 
 	/// <summary>
@@ -87,20 +201,26 @@ namespace LightCubeEngine
 		}
 	}
 
+	/// <summary>
+	/// Se obtiene el mapa de entidades
+	/// </summary>
+	/// <returns> devuelve un puntero al mapa </returns>
 	std::map<std::string, std::shared_ptr< Entity > > &Scene::get_entities()
 	{
 		return this->entities;
 	}
 
-	void Scene::add_entity(std::string id, std::shared_ptr<Entity> e)
+	/// <summary>
+	/// Añede una entidad al mapa
+	/// </summary>
+	/// <param name="id"> id único asociado a la entidad</param>
+	/// <param name="entity"> puntero a la entidad </param>
+	void Scene::add_entity(std::string id, std::shared_ptr<Entity> entity)
 	{
-		entities.insert(pair< std::string, std::shared_ptr< Entity > >(id, e));	
+		entities.insert(pair< std::string, std::shared_ptr< Entity > >(id, entity));	
 	}
 
-	std::shared_ptr<Render_System> &Scene::get_renderer()
-	{
-		return render; 
-	}
+
 
 
 }

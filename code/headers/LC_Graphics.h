@@ -98,7 +98,7 @@ namespace LC_Graphics
 	};
 
 	/// <summary>
-	/// Clase encargada del renderizado provisional de la escena usando OpenGL-Tookit
+	/// Clase encargada del renderizado provisional (antiguo método) de la escena usando OpenGL-Tookit
 	/// </summary>
 	class SceneRenderer
 	{

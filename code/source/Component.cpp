@@ -43,10 +43,38 @@ namespace LightCubeEngine
 		return transform_matrix;
 	}
 
+	/// <summary>
+	/// Obtiene el vector resultante de la transformación del fotograma
+	/// </summary>
+	/// <returns> devuelve el vector resultante de la operación de la matriz </returns>
 	glm::vec4 Transform_Component::get_transform_vector() const
 	{
 		glm::vec4 transformed_vector = glm::vec4() * get_matrix();
 		return transformed_vector;
+	}
+
+	void Transform_Component::set_position(glm::vec3 new_position)
+	{
+		position = new_position;
+	}
+	void Transform_Component::set_rotation_x(float _rot_x)
+	{
+		auto transformation = get_matrix();
+		rot_angle = _rot_x;
+
+		transformation = glm::rotate(transformation, rot_angle, glm::vec3(1.f, 0.f, 0.f));
+	}
+	void Transform_Component::set_rotation_y(float _rot_y)
+	{
+		rotation += glm::vec3(0.f, _rot_y, 0.f);
+	}
+	void Transform_Component::set_rotation_z(float _rot_z)
+	{
+		rotation += glm::vec3(0.f, 0.f, _rot_z);
+	}
+	void Transform_Component::set_scale(glm::vec3 new_scale)
+	{
+		scale = new_scale;
 	}
 
 	Camera_Component::Camera_Component(shared_ptr< glt::Camera > _camera) : camera (_camera) {};
@@ -57,7 +85,9 @@ namespace LightCubeEngine
 		mesh = make_shared<glt::Model_Obj>(glt::Model_Obj(model_path));
 		parent = &e; 
 		render->renderer->add(id, mesh); 
-		//parent->get_scene()->get_renderer()->renderer->add(id, mesh);
 	};
+
+	Audio_Component::Audio_Component(LC_Audio::Music& _music) : music(&_music) {};
+	Audio_Component::Audio_Component(LC_Audio::Sound& _sound) : sound(&_sound) {};
 	
 }

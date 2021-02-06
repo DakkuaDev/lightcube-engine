@@ -30,6 +30,7 @@ namespace LightCubeEngine
 	{
 		renderer.reset(new glt::Render_Node);
 
+		// Inicialización mínima de la escena (Cámara y fuente de luz)
 		shared_ptr< glt::Camera > camera(new glt::Camera(20.f, 1.f, 50.f, 1.f));
 		shared_ptr< glt::Light  > light(new glt::Light);
 
@@ -43,8 +44,6 @@ namespace LightCubeEngine
 	
 	}
 
-	//Input_Task::Input_Task() : Task::Task()
-
 	void Render_System::initialize()
 	{	
 		GLsizei width = GLsizei(scene->get_window()->get_width());
@@ -57,10 +56,15 @@ namespace LightCubeEngine
 
 	void Render_System::update(float delta)
 	{
+		// Limpio el fotograma anterior
 		scene->get_window()->clear();
 
 		// paralelamente también actualizo el transform del modelo GL-Toolkits
-		auto entity_map = scene->get_entities();
+		auto entity_map = scene->get_entities();	
+
+		//TODO: Giro de los números
+		//scene->get_entity("number_1")->get_transform()->set_rotation_x(0.5);
+		
 
 		for (auto mesh = entity_map.begin(); mesh != entity_map.end(); mesh++)
 		{
@@ -69,34 +73,16 @@ namespace LightCubeEngine
 
 			if (component != nullptr)
 			{
-				//mesh->second->get_transform()->get_matrix();
-
 				std::static_pointer_cast<Mesh_Component>(component)->get_mesh()->set_transformation(mesh->second->get_transform()->get_matrix());
 			}
 		}
 
+
+		// Renderizo el nuevo fotograma
 		renderer->render();
+
+		// Cambio los buffers 
 		scene->get_window()->swap_buffers();
 	}
-
-	// //<summary>
-	// //Se crea un nuevo componente de renderizado de maya
-	// //</summary>
-	// //<param name="id">  identificador del componente (único) </param>
-	// //<param name="obj_file_path"> ruta del archivo que se le pasa como .obj </param>
-	// //<returns></returns>
-	//shared_ptr< Component > Render_System::create_mesh_component(std::string id, std::string obj_file_path) 
-	//{
-	//	auto mesh = make_shared < glt::Model_Obj >(obj_file_path);
-	//	renderer->add(id, mesh);
-	//	auto mesh_component = make_shared < Mesh_Component >(mesh); 
-
-	//	return mesh_component;
-	//}
-
-	//std::unique_ptr<glt::Render_Node> Render_System::get_renderer()
-	//{
-	//	return renderer;
-	//}
 
 }

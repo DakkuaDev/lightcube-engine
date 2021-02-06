@@ -40,9 +40,7 @@ namespace LightCubeEngine
 		~Kernel() = default;
 
 	public:
-		// TODO: Crear estados (ciclo de vida): Inicialización (cargado de datos) , running, 
-		// pausado (la aplicación pasa a un segundo plano) , detener (guardado de datos importantes) y finalización
-		// Puede ser interesante guardar punteros a objetos con std:fuction para hacer callbacks a los estados del ciclo de vida
+
 		void run();
 		void stop();
 

@@ -39,9 +39,11 @@ namespace LightCubeEngine
 		~Entity() = default;
 
 	public:
-		void add_component(id, std::shared_ptr< Component > new_component);
 		std::shared_ptr< Component > get_component(id);
+		void add_component(id, std::shared_ptr< Component > new_component);
+
 		std::shared_ptr< Transform_Component > get_transform();
+
 		Scene* get_scene(); 
 	};
 }

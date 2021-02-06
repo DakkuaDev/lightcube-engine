@@ -20,6 +20,7 @@
 #include <Model_Obj.hpp>
 
 #include "LC_Math.h"
+#include "LC_Audio.h"
 
 using namespace std;
 using namespace glm;
@@ -48,8 +49,6 @@ namespace LightCubeEngine
 		~Component() = default;
 	};
 
-	// TODO: Crear el resto de componentes necesarios (control: scripting, audio)
-
 	/// <summary>
 	/// Componente de la matriz de transformación (pósición, rotación y escala) asociada a la entidad
 	/// </summary>
@@ -69,6 +68,12 @@ namespace LightCubeEngine
 	public:
 		glm::mat4 get_matrix() const;
 		glm::vec4 get_transform_vector() const;
+
+		void set_position(glm::vec3 new_position);
+		void set_rotation_x(float rot_x);
+		void set_rotation_y(float rot_y);
+		void set_rotation_z(float rot_z);
+		void set_scale(glm::vec3 new_scale);
 	};
 
 	/// <summary>
@@ -129,9 +134,19 @@ namespace LightCubeEngine
 		}
 	};
 
-	// TODO
+	/// <summary>
+	/// Componente de sonido de la entidad
+	/// </summary>
 	class Audio_Component : public Component
 	{
+		LC_Audio::Music* music;
+		LC_Audio::Sound* sound;
 
+	public:
+
+		Audio_Component() = default;
+		Audio_Component(LC_Audio::Music& music);
+		Audio_Component(LC_Audio::Sound& sound);
+		~Audio_Component() = default;
 	};
 }

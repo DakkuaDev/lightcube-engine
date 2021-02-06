@@ -70,8 +70,6 @@ namespace LightCubeEngine
 	public:
 		void initialize();
 		void update(float delta);
-		//std::unique_ptr<glt::Render_Node> get_renderer();
-		//shared_ptr< Component > create_mesh_component(id, std::string obj_file_path);
 	};
 
 	//class Input_Task : public Task

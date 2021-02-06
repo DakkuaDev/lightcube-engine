@@ -20,7 +20,9 @@ namespace LightCubeEngine
 	Entity::Entity(Scene &_scene)
 	{
 		scene = &_scene; 
-		transform = std::make_shared<Transform_Component>(Transform_Component(glm::vec3 (0,0,0), glm::vec3 (0,0,0), 0, glm::vec3(1,1,1))); 
+
+		// Transform inicial compartido por las entidades
+		transform = std::make_shared<Transform_Component>(Transform_Component(glm::vec3 (0,0,0), glm::vec3 (0,0,0), 90, glm::vec3(1,1,1))); 
 	}
 
 	/// <summary>
@@ -63,6 +65,10 @@ namespace LightCubeEngine
 		}
 	}
 
+	/// <summary>
+	/// Se obtiene la escena
+	/// </summary>
+	/// <returns> puntero a la escena </returns>
 	Scene* Entity::get_scene()
 	{
 		return scene; 
