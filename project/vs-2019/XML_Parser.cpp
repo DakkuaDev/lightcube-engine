@@ -76,8 +76,12 @@ void Serialization::read_xml()
     }
 }
 
-// Se tiene una función para cada tipo de etiqueta del XML
 
+/// <summary>
+/// Parsea la información del XML (TODO)
+/// </summary>
+/// <param name="scene_node"> nodo correspondiente a su etiqueta </param>
+/// <returns> bool </returns>
 bool Serialization::parse_scene(xml_node<>* scene_node)
 {
     if (std::string(scene_node->name()) != "scene") return false;

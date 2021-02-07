@@ -26,6 +26,7 @@ namespace LightCubeEngine
 	class Kernel;
 	class Task;
 	class Render_System;
+	class Input_Task;
 	class Mesh_Component;
 	class Entity;
 
@@ -36,6 +37,7 @@ namespace LightCubeEngine
 
 		// TODO: Añadir las tareas y sistemas que falten
 		std::shared_ptr< Render_System > render;
+		std::shared_ptr< Input_Task > input;
 
 		typedef std::string id;
 

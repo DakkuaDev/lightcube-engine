@@ -18,6 +18,9 @@ using namespace std;
 
 namespace LC_Audio
 {
+	/// <summary>
+	/// Clase de reprodución de Música 
+	/// </summary>
 	class Music
 	{
 	private:
@@ -44,6 +47,9 @@ namespace LC_Audio
 		void init();
 	};
 
+	/// <summary>
+	/// Clase de reproducción de sonido
+	/// </summary>
 	class Sound
 	{
 		Mix_Chunk* sound = nullptr;

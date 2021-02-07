@@ -10,48 +10,21 @@
  * Contact: daniel.guerra.gallardo99@gmail.com
  */
 
-#include <SDL.h>
-#include <OpenGL.hpp>
 #include "LC_Graphics.h"
 
 using namespace LC_Graphics;
 using namespace std;
 
 
+LC_Graphics::Keyboard::Keyboard(Window& _window) 
+{
+	window = &_window;
+}
+
 /// <summary>
 /// Listado de eventos capturados por teclado
 /// </summary>
-std::string LC_Graphics::Keyboard::poll_events()
+void LC_Graphics::Keyboard::poll_events()
 {
-	SDL_Event event;
-
-	if (SDL_PollEvent(&event))
-	{
-		switch ( event.type)
-		{
-		case SDL_KEYDOWN:
-		{
-			// Si se pulsan ciertas teclas se borra el contenido de la ventana:
-
-			switch (event.key.keysym.sym)
-			{
-			case SDLK_SPACE:
-				SDL_Log("Has pulsado la barra espaciadora");
-				return "space";
-				
-				break;
-
-			case SDLK_KP_ENTER:
-				SDL_Log("Has pulsado la tecla 'Enter'");
-				return "enter";
-				break;
-			}
-			break;
-		}
-		case SDL_QUIT:
-			
-		default:
-			break;
-		}
-	}
+	window->poll_events();	
 }

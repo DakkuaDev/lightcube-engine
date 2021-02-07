@@ -59,7 +59,7 @@ namespace LC_Utils
     // Code Blacksmith
     // https://twitter.com/codeblacksmith
 
-    // Clases: String (Modificada), Asset
+    // Clases: String (Modificada)
     // Angel Rodrigez
     // angel.rodriguez@esne.edu
 
@@ -72,7 +72,7 @@ namespace LC_Utils
     /// <typeparam name="T"> El objeto que se le pasa</typeparam>
     /// <typeparam name="size"> Tamaño de la piscina de objetos</typeparam>
     template<class T, size_t size = 2048>
-    class ObjectPool final
+    class ObjectPool final // TODO: Separar en Cabecera + Implementación
     {
     public:
         const static std::size_t Size = size;
@@ -194,7 +194,7 @@ namespace LC_Utils
     /// <summary>
     /// Clase string genérica para añadir funcionalidad adicional a C++ 
     /// </summary>
-    class String
+    class String // TODO: Separar en Cabecera + Implementación
     {
     public:
 
@@ -267,24 +267,6 @@ namespace LC_Utils
                 for (auto c : *this) cout << c;
             }
             cout << endl;
-
-            /* char* buffer = new char[100];
-             if (chars)
-             {
-                 for (auto c : *this) *buffer++ = c;
-             }
-             return buffer;*/
-
-             //const size_t total = length();
-             //char* buffer = new char[total];
-             //char* source = begin();
-             //
-             //for (int i = 0; i < total; ++i)
-             //{
-             //    buffer[i] = source[i];
-             //    buffer++; source++;
-             //}
-            /* return chars;*/
         }
 
     public:
@@ -359,8 +341,6 @@ namespace LC_Utils
         std::string file_name;
         std::string path = "../../../lightcube-engine/resources/";    
         std::string resource;
-
-        // TODO: Añadir los objetos de retorno del parser XML
 
     public:
 
@@ -458,39 +438,6 @@ namespace LC_Utils
                 }              
             }
         }
-
-    };
-
-    /// <summary>
-    /// Clase Serialization encapsulada con capacidad de multi-motor
-    /// </summary>
-    class Asset
-    {
-
-        std::ifstream reader;
-
-    public:
-
-        Asset(const string& path) : reader(path)
-        {
-        }
-
-        byte get()
-        {
-            return byte(reader.get());
-        }
-
-        size_t read(byte* buffer, size_t amount)
-        {
-            reader.read(reinterpret_cast<char*>(buffer), amount);
-
-            return reader.gcount();
-        }
-
-        bool good() { return reader.good(); }
-        bool bad() { return reader.bad(); }
-        bool fail() { return reader.fail(); }
-        bool eof() { return reader.eof(); }
 
     };
 }

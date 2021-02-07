@@ -2,5 +2,43 @@
   Component.cpp
 D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
 D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  Entity.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  Kernel.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(371,32): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winbase.h(716,1): warning C4005: 'STD_OUTPUT_HANDLE': macro redefinition
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(35): message : see previous definition of 'STD_OUTPUT_HANDLE'
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  Music.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  Scene.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(371,32): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+  Sound.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  String.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(371,32): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+  Task.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  Window.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  Keyboard.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  XML_Parser.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\project\vs-2019\XML_Parser.cpp(13,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(371,32): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+D:\Dev\LightCube_Engine\lightcube-engine\project\vs-2019\XML_Parser.cpp(32,24): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+  Generating Code...
+D:\Dev\LightCube_Engine\lightcube-engine\code\source\Scene.cpp(204): warning C4715: 'LightCubeEngine::Scene::get_entity': not all control paths return a value
+D:\Dev\LightCube_Engine\lightcube-engine\code\source\Entity.cpp(54): warning C4715: 'LightCubeEngine::Entity::get_component': not all control paths return a value
+D:\Dev\LightCube_Engine\lightcube-engine\code\source\Entity.cpp(66): warning C4715: 'LightCubeEngine::Entity::get_transform': not all control paths return a value
   Replacing x64\Debug\Music.obj
   lightcube-engineVS.vcxproj -> D:\Dev\LightCube_Engine\demo-game\project\vs-2019\x64\Debug\lightcube-engine.lib

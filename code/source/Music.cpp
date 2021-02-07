@@ -18,21 +18,14 @@
 using namespace LC_Audio;
 using namespace std;
 
-/// <summary>
-/// Constructor de la reproducción de música 
-/// </summary>
-/// <param name="_frequency"> Frecuencia de sonido</param>
-/// <param name="_channels"> Número de canales</param>
-/// <param name="_chunksize"> Capacidad de chucks reservados a sonido</param>
+
 LC_Audio::Music::Music(int _frequency, int _channels, int _chunksize)
 	:frequency(_frequency),channels(_channels), chunksize(_chunksize)
 {
 	Music::init();
 }
 
-/// <summary>
-/// Destructor de la reproducción de música 
-/// </summary>
+
 LC_Audio::Music::~Music()
 {
 	Mix_CloseAudio();

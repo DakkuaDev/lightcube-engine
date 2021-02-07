@@ -27,7 +27,6 @@ using namespace glt;
 namespace LC_Graphics
 {
 	// Funciones: get_width(),  get_height(), clear(), swap_buffers(), enable_vsync(), disable_vsync()
-	// Clase: SceneRenderer (Sample_Renderer)
 	// Angel Rodrigez
 	// angel.rodriguez@esne.edu
 
@@ -56,27 +55,16 @@ namespace LC_Graphics
 		inline bool is_closed() const { return closed; }
 		inline void set_closed(bool is) { closed = is; }
 
-		/** Retorna el ancho actual de la ventana (el usuario puede cambiarlo).
-			*/
 		unsigned get_width() const;
-
-		/** Retorna el alto actual de la ventana (el usuario puede cambiarlo).
-			*/
 		unsigned get_height() const;
 
-		/** Borra el buffer de la pantalla usando OpenGL.
-			*/
 		void clear() const;
-
-		/** Intercambia el buffer visible con el buffer oculto.
-			*/
 		void swap_buffers() const;
 
-		/* Activar y desactivar sincronización vertical */
 		void enable_vsync();
 		void disable_vsync();
 
-
+		void poll_events();
 
 	private:
 
@@ -88,13 +76,15 @@ namespace LC_Graphics
 	/// </summary>
 	class Keyboard
 	{
+		Window* window;
+
 	public:
 		Keyboard() = default;
+		Keyboard(Window& window);
 		~Keyboard() = default;
 
 	public:
-		std::string poll_events();
-
+		void poll_events();
 	};
 
 	/// <summary>

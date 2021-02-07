@@ -19,7 +19,7 @@
 
 using namespace std;
 
-namespace LC_Math
+namespace LC_Math // TODO: Separar en Cabecera + Implementación
 {
 
     // Clases: Vector (Modificada)

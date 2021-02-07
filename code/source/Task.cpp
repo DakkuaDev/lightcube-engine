@@ -15,8 +15,12 @@
 #include "Entity.h"
 #include "Scene.h"
 #include "Component.h"
+
 #include <iostream>
 #include <Render_Node.hpp>
+
+#include <SDL.h>
+#include <OpenGL.hpp>
 
 namespace LightCubeEngine
 {
@@ -83,6 +87,23 @@ namespace LightCubeEngine
 
 		// Cambio los buffers 
 		scene->get_window()->swap_buffers();
+	}
+
+	void Render_System::finalize()
+	{
+		
+	}
+
+	Input_Task::Input_Task(Scene& _scene) : Task::Task(_scene) 
+	{
+		input_keyboard.reset(new Keyboard(*scene->get_window()));
+	}
+
+	void Input_Task::initialize() {}
+
+	void Input_Task::update(float delta)
+	{
+		input_keyboard->poll_events();
 	}
 
 }

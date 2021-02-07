@@ -51,8 +51,6 @@ namespace LightCubeEngine
 		virtual void update(float delta) = 0; 
 	};
 
-	// TODO: Añadir tarea de lectura de input del teclado, el sistema de sonido, y el sistema de control
-
 	/// <summary>
 	/// Sistema encargado de procesar el renderizado gráfico 
 	/// </summary>
@@ -70,20 +68,24 @@ namespace LightCubeEngine
 	public:
 		void initialize();
 		void update(float delta);
+		void finalize();
 	};
 
-	//class Input_Task : public Task
-	//{
-	//	std::unique_ptr< LC_Graphics::Keyboard > input_keyboard;
+	/// <summary>
+	/// Tarea encargada de procesar los eventos de teclado
+	/// </summary>
+	class Input_Task : public Task
+	{
+		std::shared_ptr< LC_Graphics::Keyboard > input_keyboard;
 
-	//public:
-	//	Input_Task() = default;
-	//	Input_Task(Scene& scene);
-	//	~Input_Task() = default;
+	public:
+		Input_Task() = default;
+		Input_Task(Scene& scene);
+		~Input_Task() = default;
 
-	//public:
-	//	void initialize();
-	//	void update(float delta);
-	//}
+	public:
+		void initialize();
+		void update(float delta);
+	};
 }
 

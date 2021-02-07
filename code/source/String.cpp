@@ -148,7 +148,7 @@ bool LC_Utils::String::operator == (const String & other) const
     return true;
 }
 
-// No funciona correctamente
+// NO FUNCIOAN LA SOBRECARGA DE OPERADOR 
 ostream& operator << (ostream& out, LC_Utils::String& string)
 {
 
