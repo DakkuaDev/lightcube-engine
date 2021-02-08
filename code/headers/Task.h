@@ -78,9 +78,32 @@ namespace LightCubeEngine
 		std::shared_ptr< LC_Graphics::Keyboard > input_keyboard;
 
 	public:
+		std::string key;
+
+	public:
 		Input_Task() = default;
 		Input_Task(Scene& scene);
 		~Input_Task() = default;
+
+	public:
+		void update(float delta);
+	};
+
+	/// <summary>
+	/// Tarea encargada del control de la demo
+	/// </summary>
+	class Control_Task : public Task
+	{
+		Input_Task* input;
+
+		int horizontal_move = 0;
+		int vertical_move = 0;
+		int priority = 0;
+
+	public:
+		Control_Task() = default;
+		Control_Task(Scene& scene, Input_Task& input);
+		~Control_Task() = default;
 
 	public:
 		void update(float delta);

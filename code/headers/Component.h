@@ -75,6 +75,10 @@ namespace LightCubeEngine
 		void rotate_y(float rot_y);
 		void rotate_z(float rot_z);
 		void set_scale(glm::vec3 new_scale);
+
+		glm::vec3 get_position();
+		glm::vec3 get_rotation();
+		glm::vec3 get_scale();
 	};
 
 	/// <summary>

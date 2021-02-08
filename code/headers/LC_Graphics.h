@@ -88,7 +88,7 @@ namespace LC_Graphics
 	};
 
 	/// <summary>
-	/// Clase encargada del renderizado provisional (antiguo método) de la escena usando OpenGL-Tookit
+	/// Clase encargada del renderizado de la escena usando OpenGL-Tookit (Necesario para que funcione la libreria)
 	/// </summary>
 	class SceneRenderer
 	{
@@ -107,7 +107,6 @@ namespace LC_Graphics
 
 	public:
 
-		SceneRenderer(Window& given_window, Keyboard& given_keyboard);
 		SceneRenderer(Window& given_window);
 
 		/** En este caso es necesario definir explícitamente el destructor en el archivo

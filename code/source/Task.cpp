@@ -22,6 +22,8 @@
 #include <SDL.h>
 #include <OpenGL.hpp>
 
+using namespace glm;
+
 namespace LightCubeEngine
 {
 
@@ -72,12 +74,7 @@ namespace LightCubeEngine
 		// paralelamente también actualizo el transform del modelo GL-Toolkits
 		auto entity_map = scene->get_entities();	
 
-		//TODO: Giro de los números
-		//scene->get_entity("_number1")->get_transform()->rotate_x(0.5f);
-		//scene->get_entity("_number2")->get_transform()->rotate_x(0.5f);
-		//scene->get_entity("_number3")->get_transform()->rotate_x(0.5f);
-		//scene->get_entity("_number4")->get_transform()->rotate_x(0.5f);
-		//scene->get_entity("_number5")->get_transform()->rotate_x(0.5f);
+
 
 		for (auto mesh = entity_map.begin(); mesh != entity_map.end(); mesh++)
 		{
@@ -102,29 +99,104 @@ namespace LightCubeEngine
 	Input_Task::Input_Task(Scene& _scene) : Task::Task(_scene) 
 	{
 		input_keyboard.reset(new Keyboard(*scene->get_window()));
+		key = "";
 	}
 
 	void Input_Task::update(float delta)
 	{
-		std::string key = input_keyboard->poll_events();
+		key = input_keyboard->poll_events();
+	}
 
+	Control_Task::Control_Task(Scene& _scene, Input_Task& _input) : Task::Task(_scene)
+	{
+		input = &_input;
+	}
 
-		// PLAYER 
-		if (key == "up")
+	void Control_Task::update(float delta)
+	{
+
+		// Control del jugador 
+		auto _player = scene->get_entity("player")->get_transform();
+
+		if (input->key == "up" && vertical_move < 25)
 		{
-			scene->get_entity("player")->get_transform()->translate(glm::vec3(0.f, 0.f, -0.5f));
+			_player->translate(glm::vec3(0.f, 0.f, -0.5f));
+			vertical_move += 1;
 		}
-		else if (key == "down")
+		else if (input->key == "down" && vertical_move > -25)
 		{
-			scene->get_entity("player")->get_transform()->translate(glm::vec3(0.f, 0.f, 0.5f));
+			_player->translate(glm::vec3(0.f, 0.f, 0.5f));
+			vertical_move -= 1;
 		}
-		else if (key == "right")
+		else if (input->key == "right" && horizontal_move < 15)
 		{
-			scene->get_entity("player")->get_transform()->translate(glm::vec3(0.5f, 0.f, 0.f));
+			_player->translate(glm::vec3(0.5f, 0.f, 0.f));
+			horizontal_move += 1;
 		}
-		else if (key == "left")
+		else if (input->key == "left" && horizontal_move > -18)
 		{
-			scene->get_entity("player")->get_transform()->translate(glm::vec3(-0.5f, 0.f, 0.f));
+			_player->translate(glm::vec3(-0.5f, 0.f, 0.f));
+			horizontal_move -= 1;
+		}
+
+		// Mecánica: Recolecta de números
+		auto _number_1 = scene->get_entity("number_1")->get_transform();
+		auto _number_2 = scene->get_entity("number_2")->get_transform();
+		auto _number_3 = scene->get_entity("number_3")->get_transform();
+		auto _number_4 = scene->get_entity("number_4")->get_transform();
+		auto _number_5 = scene->get_entity("number_5")->get_transform();
+
+		//TODO: rotar los números
+
+		float distance_1 = glm::length(_number_1->get_position() - _player->get_position());
+		float distance_2 = glm::length(_number_2->get_position() - _player->get_position());
+		float distance_3 = glm::length(_number_3->get_position() - _player->get_position());
+		float distance_4 = glm::length(_number_4->get_position() - _player->get_position());
+		float distance_5 = glm::length(_number_5->get_position() - _player->get_position());
+
+		if (distance_1 <= 1)
+		{
+			if (priority == 0)
+			{
+				_number_1->set_position(glm::vec3(99.f, 99.f, 99.f));
+				priority++;
+			}
+		}
+
+		if (distance_2 <= 1)
+		{
+			if (priority == 1)
+			{
+				_number_2->set_position(glm::vec3(99.f, 99.f, 99.f));
+				priority++;
+			}
+		}
+
+		if (distance_3 <= 1)
+		{
+			if (priority == 2)
+			{
+				_number_3->set_position(glm::vec3(99.f, 99.f, 99.f));
+				priority++;
+			}
+		}
+
+		if (distance_4 <= 1)
+		{
+			if (priority == 3)
+			{
+				_number_4->set_position(glm::vec3(99.f, 99.f, 99.f));
+				priority++;
+			}
+		}
+
+		if (distance_5 <= 1)
+		{
+			if (priority == 4)
+			{
+				_number_5->set_position(glm::vec3(99.f, 99.f, 99.f));
+				priority++;
+			}
 		}
 	}
 

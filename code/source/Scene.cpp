@@ -24,14 +24,17 @@ namespace LightCubeEngine
 		
 		kernel.reset(new Kernel()); 
 		input.reset(new Input_Task(*this));
+		control.reset(new Control_Task(*this, *input));
 		render.reset(new Render_System(*this));
 
 		// Cargo la escena
 		load_scene("");
 
-		// Añado las tareas ( input -> update -> render  )
+		// Añado las tareas 
 		kernel->add_task(input);
+		kernel->add_task(control);
 		kernel->add_task(render);
+
 	}
 
 

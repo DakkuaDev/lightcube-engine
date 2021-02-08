@@ -97,6 +97,21 @@ namespace LightCubeEngine
 		scale = new_scale;
 	}
 
+	glm::vec3 Transform_Component::get_position()
+	{
+		return position;
+	}
+
+	glm::vec3 Transform_Component::get_rotation()
+	{
+		return rotation;
+	}
+
+	glm::vec3 Transform_Component::get_scale()
+	{
+		return scale;
+	}
+
 	Camera_Component::Camera_Component(shared_ptr< glt::Camera > _camera) : camera (_camera) {};
 	Light_Component::Light_Component(shared_ptr< glt::Light > _light) : light (_light) {};
 	Mesh_Component::Mesh_Component(std::string id, std::string model_path, Entity& e, Render_System *render) 
