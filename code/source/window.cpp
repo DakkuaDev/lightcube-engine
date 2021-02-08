@@ -147,7 +147,7 @@ void LC_Graphics::Window::disable_vsync()
 /// <summary>
 /// Eventos de teclado asociados a la ventana
 /// </summary>
-void LC_Graphics::Window::poll_events()
+std::string LC_Graphics::Window::poll_events()
 {
 	SDL_Event event;
 
@@ -161,19 +161,26 @@ void LC_Graphics::Window::poll_events()
 
 			switch (event.key.keysym.sym)
 			{
-			case SDLK_SPACE:
-				SDL_Log("Has pulsado la barra espaciadora");
-
+			case SDLK_w:
+				return "up";
 				break;
 
-			case SDLK_KP_ENTER:
-				SDL_Log("Has pulsado la tecla 'Enter'");
+			case SDLK_s:
+				return "down";
+				break;
+
+			case SDLK_a:
+				return "left";
+				break;
+
+			case SDLK_d:
+				return "right";
 				break;
 			}
 			break;
 		}
 		case SDL_QUIT:
-			// TODO: Tengo que llamar a finalización de tareas
+
 			this->set_closed(true);
 			
 
@@ -181,4 +188,6 @@ void LC_Graphics::Window::poll_events()
 			break;
 		}
 	}
+
+	return "false";
 }

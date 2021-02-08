@@ -60,6 +60,12 @@ namespace LightCubeEngine
 
 	void Render_System::update(float delta)
 	{
+		// Comprueba si el usuario ha cerrado la ventana
+		if (scene->get_window()->is_closed())
+		{
+			scene->stop();
+		}
+
 		// Limpio el fotograma anterior
 		scene->get_window()->clear();
 
@@ -67,8 +73,11 @@ namespace LightCubeEngine
 		auto entity_map = scene->get_entities();	
 
 		//TODO: Giro de los números
-		//scene->get_entity("number_1")->get_transform()->set_rotation_x(0.5);
-		
+		//scene->get_entity("_number1")->get_transform()->rotate_x(0.5f);
+		//scene->get_entity("_number2")->get_transform()->rotate_x(0.5f);
+		//scene->get_entity("_number3")->get_transform()->rotate_x(0.5f);
+		//scene->get_entity("_number4")->get_transform()->rotate_x(0.5f);
+		//scene->get_entity("_number5")->get_transform()->rotate_x(0.5f);
 
 		for (auto mesh = entity_map.begin(); mesh != entity_map.end(); mesh++)
 		{
@@ -89,21 +98,34 @@ namespace LightCubeEngine
 		scene->get_window()->swap_buffers();
 	}
 
-	void Render_System::finalize()
-	{
-		
-	}
 
 	Input_Task::Input_Task(Scene& _scene) : Task::Task(_scene) 
 	{
 		input_keyboard.reset(new Keyboard(*scene->get_window()));
 	}
 
-	void Input_Task::initialize() {}
-
 	void Input_Task::update(float delta)
 	{
-		input_keyboard->poll_events();
+		std::string key = input_keyboard->poll_events();
+
+
+		// PLAYER 
+		if (key == "up")
+		{
+			scene->get_entity("player")->get_transform()->translate(glm::vec3(0.f, 0.f, -0.5f));
+		}
+		else if (key == "down")
+		{
+			scene->get_entity("player")->get_transform()->translate(glm::vec3(0.f, 0.f, 0.5f));
+		}
+		else if (key == "right")
+		{
+			scene->get_entity("player")->get_transform()->translate(glm::vec3(0.5f, 0.f, 0.f));
+		}
+		else if (key == "left")
+		{
+			scene->get_entity("player")->get_transform()->translate(glm::vec3(-0.5f, 0.f, 0.f));
+		}
 	}
 
 }

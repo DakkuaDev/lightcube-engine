@@ -64,7 +64,7 @@ namespace LC_Graphics
 		void enable_vsync();
 		void disable_vsync();
 
-		void poll_events();
+		std::string poll_events();
 
 	private:
 
@@ -84,7 +84,7 @@ namespace LC_Graphics
 		~Keyboard() = default;
 
 	public:
-		void poll_events();
+		std::string poll_events();
 	};
 
 	/// <summary>

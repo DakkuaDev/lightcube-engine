@@ -70,9 +70,10 @@ namespace LightCubeEngine
 		glm::vec4 get_transform_vector() const;
 
 		void set_position(glm::vec3 new_position);
-		void set_rotation_x(float rot_x);
-		void set_rotation_y(float rot_y);
-		void set_rotation_z(float rot_z);
+		void translate(glm::vec3 coord);
+		void rotate_x(float rot_x);
+		void rotate_y(float rot_y);
+		void rotate_z(float rot_z);
 		void set_scale(glm::vec3 new_scale);
 	};
 

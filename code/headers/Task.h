@@ -44,11 +44,11 @@ namespace LightCubeEngine
 		// Inicialización de la tarea
 		virtual void initialize() {};
 
-		// Finalización de la tarea
-		virtual void finalize() {};
-
 		// Actualización de la tarea. delta: medición del refresco de actualización.
 		virtual void update(float delta) = 0; 
+
+		// Inicialización de la tarea
+		virtual void finalize() {};
 	};
 
 	/// <summary>
@@ -63,12 +63,11 @@ namespace LightCubeEngine
 	public:
 		Render_System() = default;
 		Render_System(Scene& scene);
-		~Render_System() = default;
+		~Render_System() {};
 
 	public:
 		void initialize();
 		void update(float delta);
-		void finalize();
 	};
 
 	/// <summary>
@@ -84,7 +83,6 @@ namespace LightCubeEngine
 		~Input_Task() = default;
 
 	public:
-		void initialize();
 		void update(float delta);
 	};
 }

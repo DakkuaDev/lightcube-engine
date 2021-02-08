@@ -23,8 +23,8 @@ namespace LightCubeEngine
 		window = &_window;
 		
 		kernel.reset(new Kernel()); 
-		render.reset(new Render_System(*this));
 		input.reset(new Input_Task(*this));
+		render.reset(new Render_System(*this));
 
 		// Cargo la escena
 		load_scene("");
@@ -194,12 +194,12 @@ namespace LightCubeEngine
 	/// </summary>
 	/// <param name="id"> identificador de la entidad (único) </param>
 	/// <returns> se devuelve el puntero a la entidad buscada </returns>
-	std::shared_ptr< Entity > Scene::get_entity(std::string id)
+	std::shared_ptr< Entity >& Scene::get_entity(std::string id)
 	{
 		if (entities.size() > 0)
 		{
-			auto ent = entities.at(id);
-			return ent;
+			auto ent = entities.find(id);
+			return ent->second;
 		}
 	}
 

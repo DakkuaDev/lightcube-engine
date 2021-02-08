@@ -53,25 +53,45 @@ namespace LightCubeEngine
 		return transformed_vector;
 	}
 
+	/// <summary>
+	/// Posiciona la traslación a unas nuevas coordenadas a la entidad
+	/// </summary>
+	/// <param name="new_position"> vector posición </param>
 	void Transform_Component::set_position(glm::vec3 new_position)
 	{
 		position = new_position;
 	}
-	void Transform_Component::set_rotation_x(float _rot_x)
-	{
-		auto transformation = get_matrix();
-		rot_angle = _rot_x;
 
-		transformation = glm::rotate(transformation, rot_angle, glm::vec3(1.f, 0.f, 0.f));
+	/// <summary>
+	/// Traslada sobre las anteriores coordenadas a la entidad
+	/// </summary>
+	/// <param name="coord"> vector traslación </param>
+	void Transform_Component::translate(glm::vec3 coord)
+	{
+		position += coord;
 	}
-	void Transform_Component::set_rotation_y(float _rot_y)
+
+	/// <summary>
+	/// Rota sobre las coordenadas anteriores de la entidad (x, y, z)
+	/// </summary>
+	/// <param name="_rot_x"></param>
+	void Transform_Component::rotate_x(float _rot_x)
+	{
+		rotation += glm::vec3(_rot_x, 0.f, 0.f);
+	}
+	void Transform_Component::rotate_y(float _rot_y)
 	{
 		rotation += glm::vec3(0.f, _rot_y, 0.f);
 	}
-	void Transform_Component::set_rotation_z(float _rot_z)
+	void Transform_Component::rotate_z(float _rot_z)
 	{
 		rotation += glm::vec3(0.f, 0.f, _rot_z);
 	}
+
+	/// <summary>
+	/// Fija una nueva escala a la entidad
+	/// </summary>
+	/// <param name="new_scale"> vector escala </param>
 	void Transform_Component::set_scale(glm::vec3 new_scale)
 	{
 		scale = new_scale;

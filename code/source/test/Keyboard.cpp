@@ -24,7 +24,7 @@ LC_Graphics::Keyboard::Keyboard(Window& _window)
 /// <summary>
 /// Listado de eventos capturados por teclado
 /// </summary>
-void LC_Graphics::Keyboard::poll_events()
+std::string LC_Graphics::Keyboard::poll_events()
 {
-	window->poll_events();	
+	return window->poll_events();	
 }

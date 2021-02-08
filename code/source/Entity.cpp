@@ -22,7 +22,7 @@ namespace LightCubeEngine
 		scene = &_scene; 
 
 		// Transform inicial compartido por las entidades
-		transform = std::make_shared<Transform_Component>(Transform_Component(glm::vec3 (0,0,0), glm::vec3 (0,0,0), 90, glm::vec3(1,1,1))); 
+		transform = std::make_shared<Transform_Component>(Transform_Component(glm::vec3 (0,0,0), glm::vec3 (0,0,0), 3.14f, glm::vec3(1,1,1)));
 	}
 
 	/// <summary>
@@ -57,12 +57,9 @@ namespace LightCubeEngine
 	/// Se obtiene el transform del componente
 	/// </summary>
 	/// <returns> puntero al transform buscado </returns>
-	std::shared_ptr< Transform_Component > Entity::get_transform()
+	std::shared_ptr< Transform_Component >& Entity::get_transform()
 	{	
-		if (transform != nullptr)
-		{
-			return transform;
-		}
+		return transform;
 	}
 
 	/// <summary>

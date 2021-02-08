@@ -1,23 +1,40 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (lightcube-engineVS.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Component.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
   Entity.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
   Kernel.cpp
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(388,32): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(371,32): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winbase.h(716,1): warning C4005: 'STD_OUTPUT_HANDLE': macro redefinition
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(33): message : see previous definition of 'STD_OUTPUT_HANDLE'
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(34,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(35): message : see previous definition of 'STD_OUTPUT_HANDLE'
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
   Music.cpp
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(34,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
   Scene.cpp
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(34,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(388,32): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(371,32): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
   Sound.cpp
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(34,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
   String.cpp
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(388,32): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(371,32): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
   Task.cpp
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(34,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+  Keyboard.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
   Window.cpp
-D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(34,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(23,24): warning C4091: 'typedef ': ignored on left of 'SDL_Event' when no variable is declared
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\internal\declarations.h(36,25): warning C4091: 'typedef ': ignored on left of 'Mix_Chunk' when no variable is declared
   winmain.cpp
+  XML_Parser.cpp
+D:\Dev\LightCube_Engine\lightcube-engine\project\vs-2019\XML_Parser.cpp(13,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(371,32): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+D:\Dev\LightCube_Engine\lightcube-engine\project\vs-2019\XML_Parser.cpp(32,24): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
   lightcube-engineVS.vcxproj -> D:\Dev\LightCube_Engine\demo-game\project\vs-2019\x64\Release\lightcube-engine.lib
