@@ -29,6 +29,7 @@ namespace LightCubeEngine
 	class Entity
 	{
 		Scene* scene;		
+
 		std::shared_ptr< Transform_Component > transform;
 
 		typedef std::string id;

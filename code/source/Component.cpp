@@ -44,6 +44,18 @@ namespace LightCubeEngine
 	}
 
 	/// <summary>
+	/// Jerarquia de escena (atachea una entidad padre a una hija)
+	/// </summary>
+	/// <param name="parent_entity"></param>
+	/// <returns></returns>
+	glm::mat4 Transform_Component::attached_to(std::shared_ptr< Entity >& parent_entity)
+	{
+		parent = parent_entity.get();
+
+		return parent->get_transform()->get_matrix() * this->get_matrix();
+	}
+
+	/// <summary>
 	/// Obtiene el vector resultante de la transformación del fotograma
 	/// </summary>
 	/// <returns> devuelve el vector resultante de la operación de la matriz </returns>
@@ -72,20 +84,12 @@ namespace LightCubeEngine
 	}
 
 	/// <summary>
-	/// Rota sobre las coordenadas anteriores de la entidad (x, y, z)
+	/// Rota sobe 'y' la entidad
 	/// </summary>
-	/// <param name="_rot_x"></param>
-	void Transform_Component::rotate_x(float _rot_x)
+	/// <param name="angle"> ángulo de rotación </param>
+	void Transform_Component::rotate(float angle)
 	{
-		rotation += glm::vec3(_rot_x, 0.f, 0.f);
-	}
-	void Transform_Component::rotate_y(float _rot_y)
-	{
-		rotation += glm::vec3(0.f, _rot_y, 0.f);
-	}
-	void Transform_Component::rotate_z(float _rot_z)
-	{
-		rotation += glm::vec3(0.f, 0.f, _rot_z);
+		rot_angle += angle;
 	}
 
 	/// <summary>
@@ -97,16 +101,28 @@ namespace LightCubeEngine
 		scale = new_scale;
 	}
 
+	/// <summary>
+	/// Devuelve el vector position
+	/// </summary>
+	/// <returns> vector posición </returns>
 	glm::vec3 Transform_Component::get_position()
 	{
 		return position;
 	}
 
+	/// <summary>
+	/// Devuelve el vector rotación
+	/// </summary>
+	/// <returns> vector rotación </returns>
 	glm::vec3 Transform_Component::get_rotation()
 	{
 		return rotation;
 	}
 
+	/// <summary>
+	/// Devuelve el vector escala
+	/// </summary>
+	/// <returns> vector escala </returns>
 	glm::vec3 Transform_Component::get_scale()
 	{
 		return scale;
@@ -121,8 +137,5 @@ namespace LightCubeEngine
 		parent = &e; 
 		render->renderer->add(id, mesh); 
 	};
-
-	Audio_Component::Audio_Component(LC_Audio::Music& _music) : music(&_music) {};
-	Audio_Component::Audio_Component(LC_Audio::Sound& _sound) : sound(&_sound) {};
 	
 }

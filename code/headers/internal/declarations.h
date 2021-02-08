@@ -20,7 +20,7 @@
 
 typedef struct SDL_Window   SDL_Window;
 typedef void* SDL_GLContext;
-typedef union SDL_Event;
+union SDL_Event;
 
 
 
@@ -33,7 +33,7 @@ typedef uint8_t Uint8;
 //////////////////////////////////// SDL MIXER ////////////////////////////////////////
 
 typedef struct _Mix_Music Mix_Music;
-typedef struct Mix_Chunk;
+struct Mix_Chunk;
 
 /////////////////////////////////// OPENGL TOOLKIT ////////////////////////////////////
 

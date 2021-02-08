@@ -54,10 +54,10 @@
     <ClCompile Include="..\..\code\source\Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\source\test\Keyboard.cpp">
+    <ClCompile Include="..\..\code\source\Keyboard.cpp">
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
-    <ClCompile Include="XML_Parser.cpp">
+    <ClCompile Include="..\..\code\source\XML_Parser.cpp">
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
   </ItemGroup>

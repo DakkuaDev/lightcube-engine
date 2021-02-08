@@ -29,7 +29,7 @@ void Serialization::read_xml()
 
         if (file.good())
         {
-            int length = file.tellg();
+            auto length = file.tellg();
 
             if (length > 0)
             {

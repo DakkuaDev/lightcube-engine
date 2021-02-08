@@ -96,6 +96,7 @@ namespace LightCubeEngine
 	{
 		Input_Task* input;
 
+		bool onWin = false;
 		int horizontal_move = 0;
 		int vertical_move = 0;
 		int priority = 0;

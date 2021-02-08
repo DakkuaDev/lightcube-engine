@@ -14,15 +14,15 @@
     <ClCompile Include="..\..\code\source\Component.cpp" />
     <ClCompile Include="..\..\code\source\Entity.cpp" />
     <ClCompile Include="..\..\code\source\Kernel.cpp" />
+    <ClCompile Include="..\..\code\source\Keyboard.cpp" />
     <ClCompile Include="..\..\code\source\Music.cpp" />
     <ClCompile Include="..\..\code\source\Scene.cpp" />
     <ClCompile Include="..\..\code\source\Sound.cpp" />
     <ClCompile Include="..\..\code\source\String.cpp" />
     <ClCompile Include="..\..\code\source\Task.cpp" />
-    <ClCompile Include="..\..\code\source\test\Keyboard.cpp" />
     <ClCompile Include="..\..\code\source\Window.cpp" />
     <ClCompile Include="..\..\code\source\winmain.cpp" />
-    <ClCompile Include="XML_Parser.cpp" />
+    <ClCompile Include="..\..\code\source\XML_Parser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\Component.h" />

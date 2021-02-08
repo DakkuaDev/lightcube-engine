@@ -54,8 +54,9 @@ namespace LightCubeEngine
 	/// <param name=""> Posible XML de la escena a cargar (TODO) </param>
 	void Scene::load_scene(const std::string&)
 	{
-		// SCENARIO
+		// ESCENARIO
 
+		// Cargo la entidad
 		shared_ptr<Entity> scenario( new Entity(*this));
 
 		scenario->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
@@ -67,10 +68,29 @@ namespace LightCubeEngine
 		)
 		));
 
+		// Añado la entidad al mapa
 		this->add_entity("scenario", scenario);	
 
 
-		// PLAYER
+
+		shared_ptr<Entity> scenario_win(new Entity(*this));
+
+		scenario_win->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
+		(
+			"scenario_win",
+			"../../resources/scenario_demo_win.obj",
+			*scenario_win.get(),
+			render.get()
+		)
+			));
+
+		this->add_entity("scenario_win", scenario_win);
+
+		// Posiciono la entidad 
+		scenario_win->get_transform()->set_position(glm::vec3(99.f, 99.f, 99.f));
+
+
+		// JUGADOR
 
 		shared_ptr<Entity> player(new Entity(*this));
 
@@ -85,7 +105,10 @@ namespace LightCubeEngine
 
 		this->add_entity("player", player);
 
-		// NUMBERS
+		// Creo una jerarquia de escena entre una entidad hija y una padre
+		player->get_transform()->attached_to(scenario);
+
+		// NUMEROS
 
 		shared_ptr<Entity> number_1(new Entity(*this));
 
@@ -101,6 +124,7 @@ namespace LightCubeEngine
 		this->add_entity("number_1", number_1);
 
 		number_1->get_transform()->set_position(glm::vec3(-7.f, 0.f, -8.f));
+		number_1->get_transform()->attached_to(scenario);
 
 
 
@@ -118,6 +142,7 @@ namespace LightCubeEngine
 		this->add_entity("number_2", number_2);
 
 		number_2->get_transform()->set_position(glm::vec3(8.f, 0.f, -2.f));
+		number_2->get_transform()->attached_to(scenario);
 
 
 
@@ -136,6 +161,7 @@ namespace LightCubeEngine
 		this->add_entity("number_3", number_3);
 
 		number_3->get_transform()->set_position(glm::vec3(-8.f, 0.f, 4.f));
+		number_3->get_transform()->attached_to(scenario);
 
 
 
@@ -154,6 +180,7 @@ namespace LightCubeEngine
 		this->add_entity("number_4", number_4);
 
 		number_4->get_transform()->set_position(glm::vec3(0.f, 0.f, -5.f));
+		number_4->get_transform()->attached_to(scenario);
 
 
 
@@ -172,6 +199,7 @@ namespace LightCubeEngine
 		this->add_entity("number_5", number_5);
 
 		number_5->get_transform()->set_position(glm::vec3(2.5f, 0.f, 8.f));
+		number_5->get_transform()->attached_to(scenario);
 	}
 
 	/// <summary>
@@ -199,11 +227,9 @@ namespace LightCubeEngine
 	/// <returns> se devuelve el puntero a la entidad buscada </returns>
 	std::shared_ptr< Entity >& Scene::get_entity(std::string id)
 	{
-		if (entities.size() > 0)
-		{
-			auto ent = entities.find(id);
-			return ent->second;
-		}
+
+		auto ent = entities.find(id);
+		return ent->second;
 	}
 
 	/// <summary>
@@ -224,8 +250,4 @@ namespace LightCubeEngine
 	{
 		entities.insert(pair< std::string, std::shared_ptr< Entity > >(id, entity));	
 	}
-
-
-
-
 }

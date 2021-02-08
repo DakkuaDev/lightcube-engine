@@ -67,13 +67,14 @@ namespace LightCubeEngine
 
 	public:
 		glm::mat4 get_matrix() const;
+		glm::mat4 attached_to(std::shared_ptr< Entity >& parent_entity);
 		glm::vec4 get_transform_vector() const;
 
 		void set_position(glm::vec3 new_position);
 		void translate(glm::vec3 coord);
-		void rotate_x(float rot_x);
-		void rotate_y(float rot_y);
-		void rotate_z(float rot_z);
+		
+		void rotate(float angle);
+
 		void set_scale(glm::vec3 new_scale);
 
 		glm::vec3 get_position();
@@ -150,8 +151,6 @@ namespace LightCubeEngine
 	public:
 
 		Audio_Component() = default;
-		Audio_Component(LC_Audio::Music& music);
-		Audio_Component(LC_Audio::Sound& sound);
 		~Audio_Component() = default;
 	};
 }

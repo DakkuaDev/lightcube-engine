@@ -22,7 +22,7 @@ namespace LightCubeEngine
 		scene = &_scene; 
 
 		// Transform inicial compartido por las entidades
-		transform = std::make_shared<Transform_Component>(Transform_Component(glm::vec3 (0,0,0), glm::vec3 (0,0,0), 3.14f, glm::vec3(1,1,1)));
+		transform = std::make_shared<Transform_Component>(Transform_Component(glm::vec3 (0,0,0), glm::vec3 (0,1,0), 0.f, glm::vec3(1,1,1)));
 	}
 
 	/// <summary>
@@ -46,11 +46,8 @@ namespace LightCubeEngine
 	/// <returns> se devuelve el puntero al componente buscado </returns>
 	std::shared_ptr< Component > Entity::get_component(std::string id)
 	{
-		if (components.size() > 0)
-		{
-			auto comp = components.at(id);
-			return comp;
-		}
+		auto comp = components.at(id);
+		return comp;
 	}
 
 	/// <summary>

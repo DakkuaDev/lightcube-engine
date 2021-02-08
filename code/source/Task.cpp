@@ -45,9 +45,7 @@ namespace LightCubeEngine
 		renderer->add("light", light);
 		renderer->get("camera")->translate(glt::Vector3(0.f, 18.f, 25.f));
 		renderer->get("camera")->rotate_around_x(-0.6f);
-		renderer->get("light")->translate(glt::Vector3(50.f, 50.f, 50.f));
-
-	
+		renderer->get("light")->translate(glt::Vector3(50.f, 50.f, 50.f));	
 	}
 
 	void Render_System::initialize()
@@ -118,35 +116,39 @@ namespace LightCubeEngine
 		// Control del jugador 
 		auto _player = scene->get_entity("player")->get_transform();
 
-		if (input->key == "up" && vertical_move < 25)
+		if (input->key == "up" && (vertical_move < 25 || onWin))
 		{
 			_player->translate(glm::vec3(0.f, 0.f, -0.5f));
 			vertical_move += 1;
 		}
-		else if (input->key == "down" && vertical_move > -25)
+		else if (input->key == "down" && (vertical_move > -25 || onWin))
 		{
 			_player->translate(glm::vec3(0.f, 0.f, 0.5f));
 			vertical_move -= 1;
 		}
-		else if (input->key == "right" && horizontal_move < 15)
+		else if (input->key == "right" && (horizontal_move < 15 || onWin))
 		{
 			_player->translate(glm::vec3(0.5f, 0.f, 0.f));
 			horizontal_move += 1;
 		}
-		else if (input->key == "left" && horizontal_move > -18)
+		else if (input->key == "left" && (horizontal_move > -18 || onWin))
 		{
 			_player->translate(glm::vec3(-0.5f, 0.f, 0.f));
 			horizontal_move -= 1;
 		}
 
-		// Mecánica: Recolecta de números
+		// Mecánica: Recolecta de números en orden
 		auto _number_1 = scene->get_entity("number_1")->get_transform();
 		auto _number_2 = scene->get_entity("number_2")->get_transform();
 		auto _number_3 = scene->get_entity("number_3")->get_transform();
 		auto _number_4 = scene->get_entity("number_4")->get_transform();
 		auto _number_5 = scene->get_entity("number_5")->get_transform();
 
-		//TODO: rotar los números
+		_number_1->rotate(0.02f);
+		_number_2->rotate(0.02f);
+		_number_3->rotate(0.02f);
+		_number_4->rotate(0.02f);
+		_number_5->rotate(0.02f);
 
 		float distance_1 = glm::length(_number_1->get_position() - _player->get_position());
 		float distance_2 = glm::length(_number_2->get_position() - _player->get_position());
@@ -195,7 +197,13 @@ namespace LightCubeEngine
 			if (priority == 4)
 			{
 				_number_5->set_position(glm::vec3(99.f, 99.f, 99.f));
-				priority++;
+
+				// Finalización de partida
+
+				scene->get_entity("scenario")->get_transform()->set_position(glm::vec3(99.f, 99.f, 99.f));
+				scene->get_entity("scenario_win")->get_transform() ->set_position(glm::vec3(0.f, 0.f, 0.f));
+
+				onWin = true;
 			}
 		}
 	}
