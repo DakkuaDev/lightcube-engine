@@ -138,14 +138,20 @@ namespace LightCubeEngine
 		render->renderer->add(id, mesh); 
 	};
 
-	void Audio_Component::play_music(std::string file, int loop)
+
+	Audio_Component::Audio_Component(std::string _file)
 	{
-		music->play(file, loop);
+		sound.reset(new LC_Audio::Sound(_file));
 	}
 
-	void Audio_Component::play_sound(std::string file, int loop)
+	void Audio_Component::play_sound(int loop)
 	{
-		sound->play(file, loop);
+		sound->play(loop);
+	}
+
+	void Audio_Component::set_volume(int channel, int volume)
+	{
+		sound->set_volume(channel, volume);
 	}
 	
 }

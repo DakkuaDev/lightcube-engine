@@ -18,15 +18,25 @@
 using namespace LC_Audio;
 using namespace std;
 
-LC_Audio::Sound::Sound()
+LC_Audio::Sound::Sound(std::string _file)
 {
-	Sound::init();
+	init();
+
+	if (!load_sound(_file))
+	{
+		SDL_Log("No se ha podido inicializar el objeto de sonido");
+	}
 }
 
-LC_Audio::Sound::Sound(int _frequency, int _channels, int _chunksize)
+LC_Audio::Sound::Sound(std::string _file, int _frequency, int _channels, int _chunksize)
 	:frequency(_frequency), channels(_channels), chunksize(_chunksize)
 {
-	Sound::init();
+	init();
+
+	if (!load_sound(_file))
+	{
+		SDL_Log("No se ha podido inicializar el objeto de sonido");
+	}
 }
 
 
@@ -40,13 +50,6 @@ LC_Audio::Sound::~Sound()
 /// </summary>
 void LC_Audio::Sound::init()
 {
-
-	// Inicializo SDL_Mixer
-	if (SDL_Init(SDL_INIT_AUDIO) != 0)
-	{
-		SDL_Log("SDL Mixer no se ha iniciado correctamente");
-	}
-
 	// Inicializo SDL_Mixer
 	if (SDL_Init(SDL_INIT_AUDIO) != 0)
 	{
@@ -63,21 +66,30 @@ void LC_Audio::Sound::init()
 }
 
 /// <summary>
-/// Función para comenzar a reproducir 
+/// Función de carga de archivo de sonido
 /// </summary>
-/// <param name="file"> nombre del archivo que se va a reproducir</param>
-/// <param name="loop"> repetición constante de la música (0: false, 1: true)</param>
-void LC_Audio::Sound::play(std::string file, int loop)
+/// <param name="file"> archivo a cargar </param>
+/// <returns> booleano si se pudo completar o no la carga </returns>
+bool LC_Audio::Sound::load_sound(std::string file)
 {
 	std::string sound_path = path + file;
-
-	// Se le pasa la ruta
 	sound = Mix_LoadWAV(sound_path.c_str());
 
+	if (sound != nullptr) return true;
+
+	return false;
+}
+
+/// <summary>
+/// Función para comenzar a reproducir el sonido
+/// </summary>
+/// <param name="loop"> repetición constante de la música (0: false, -1: true)</param>
+void LC_Audio::Sound::play(int loop)
+{
 	if (not (Mix_PlayChannel(-1, sound, loop)))
 	{
-		SDL_Log("No se ha podido cargar el audio");
-		SDL_Log(Mix_GetError());
+		//SDL_Log("No se ha podido cargar el audio");
+		//SDL_Log(Mix_GetError());
 	}	
 }
 
@@ -87,4 +99,13 @@ void LC_Audio::Sound::play(std::string file, int loop)
 void LC_Audio::Sound::stop()
 {
 	if (sound) Mix_FreeChunk(sound);
+}
+
+/// <summary>
+/// Función para manejar el volumen de la música
+/// </summary>
+/// <param name="volume"> nuevo volumen </param>
+void LC_Audio::Sound::set_volume(int channel, int volume)
+{
+	Mix_Volume(channel, volume);
 }

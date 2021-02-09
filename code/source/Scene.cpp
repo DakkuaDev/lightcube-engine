@@ -122,7 +122,7 @@ namespace LightCubeEngine
 			));
 
 		// Añado el componente de audio
-		number_1->add_component("audio", make_shared<Audio_Component>(Audio_Component()));
+		number_1->add_component("audio", make_shared<Audio_Component>(Audio_Component("collect_sound.wav")));
 
 		this->add_entity("number_1", number_1);
 
@@ -142,7 +142,7 @@ namespace LightCubeEngine
 		)
 			));
 
-		number_2->add_component("audio", make_shared<Audio_Component>(Audio_Component()));
+		number_2->add_component("audio", make_shared<Audio_Component>(Audio_Component("collect_sound.wav")));
 
 		this->add_entity("number_2", number_2);
 
@@ -163,7 +163,7 @@ namespace LightCubeEngine
 		)
 			));
 
-		number_3->add_component("audio", make_shared<Audio_Component>(Audio_Component()));
+		number_3->add_component("audio", make_shared<Audio_Component>(Audio_Component("collect_sound.wav")));
 
 		this->add_entity("number_3", number_3);
 
@@ -184,7 +184,7 @@ namespace LightCubeEngine
 		)
 			));
 
-		number_4->add_component("audio", make_shared<Audio_Component>(Audio_Component()));
+		number_4->add_component("audio", make_shared<Audio_Component>(Audio_Component("collect_sound.wav")));
 
 		this->add_entity("number_4", number_4);
 
@@ -205,7 +205,7 @@ namespace LightCubeEngine
 		)
 			));
 
-		number_5->add_component("audio", make_shared<Audio_Component>(Audio_Component()));
+		number_5->add_component("audio", make_shared<Audio_Component>(Audio_Component("end_sound.wav")));
 
 		this->add_entity("number_5", number_5);
 

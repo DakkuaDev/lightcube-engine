@@ -27,6 +27,7 @@ namespace LC_Audio
 
 		Mix_Music* music = nullptr;
 
+		std::string file;
 		std::string path = "../../resources/";
 
 		const int frequency = 22050;
@@ -34,13 +35,15 @@ namespace LC_Audio
 		const int chunksize = 4096;
 
 	public:
-		Music();
-		Music(int frequency, int channels, int chunksize);
+		Music(std::string file);
+		Music(std::string file, int frequency, int channels, int chunksize);
 		~Music();
 
 	public:
-		void play(std::string file, int loop);
+		bool load_music(std::string file);
+		void play(int loop);
 		void stop();
+		void set_volume(int volume);
 
 	private:
 		void init();
@@ -59,13 +62,15 @@ namespace LC_Audio
 		int channels = 2;
 		const int chunksize = 4096;
 	public:
-		Sound();
-		Sound(int frequency, int channels, int chunksize);
+		Sound(std::string file);
+		Sound(std::string file, int frequency, int channels, int chunksize);
 		~Sound();
 
 	public:
-		void play(std::string file, int loop);
+		bool load_sound(std::string file);
+		void play(int loop);
 		void stop();
+		void set_volume(int channel, int volume);
 
 	private:
 		void init();

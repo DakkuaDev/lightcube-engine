@@ -111,8 +111,13 @@ namespace LightCubeEngine
 	{
 		input = &_input;
 
-		std::string file = "bg_music.wav";
-		bg_music.play(file, 1);
+		bg_music.reset(new LC_Audio::Music("bg_music.wav"));
+		bg_music->play(0);
+		bg_music->set_volume(10);
+
+		error.reset(new LC_Audio::Sound("error_sound.wav"));
+		bg_music->set_volume(20);
+
 	}
 
 	void Control_Task::update(float delta)
@@ -165,10 +170,11 @@ namespace LightCubeEngine
 		{
 			if (priority == 0)
 			{
-				_number_1->set_position(glm::vec3(99.f, 99.f, 99.f));
+				std::shared_ptr< Component > component = scene->get_entity("number_1")->get_component("audio");
+				std::static_pointer_cast<Audio_Component>(component)->play_sound(0);
+				std::static_pointer_cast<Audio_Component>(component)->set_volume(-1, 20);
 
-				//std::shared_ptr< Component > component = scene->get_entity("number_1")->get_component("audio");
-				//std::static_pointer_cast<Audio_Component>(component)->play_music("collect_sound.wav", 0);
+				_number_1->set_position(glm::vec3(99.f, 99.f, 99.f));
 
 				priority++;
 			}
@@ -178,8 +184,17 @@ namespace LightCubeEngine
 		{
 			if (priority == 1)
 			{
+				std::shared_ptr< Component > component = scene->get_entity("number_2")->get_component("audio");
+				std::static_pointer_cast<Audio_Component>(component)->play_sound(0);
+				std::static_pointer_cast<Audio_Component>(component)->set_volume(-1, 20);
+
 				_number_2->set_position(glm::vec3(99.f, 99.f, 99.f));
+
 				priority++;
+			}
+			else
+			{
+				error->play(0);
 			}
 		}
 
@@ -187,8 +202,17 @@ namespace LightCubeEngine
 		{
 			if (priority == 2)
 			{
+				std::shared_ptr< Component > component = scene->get_entity("number_3")->get_component("audio");
+				std::static_pointer_cast<Audio_Component>(component)->play_sound(0);
+				std::static_pointer_cast<Audio_Component>(component)->set_volume(-1, 20);
+
 				_number_3->set_position(glm::vec3(99.f, 99.f, 99.f));
+
 				priority++;
+			}
+			else
+			{
+				error->play(0);
 			}
 		}
 
@@ -196,8 +220,17 @@ namespace LightCubeEngine
 		{
 			if (priority == 3)
 			{
+				std::shared_ptr< Component > component = scene->get_entity("number_4")->get_component("audio");
+				std::static_pointer_cast<Audio_Component>(component)->play_sound(0);
+				std::static_pointer_cast<Audio_Component>(component)->set_volume(-1, 20);
+
 				_number_4->set_position(glm::vec3(99.f, 99.f, 99.f));
+
 				priority++;
+			}
+			else
+			{
+				error->play(0);
 			}
 		}
 
@@ -205,16 +238,24 @@ namespace LightCubeEngine
 		{
 			if (priority == 4)
 			{
+				std::shared_ptr< Component > component = scene->get_entity("number_5")->get_component("audio");
+				std::static_pointer_cast<Audio_Component>(component)->play_sound(0);
+				std::static_pointer_cast<Audio_Component>(component)->set_volume(-1, 20);
+
 				_number_5->set_position(glm::vec3(99.f, 99.f, 99.f));
 
 				// Finalización de partida
 
-				//bg_music.stop();
+				bg_music->stop();
 
 				scene->get_entity("scenario")->get_transform()->set_position(glm::vec3(99.f, 99.f, 99.f));
 				scene->get_entity("scenario_win")->get_transform() ->set_position(glm::vec3(0.f, 0.f, 0.f));
 
 				onWin = true;
+			}
+			else
+			{
+				error->play(0);
 			}
 		}
 	}

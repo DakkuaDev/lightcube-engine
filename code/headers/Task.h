@@ -92,12 +92,13 @@ namespace LightCubeEngine
 	};
 
 	/// <summary>
-	/// Tarea encargada del control de la demo
+	/// Tarea encargada del control de la demo 
 	/// </summary>
 	class Control_Task : public Task
 	{
 		Input_Task* input;
-		LC_Audio::Music bg_music;
+		shared_ptr<LC_Audio::Music> bg_music;
+		shared_ptr<LC_Audio::Sound> error;
 
 		bool onWin = false;
 		int horizontal_move = 0;

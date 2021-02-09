@@ -145,15 +145,14 @@ namespace LightCubeEngine
 	/// </summary>
 	class Audio_Component : public Component
 	{
-		LC_Audio::Music* music;
-		LC_Audio::Sound* sound;
+		shared_ptr<LC_Audio::Sound> sound;
 
 	public:
-		Audio_Component() = default;
+		Audio_Component(std::string file);
 		~Audio_Component() = default;
 
 	public:
-		void play_music(std::string file, int loop);
-		void play_sound(std::string file, int loop);
+		void play_sound(int loop);
+		void set_volume(int channel, int volume);
 	};
 }
