@@ -38,7 +38,7 @@ namespace LightCubeEngine
 		glm::mat4 scale_matrix = glm::scale(translate_matrix, scale);
 		glm::mat4 rotate_matrix = glm::rotate(scale_matrix, rot_angle, rotation);
 		
-		glm::mat4 transform_matrix = scale_matrix;
+		glm::mat4 transform_matrix = rotate_matrix;
 
 		return transform_matrix;
 	}
