@@ -149,8 +149,11 @@ namespace LightCubeEngine
 		LC_Audio::Sound* sound;
 
 	public:
-
 		Audio_Component() = default;
 		~Audio_Component() = default;
+
+	public:
+		void play_music(std::string file, int loop);
+		void play_sound(std::string file, int loop);
 	};
 }

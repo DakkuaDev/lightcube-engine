@@ -34,14 +34,13 @@ namespace LC_Audio
 		const int chunksize = 4096;
 
 	public:
-		Music() = default;
+		Music();
 		Music(int frequency, int channels, int chunksize);
 		~Music();
 
 	public:
 		void play(std::string file, int loop);
 		void stop();
-		void set_volume();
 
 	private:
 		void init();
@@ -60,14 +59,13 @@ namespace LC_Audio
 		int channels = 2;
 		const int chunksize = 4096;
 	public:
-		Sound() = default;
+		Sound();
 		Sound(int frequency, int channels, int chunksize);
 		~Sound();
 
 	public:
 		void play(std::string file, int loop);
 		void stop();
-		void set_volume();
 
 	private:
 		void init();

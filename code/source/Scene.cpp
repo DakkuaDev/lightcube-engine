@@ -34,7 +34,6 @@ namespace LightCubeEngine
 		kernel->add_task(input);
 		kernel->add_task(control);
 		kernel->add_task(render);
-
 	}
 
 
@@ -59,6 +58,7 @@ namespace LightCubeEngine
 		// Cargo la entidad
 		shared_ptr<Entity> scenario( new Entity(*this));
 
+		// Añado el componente de maya
 		scenario->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
 		( 
 			"scenario", 
@@ -121,6 +121,9 @@ namespace LightCubeEngine
 		)
 			));
 
+		// Añado el componente de audio
+		number_1->add_component("audio", make_shared<Audio_Component>(Audio_Component()));
+
 		this->add_entity("number_1", number_1);
 
 		number_1->get_transform()->set_position(glm::vec3(-7.f, 0.f, -8.f));
@@ -138,6 +141,8 @@ namespace LightCubeEngine
 			render.get()
 		)
 			));
+
+		number_2->add_component("audio", make_shared<Audio_Component>(Audio_Component()));
 
 		this->add_entity("number_2", number_2);
 
@@ -158,6 +163,8 @@ namespace LightCubeEngine
 		)
 			));
 
+		number_3->add_component("audio", make_shared<Audio_Component>(Audio_Component()));
+
 		this->add_entity("number_3", number_3);
 
 		number_3->get_transform()->set_position(glm::vec3(-8.f, 0.f, 4.f));
@@ -177,6 +184,8 @@ namespace LightCubeEngine
 		)
 			));
 
+		number_4->add_component("audio", make_shared<Audio_Component>(Audio_Component()));
+
 		this->add_entity("number_4", number_4);
 
 		number_4->get_transform()->set_position(glm::vec3(0.f, 0.f, -5.f));
@@ -195,6 +204,8 @@ namespace LightCubeEngine
 			render.get()
 		)
 			));
+
+		number_5->add_component("audio", make_shared<Audio_Component>(Audio_Component()));
 
 		this->add_entity("number_5", number_5);
 

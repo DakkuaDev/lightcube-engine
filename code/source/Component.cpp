@@ -137,5 +137,15 @@ namespace LightCubeEngine
 		parent = &e; 
 		render->renderer->add(id, mesh); 
 	};
+
+	void Audio_Component::play_music(std::string file, int loop)
+	{
+		music->play(file, loop);
+	}
+
+	void Audio_Component::play_sound(std::string file, int loop)
+	{
+		sound->play(file, loop);
+	}
 	
 }

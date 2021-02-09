@@ -22,6 +22,8 @@
 #include <SDL.h>
 #include <OpenGL.hpp>
 
+#include "LC_Audio.h"
+
 using namespace glm;
 
 namespace LightCubeEngine
@@ -108,6 +110,9 @@ namespace LightCubeEngine
 	Control_Task::Control_Task(Scene& _scene, Input_Task& _input) : Task::Task(_scene)
 	{
 		input = &_input;
+
+		std::string file = "bg_music.wav";
+		bg_music.play(file, 1);
 	}
 
 	void Control_Task::update(float delta)
@@ -161,6 +166,10 @@ namespace LightCubeEngine
 			if (priority == 0)
 			{
 				_number_1->set_position(glm::vec3(99.f, 99.f, 99.f));
+
+				//std::shared_ptr< Component > component = scene->get_entity("number_1")->get_component("audio");
+				//std::static_pointer_cast<Audio_Component>(component)->play_music("collect_sound.wav", 0);
+
 				priority++;
 			}
 		}
@@ -199,6 +208,8 @@ namespace LightCubeEngine
 				_number_5->set_position(glm::vec3(99.f, 99.f, 99.f));
 
 				// Finalización de partida
+
+				//bg_music.stop();
 
 				scene->get_entity("scenario")->get_transform()->set_position(glm::vec3(99.f, 99.f, 99.f));
 				scene->get_entity("scenario_win")->get_transform() ->set_position(glm::vec3(0.f, 0.f, 0.f));

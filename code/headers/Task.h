@@ -15,12 +15,13 @@
 #include <iostream>
 #include <memory>
 
-
 #include "LC_Graphics.h"
+#include "LC_Audio.h"
 
 using namespace std;
 using namespace glt;
 using namespace LC_Graphics;
+using namespace LC_Audio;
 
 namespace LightCubeEngine
 {
@@ -28,6 +29,7 @@ namespace LightCubeEngine
 	class Entity;
 	class Component;
 	class Render_Node;
+	class Music;
 
 	class Task
 	{
@@ -95,6 +97,7 @@ namespace LightCubeEngine
 	class Control_Task : public Task
 	{
 		Input_Task* input;
+		LC_Audio::Music bg_music;
 
 		bool onWin = false;
 		int horizontal_move = 0;

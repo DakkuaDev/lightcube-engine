@@ -11,6 +11,7 @@
  */
 
 #include <iostream>
+#include <cstdlib>
 #include <SDL.h>
 #include <SDL_mixer.h>
 #include "LC_Audio.h"
@@ -19,8 +20,13 @@ using namespace LC_Audio;
 using namespace std;
 
 
+LC_Audio::Music::Music()
+{
+	Music::init();
+}
+
 LC_Audio::Music::Music(int _frequency, int _channels, int _chunksize)
-	:frequency(_frequency),channels(_channels), chunksize(_chunksize)
+	:frequency(_frequency), channels(_channels), chunksize(_chunksize)
 {
 	Music::init();
 }
@@ -36,6 +42,12 @@ LC_Audio::Music::~Music()
 /// </summary>
 void LC_Audio::Music::init()
 {
+	// Inicializo SDL_Mixer
+	if (SDL_Init(SDL_INIT_AUDIO) != 0)
+	{
+		SDL_Log("SDL Mixer no se ha iniciado correctamente");
+	}
+
 	// Inicializo SDL_Mixer
 	if (SDL_Init(SDL_INIT_AUDIO) != 0)
 	{
@@ -62,17 +74,12 @@ void LC_Audio::Music::play(std::string file, int loop)
 	SDL_Log(music_path.c_str());
 
 	// Se le pasa la ruta
-    music = Mix_LoadMUS(music_path.c_str());
+	music = Mix_LoadMUS(music_path.c_str());
 
-	if (music)
+	if (not (Mix_FadeInMusic(music, loop, 4000)))
 	{
-		// Se reproduce
-		Mix_FadeInMusic(music, loop, 4000);
-	}
-	else
-	{
-		SDL_Log(Mix_GetError());
 		SDL_Log("No se ha podido cargar el audio");
+		SDL_Log(Mix_GetError());
 	}
 }
 
