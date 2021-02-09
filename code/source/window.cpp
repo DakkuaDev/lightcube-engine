@@ -11,7 +11,7 @@
  */
 
 
-#include <iostream>						// Cuidado con el orden de estas cabeceras.
+#include <iostream>						
 #include <cassert>
 #include <SDL.h>
 #include <OpenGL.hpp>

@@ -15,6 +15,9 @@
 using namespace LC_Utils;
 using namespace std;
 
+/// <summary>
+/// Lee el archivo XML para interpretarlo con la libreria RapidXML
+/// </summary>
 void Serialization::read_xml()
 {
     N_DEBUG_WARNING(resource);

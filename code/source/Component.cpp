@@ -144,11 +144,20 @@ namespace LightCubeEngine
 		sound.reset(new LC_Audio::Sound(_file));
 	}
 
+	/// <summary>
+	/// Reproduce un sonido
+	/// </summary>
+	/// <param name="loop"> loopeo del sonido (-1) sin loopeo (0) </param>
 	void Audio_Component::play_sound(int loop)
 	{
 		sound->play(loop);
 	}
 
+	/// <summary>
+	/// Cambia el volumen de la pista de reproducción
+	/// </summary>
+	/// <param name="channel"> canal seleccionado </param>
+	/// <param name="volume"> nuevo volumen </param>
 	void Audio_Component::set_volume(int channel, int volume)
 	{
 		sound->set_volume(channel, volume);

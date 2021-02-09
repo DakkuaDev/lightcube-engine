@@ -27,6 +27,7 @@ using namespace glt;
 namespace LC_Graphics
 {
 	// Funciones: get_width(),  get_height(), clear(), swap_buffers(), enable_vsync(), disable_vsync()
+	// Clase: SceneRenderer
 	// Angel Rodrigez
 	// angel.rodriguez@esne.edu
 
@@ -88,7 +89,7 @@ namespace LC_Graphics
 	};
 
 	/// <summary>
-	/// Clase encargada del renderizado de la escena usando OpenGL-Tookit (Necesario para que funcione la libreria)
+	/// Clase encargada del renderizado de la escena procesando los datos de uso de OpenGL-Toolkit
 	/// </summary>
 	class SceneRenderer
 	{
@@ -99,15 +100,9 @@ namespace LC_Graphics
 
 		std::unique_ptr< glt::Render_Node > renderer;
 
-		Window* window = nullptr;
-		Keyboard* input = nullptr;
-
-		int horizontal_move = 0;
-		int vertical_move = 0;
-
 	public:
 
-		SceneRenderer(Window& given_window);
+		SceneRenderer();
 
 		/** En este caso es necesario definir explícitamente el destructor en el archivo
 			* de implementación (CPP) para que el compilador pueda destruir el Render_Node.
@@ -118,17 +113,6 @@ namespace LC_Graphics
 		~SceneRenderer();
 
 	public:
-		void update();
-
-		void initialize_scene_a();
-		void initialize_scene_b();
-
+		void data();
 	};
 }
-
-
-
-
-
-
-

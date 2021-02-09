@@ -1,4 +1,12 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (lightcube-engineVS.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Component.cpp
+  Kernel.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winbase.h(716,1): warning C4005: 'STD_OUTPUT_HANDLE': macro redefinition
+D:\Dev\LightCube_Engine\lightcube-engine\code\headers\LC_Utils.h(35): message : see previous definition of 'STD_OUTPUT_HANDLE'
+  Keyboard.cpp
+  Scene.cpp
+  Task.cpp
+  Window.cpp
+  Generating Code...
   Replacing x64\Debug\Music.obj
   lightcube-engineVS.vcxproj -> D:\Dev\LightCube_Engine\demo-game\project\vs-2019\x64\Debug\lightcube-engine.lib

@@ -194,7 +194,7 @@ namespace LC_Utils
     /// <summary>
     /// Clase string genérica para añadir funcionalidad adicional a C++ 
     /// </summary>
-    class String // TODO: Separar en Cabecera + Implementación
+    class String 
     {
     public:
 

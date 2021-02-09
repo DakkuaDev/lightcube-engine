@@ -46,7 +46,6 @@ namespace LightCubeEngine
 
 	public:
 
-		// TODO: Pensar, si añado XML, donde lo meto + cuando cargo las tareas
 		Scene() = default;
 		Scene(LC_Graphics::Window& window);
 		~Scene() = default;
