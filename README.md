@@ -1,8 +1,6 @@
 # Light Cube Engine
 
-<p align="center">
-  <img width="460" height="300" src="https://ibb.co/TK259xG">
-</p>
+![lightcube-egine](./resources/light_cube_logo.ico)
 
 # What is this about?
 
