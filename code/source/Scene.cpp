@@ -62,7 +62,7 @@ namespace LightCubeEngine
 		scenario->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
 		( 
 			"scenario", 
-			"../../resources/scenario_demo.obj",
+			"./resources/scenario_demo.obj",
 			*scenario.get(),
 			render.get()
 		)
@@ -78,7 +78,7 @@ namespace LightCubeEngine
 		scenario_win->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
 		(
 			"scenario_win",
-			"../../resources/scenario_demo_win.obj",
+			"./resources/scenario_demo_win.obj",
 			*scenario_win.get(),
 			render.get()
 		)
@@ -97,7 +97,7 @@ namespace LightCubeEngine
 		player->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
 		(
 			"player",
-			"../../resources/player.obj",
+			"./resources/player.obj",
 			*player.get(),
 			render.get()
 		)
@@ -115,7 +115,7 @@ namespace LightCubeEngine
 		number_1->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
 		(
 			"number_1",
-			"../../resources/number_1.obj",
+			"./resources/number_1.obj",
 			*number_1.get(),
 			render.get()
 		)
@@ -136,7 +136,7 @@ namespace LightCubeEngine
 		number_2->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
 		(
 			"number_2",
-			"../../resources/number_2.obj",
+			"./resources/number_2.obj",
 			*number_2.get(),
 			render.get()
 		)
@@ -157,7 +157,7 @@ namespace LightCubeEngine
 		number_3->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
 		(
 			"number_3",
-			"../../resources/number_3.obj",
+			"./resources/number_3.obj",
 			*number_3.get(),
 			render.get()
 		)
@@ -178,7 +178,7 @@ namespace LightCubeEngine
 		number_4->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
 		(
 			"number_4",
-			"../../resources/number_4.obj",
+			"./resources/number_4.obj",
 			*number_4.get(),
 			render.get()
 		)
@@ -199,7 +199,7 @@ namespace LightCubeEngine
 		number_5->add_component("mesh", make_shared<Mesh_Component>(Mesh_Component
 		(
 			"number_5",
-			"../../resources/number_5.obj",
+			"./resources/number_5.obj",
 			*number_5.get(),
 			render.get()
 		)

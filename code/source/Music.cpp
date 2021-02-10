@@ -75,7 +75,6 @@ void LC_Audio::Music::init()
 bool LC_Audio::Music::load_music(std::string file)
 {
 	std::string music_path = path + file;
-	SDL_Log(music_path.c_str());
 
 	music = Mix_LoadMUS(music_path.c_str());
 
@@ -92,8 +91,8 @@ void LC_Audio::Music::play(int loop)
 {
 	if (not (Mix_FadeInMusic(music, loop, 5000)))
 	{
-		SDL_Log("No se ha podido cargar el audio");
-		SDL_Log(Mix_GetError());
+		//SDL_Log("No se ha podido cargar el audio");
+		//SDL_Log(Mix_GetError());
 	}
 }
 
