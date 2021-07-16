@@ -20,5 +20,7 @@ Light Cube Engine, is a personal video game engine written in C++ with the aim o
 - Entity system
 - Component system
 
+Author: Daniel Guerra Gallardo
+
 
 
